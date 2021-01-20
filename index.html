@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />    
+    
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
     <script src="./app/app.js"></script>
 
     <title>Scrum Quiz</title>
@@ -14,23 +17,38 @@
       <div class="flex">
         <label for="text"></label>
         <input type="text" />
-        <div class="btn-login"><button>Login</button></div>
-        <div class="btn-confirm"><button>Registrera</button></div>
+        <div class="btn-login">
+          <button class="btn margin-btn">Login</button>
+        </div>
+        <div class="btn-confirm">
+          <button class="btn margin-btn">Registrera</button>
+        </div>
       </div>
       <div class="flex column">
-        <div class="rubrik"></div>
-        <div class="toplista"></div>
-        <div class="namn"></div>
-        <div class="namn"></div>
-        <div class="namn"></div>
+        <div class="rubrik"><h2>Antal spelade spel</h2></div>
+        <div class="flex space-between">
+          <p>Toplista</p>
+          <p>Poäng</p>
+        </div>
+        <div class="flex space-between">
+          <p>Namn</p>
+          <p>000</p>
+        </div>
+        <div class="flex space-between">
+          <p>Namn</p>
+          <p>000</p>
+        </div>
+        <div class="flex space-between">
+          <p>Namn</p>
+          <p>000</p>
+        </div>
       </div>
       <div class="flex row space-between width100">
-        <div class="btn-container"><button>Regler</button></div>
-        <div class="btn-container"><button>Start Game</button></div>
-        <div class="btn-container"><button>Statestik</button></div>
-        <form action="./endscreen.html">
+        
+    <form action="./endscreen.html">
           <input type="submit" value="Go to endscreen"/>
-        </form>
+        </form>       
+        
       </div>
     </main>
   </body>
