@@ -28,3 +28,16 @@ main {
 .width100 {
   width: 100%;
 }
+.btn {
+  padding: 0.3rem;
+}
+.margin-btn {
+  margin-left: 1rem;
+}
+.space-around {
+  justify-content: space-around;
+}
+/*olofs klasser*/
+.rubrik {
+  margin-bottom: 1rem;
+}
