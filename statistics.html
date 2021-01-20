@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">    
-    
-    <!-- fontawsome -->
-    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
+       <!-- fontawsome -->
+       <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
     <script src="./app/app.js"></script>
     <title>Scrum Quiz</title>
 </head>
-<body>
-    
+<body>    
+    <main class="flex column center">
+        <div class="flex center">
+            <h1>Statistik</h1>
+        </div>
+        <div class="flex column">
+            <div class="bot-statistics flex row">
+                <div class="flex column center">
+                    <img src="./assets/player.png" alt="" class="bot-img">
+                    <p>Lätt</p>
+                    <p>Vunna matcher: </p>
+                    <p>Spelade matcher:</p>
+
+                </div>
+                <div class="flex column center">
+                    <img src="./assets/player.png" alt="" class="bot-img">
+                    <p>Medium</p>
+                    <p>Vunna matcher: </p>
+                    <p>Spelade matcher:</p>
+                </div>
+                <div class="flex column center">
+                    <img src="./assets/player.png" alt="" class="bot-img">
+                    <p>Svår</p>
+                    <p>Vunna matcher: </p>
+                    <p>Spelade matcher:</p>
+                </div>
+            </div>
+
+            <div class="highscore">
+                <p>1. Namn och poäng från Local Storage</p>
+                <p>2. Namn och poäng från Local Storage</p>
+                <p>3. Namn och poäng från Local Storage</p>
+            </div>
+
+            <div class="btn-container flex center">
+                <form action="index.html">
+                    <input type="submit" value="Gå tillbaka till spelet"/>
+                </form>
+            </div>
+        </div>
+
+      </main>
 </body>
 </html>
