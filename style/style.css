@@ -1,10 +1,30 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
-    max-width: 1200px;
-    width: 100%;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.width100 {
+  width: 100%;
 }
