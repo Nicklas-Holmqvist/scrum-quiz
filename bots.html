@@ -4,10 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
     <script src="./app/app.js"></script>
     <title>Scrum Quiz</title>
 </head>
-<body>
+
+<style>   
+
+    body {
+        margin: 0 auto;
+        background: #F3f3f3;
+    }
     
+    h2 {
+        text-align: center;
+        margin: 3rem;
+        font-size: 3rem;
+    }
+
+    .bots {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 5rem 0 5rem;
+    }
+
+    .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .margin3 {
+        margin: 3rem;
+    }
+
+</style>
+
+<body>
+    <h2>Välj Bot(ar)</h2>
+    <div class="bots">
+        <img src="./assets/player-green.png" width="200px">
+        <img src="./assets/player-blue.png" width="200px">
+        <img src="./assets/player-red.png" width="200px">
+    </div>
+    <div class="centered margin3">
+        <form action="thegame.html">
+            <input type="submit" value="Fortsätt"/>
+        </form>
+    </div>
 </body>
 </html>
