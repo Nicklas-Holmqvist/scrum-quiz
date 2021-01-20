@@ -8,6 +8,7 @@ main {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  height: 100vh;
 }
 .flex {
   display: flex;
@@ -40,4 +41,7 @@ main {
 /*olofs klasser*/
 .rubrik {
   margin-bottom: 1rem;
+}
+.height100 {
+  height: 100%;
 }

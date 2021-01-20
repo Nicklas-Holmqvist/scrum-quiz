@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />    
-    
+    <link rel="stylesheet" href="./style/style.css" />
+
     <!-- fontawsome -->
-    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e5bc88f7ae.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./app/app.js"></script>
 
     <title>Scrum Quiz</title>
   </head>
   <body>
-    <main class="flex column center">
+    <main class="flex column center space-between">
       <div class="flex center"><h1>Quizz-App</h1></div>
       <div class="flex">
         <label for="text"></label>
@@ -44,9 +47,13 @@
         </div>
       </div>
       <div class="flex row space-between width100">
-        <div class="btn-container"><button class="btn">Regler</button></div>
-        <div class="btn-container"><button class="btn">Start Game</button></div>
-        <div class="btn-container"><button class="btn">Statestik</button></div>
+        <button class="btn">Regler</button>
+        <form action="bots.html">
+          <input class="btn" type="submit" value="Starta spelet" />
+        </form>
+        <form action="statistics.html">
+          <input class="btn" type="submit" value="Statestik" />
+        </form>
       </div>
     </main>
   </body>
