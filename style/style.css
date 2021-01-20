@@ -4,12 +4,62 @@
   box-sizing: border-box;
 }
 
+
+html {
+    height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  background: #F3f3f3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.bots {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 5rem 0 5rem;
+}
+
+.bot-img {
+  width: 12rem;
+}
+
+.margin3 {
+  margin: 3rem;
+}
+
 main {
-  max-width: 1200px;
+  max-width: 60rem;
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  height: 40rem;
 }
+
 .flex {
   display: flex;
 }
@@ -26,10 +76,43 @@ main {
 .space-between {
   justify-content: space-between;
 }
+.space-evenly {
+  justify-content: space-evenly;
+}
 .width100 {
   width: 100%;
 }
 
+/* Knappsmink */
+#inputfield {
+  padding-left: 0.5rem;
+  border-style: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+}
+
+.btn {
+  width: 10rem;
+}
+
+.btn-small {
+  /* width: 10rem; */
+  padding: 0.5rem;
+  width: 8rem;
+  border-style: none;
+  box-shadow: 1px 1px 1px #4e4e4e;
+  background: #FFFFFF;
+}
+
+.btn-big {
+  /* width: 10rem; */
+  padding: 0.5rem;
+  width: 10rem;
+  /* color: hotpink; */
+  border-style: none;
+  box-shadow: 1px 1px 1px #4e4e4e;
+  background: #FFFFFF;
+}
 
 
 /* endscreen css */
@@ -74,13 +157,22 @@ main {
   justify-content: space-around;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: 15rem;
-  margin-right: 15rem;
+  width: 50%;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
-=======
-.btn {
+
+.players-container {
+  height: 20rem;
+}
+
+.game-btn-container .btn-big {
+  margin: 2rem 2rem; 
+}
+/* .btn {
   padding: 0.3rem;
-}
+} */
+
 .margin-btn {
   margin-left: 1rem;
 }
@@ -90,6 +182,7 @@ main {
 /*olofs klasser*/
 .rubrik {
   margin-bottom: 1rem;
+
 }
 
 .height100 {
@@ -98,8 +191,6 @@ main {
 
 /* statistics page */
 
-.bot-img {
-  width: 6rem;
-}
+
 
 
