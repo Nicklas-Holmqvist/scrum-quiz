@@ -14,27 +14,27 @@
 
 <body>
     <main class="flex center column">    
-        <h2>Välj Bot</h2>
+        <h2>Välj svårighetsgrad</h2>
         <div class="bots margin3">
-            <div class="playerbox player-one flex center column">
+            <div class="playerbox player-one flex center column" onclick="borderClick1()" id="botcard1">
                 <i class="fas fa-male figure-1 figure-green margin05"></i>
                 <p>Lätt</p>
             </div>
-            <div class="playerbox player-one flex center column">
+            <div class="playerbox player-one flex center column" onclick="borderClick2()" id="botcard2">
                 <i class="fas fa-male figure-1 figure-blue margin05"></i>
                 <p>Medium</p>
             </div>
-            <div class="playerbox player-one flex center column">
+            <div class="playerbox player-one flex center column" onclick="borderClick3()" id="botcard3">
                 <i class="fas fa-male figure-1 figure-red margin05"></i>
                 <p>Svår</p>
             </div>
         </div>
         <div class="flex center">
             <form action="index.html">
-                <input type="submit" value="Tillbaka" class="btn-small margin1">
+                <input type="submit" value="Tillbaka" class="btn-big margin1">
             </form>
             <form action="thegame.html">
-                <input type="submit" value="Fortsätt" class="btn-small margin1">
+                <input type="submit" value="Starta" class="btn-big margin1">
             </form>
         </div>
     </main>
