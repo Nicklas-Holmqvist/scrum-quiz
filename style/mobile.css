@@ -13,6 +13,28 @@
   padding: 0.5rem;
 }
 
+/* the game */
+
+.players-container {
+  padding: 1rem 0;
+}
+
+.player-one, .player-two {
+  width: 8rem;  
+}
+
+.fas {
+  font-size: 4rem;
+}
+
+.game-btn-container .btn-big {
+  margin: 1rem 1rem; 
+}
+
+.user-container {
+  flex-direction: column-reverse;
+}
+
 /* statistics page */
 
 .bot-statistics {

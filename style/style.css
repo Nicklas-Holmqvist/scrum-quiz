@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 html {
     height: 100%;
 }
@@ -101,6 +100,9 @@ main {
 .width100 {
   width: 100%;
 }
+.height100 {
+  height: 100%;
+}
 
 /* Knappsmink */
 #inputfield {
@@ -136,6 +138,44 @@ main {
 .fas {
   font-size: 10rem;
   padding-bottom: 1rem;
+  
+}
+
+
+/* the game */
+
+.players-container {
+  padding: 2rem 0;
+}
+
+.versus {
+  padding: 0 2rem;
+}
+
+.answer {
+  font-size: 3rem;
+}
+
+.game-btn-container .btn-big {
+  margin: 2rem 2rem; 
+}
+
+#number {
+  height: 3rem;
+}
+
+.player-one, .player-two {
+  width: 12rem;  
+}
+
+.players-container .fas {
+  border: 1px white solid;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+.game-btn-container .confirm {
+  padding: 2rem;
 }
 
 .figure-green {
@@ -196,13 +236,6 @@ main {
   margin-right: 5rem;
 }
 
-.players-container {
-  height: 20rem;
-}
-
-.game-btn-container .btn-big {
-  margin: 2rem 2rem; 
-}
 /* .btn {
   padding: 0.3rem;
 } */

@@ -14,31 +14,42 @@
 </head>
 <body>
     <main class="flex center column width100">
-        <p class="time-left">
-            Tid kvar: 8s
-            <!-- kod från javascript -->
-        </p>
-        <p class="answer">
-            Lägre
-            <!-- kod från javascript -->
-        </p>
-        <p class="show-latest-answer">
-            Senaste siffra: 15
-            <!-- kod från javascript -->
-        </p>
-        <input type="number" name="" id="number">
-        <div class="players-container flex center width100 space-between">
-            <div class="player-one flex center column">
-                <i class="fas fa-male figure-1"></i>
-                <p>Karl-Knut</p>
+        <div class="game-status flex center column space-evenly ">
+            <p class="time-left">
+                Tid kvar: 8s
+                <!-- kod från javascript -->
+            </p>
+            <p class="answer">
+                Lägre
+                <!-- kod från javascript -->
+            </p>
+            <p class="show-latest-answer">
+                Senaste siffra: 15
+                <!-- kod från javascript -->
+            </p>            
+        </div>
+        <div class="user-container flex column center">
+            <div class="players-container flex center width100 space-between">
+                <div class="player-one flex center column">
+                    <i class="fas fa-male figure-1"></i>
+                    <p>Karl-Knut</p>
+                </div>
+                <div class="versus">
+                    <p>
+                        VS
+                    </p>
+                </div>
+                <div class="player-two flex center column">
+                    <i class="fas fa-male figure-2"></i>
+                    <p>Drygo</p>
+                </div>
             </div>
-            <div class="game-btn-container flex center column">
-                <button class="btn-big">Bekräfta</button>
-                <button class="btn-big">Visa senaste poäng</button>
-            </div>
-            <div class="player-two flex center column">
-                <i class="fas fa-male figure-2"></i>
-                <p>Drygo</p>
+            <div class="user-input flex center column">
+                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in tal">
+                <div class="game-btn-container flex center column width100">
+                    <button class="btn-big confirm">Bekräfta</button>
+                    <button class="btn-big">Visa senaste poäng</button>
+                </div>
             </div>
         </div>
     </main>
