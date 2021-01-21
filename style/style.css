@@ -49,11 +49,24 @@ p {
   width: 12rem;
 }
 
+.margin05 {
+  margin: 0.5rem;
+}
+
+.margin1 {
+  margin: 1rem;
+}
+
+.margin2 {
+  margin: 2rem;
+}
+
 .margin3 {
   margin: 3rem;
 }
 
 main {
+  /* background: rgb(161, 214, 228); */
   max-width: 60rem;
   width: 100%;
   margin: 0 auto;
@@ -119,6 +132,17 @@ main {
   padding-bottom: 1rem;
 }
 
+.figure-green {
+  color: green;
+}
+
+.figure-blue {
+  color: blue;
+}
+
+.figure-red {
+  color: red;
+}
 
 /* endscreen css */
 
