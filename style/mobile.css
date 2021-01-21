@@ -1,5 +1,19 @@
 @media (max-width: 39.99em) {
-    main {
-      height: xxx;
-    }
+  main {
+    height: xxx;
   }
+}
+.media-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.media-margin-top {
+  margin-top: 0.5rem;
+}
+.media.input {
+  padding: 1rem;
+}
+#inputfield {
+  padding: 0.5rem;
+}
