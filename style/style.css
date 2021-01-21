@@ -82,6 +82,9 @@ main {
 .width100 {
   width: 100%;
 }
+.height100 {
+  height: 100%;
+}
 
 /* Knappsmink */
 #inputfield {
@@ -119,6 +122,33 @@ main {
   padding-bottom: 1rem;
 }
 
+
+/* the game */
+
+
+.players-container {
+  /* height: 20rem; */
+}
+
+.answer {
+  font-size: 3rem;
+}
+
+.game-btn-container .btn-big {
+  margin: 2rem 2rem; 
+}
+
+#number {
+  height: 3rem;
+}
+
+.player-one, .player-two {
+  width: 10rem;
+}
+
+.game-btn-container .confirm {
+  padding: 2rem;
+}
 
 /* endscreen css */
 
@@ -167,13 +197,6 @@ main {
   margin-right: 5rem;
 }
 
-.players-container {
-  height: 20rem;
-}
-
-.game-btn-container .btn-big {
-  margin: 2rem 2rem; 
-}
 /* .btn {
   padding: 0.3rem;
 } */
