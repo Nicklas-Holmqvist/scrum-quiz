@@ -66,6 +66,11 @@ p {
   margin: 3rem;
 }
 
+.marginBtn {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
 main {
   /* background: rgb(161, 214, 228); */
   max-width: 60rem;
@@ -156,7 +161,7 @@ main {
   width: 60vw;
   background-color: gray;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
@@ -170,9 +175,8 @@ main {
   justify-content: center;
 }
 .highscoreTable {
-  border: solid 1px;
-  height: 50vh;
-  width: 50vw;
+  height: 48vh;
+  width: 55vw;
   margin-left: auto;
   margin-right: auto;
   background-color: white;

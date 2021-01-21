@@ -20,11 +20,21 @@
   flex-direction: column;
 }
 
-/* @media (max-width: 39.99em) {
+ @media (max-width: 39.99em) {
     main {
       height: xxx;
     }
-  } */
+
+    .endscreenBtn {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .marginBtn {
+      margin-right: 0;
+    }
+  }
+  } 
 
   .playerbox {
     width: 100%;
@@ -48,3 +58,4 @@
   /* main {
     height: 200rem;
   } */
+
