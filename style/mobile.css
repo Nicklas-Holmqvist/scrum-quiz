@@ -19,8 +19,9 @@
   padding: 1rem 0;
 }
 
-.player-one, .player-two {
-  width: 8rem;  
+.player-one,
+.player-two {
+  width: 8rem;
 }
 
 .fas {
@@ -28,7 +29,7 @@
 }
 
 .game-btn-container .btn-big {
-  margin: 1rem 1rem; 
+  margin: 1rem 1rem;
 }
 
 .user-container {
@@ -71,7 +72,12 @@
   padding: 1rem 2rem;
   background: white;
 }
-
+.statisticFix {
+  height: 100%;
+}
+.bodyFix {
+  height: auto;
+}
 /* Lade till detta för att öka height-ytan totalt i mobile */
 /* main {
     height: 200rem;

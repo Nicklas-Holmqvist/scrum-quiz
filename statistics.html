@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/mobile.css" media="(max-width: 40em)"/>
-       <!-- fontawsome -->
-       <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="./style/mobile.css"
+      media="(max-width: 40em)"
+    />
+    <!-- fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/e5bc88f7ae.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./app/app.js"></script>
     <title>Scrum Quiz</title>
-</head>
-<body>    
-    <main class="flex column center">
-        <div class="flex center">
-            <h2>Statistik</h2>
-        </div>
-        <div class="flex column">
-            <div class="bot-statistics row flex">
-                <div class="flex column center margin1">
-                    <i class="fas fa-male figure-green"></i>
-                    <p>Lätt</p>
-                    <p>Vunna matcher: </p>
-                    <p>Spelade matcher:</p>
-
-                </div>
-                <div class="flex column center margin1">
-                    <i class="fas fa-male figure-blue"></i>
-                    <p>Medium</p>
-                    <p>Vunna matcher: </p>
-                    <p>Spelade matcher:</p>
-                </div>
-                <div class="flex column center margin1">
-                    <i class="fas fa-male figure-red"></i>
-                    <p>Svår</p>
-                    <p>Vunna matcher: </p>
-                    <p>Spelade matcher:</p>
-                </div>
-            </div>
-
-            <div class="highscore flex center margin3 column">
-                <p>1. Namn och poäng från Local Storage</p>
-                <p>2. Namn och poäng från Local Storage</p>
-                <p>3. Namn och poäng från Local Storage</p>
-            </div>
-
-            <div class="btn-container flex center">
-                <form action="index.html">
-                    <input type="submit" value="Gå tillbaka till spelet" class="btn-big"/>
-                </form>
-            </div>
+  </head>
+  <body class="bodyFix">
+    <main class="flex column center statisticFix">
+      <div class="flex center">
+        <h2>Statistik</h2>
+      </div>
+      <div class="flex column">
+        <div class="bot-statistics row flex">
+          <div class="flex column center margin1">
+            <i class="fas fa-male figure-green"></i>
+            <p>Lätt</p>
+            <p>Vunna matcher:</p>
+            <p>Spelade matcher:</p>
+          </div>
+          <div class="flex column center margin1">
+            <i class="fas fa-male figure-blue"></i>
+            <p>Medium</p>
+            <p>Vunna matcher:</p>
+            <p>Spelade matcher:</p>
+          </div>
+          <div class="flex column center margin1">
+            <i class="fas fa-male figure-red"></i>
+            <p>Svår</p>
+            <p>Vunna matcher:</p>
+            <p>Spelade matcher:</p>
+          </div>
         </div>
 
-      </main>
-</body>
+        <div class="highscore flex center margin3 column">
+          <p>1. Namn och poäng från Local Storage</p>
+          <p>2. Namn och poäng från Local Storage</p>
+          <p>3. Namn och poäng från Local Storage</p>
+        </div>
+
+        <div class="btn-container flex center">
+          <form action="index.html">
+            <input
+              type="submit"
+              value="Gå tillbaka till spelet"
+              class="btn-big"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
