@@ -49,6 +49,9 @@ p {
   width: 12rem;
 }
 
+.margin1 {
+  margin: 1rem;
+}
 .margin3 {
   margin: 3rem;
 }
@@ -193,8 +196,6 @@ main {
 .height100 {
   height: 100%;
 }
-
-/* statistics page */
 
 
 
