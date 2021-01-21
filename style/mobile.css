@@ -41,40 +41,38 @@
   flex-direction: column;
 }
 
-main {
+/* main {
   height: xxx;
-}
+} */
 
 .endscreenBtn {
-      flex-direction: column;
-      align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .marginBtn {
-      margin-right: 0;
-} 
+  margin-right: 0;
+}
 
 .playerbox {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .bots {
-    /* flex-direction: column; */
-    width: 100%;
-    padding: 1rem;
+  /* flex-direction: column; */
+  width: 100%;
+  padding: 1rem;
 }
-  
+
 .figure-1 {
-    font-size: 4rem;
-    border: 1px white solid;
-    padding: 1rem 2rem;
-    background: white;
+  font-size: 4rem;
+  border: 1px white solid;
+  padding: 1rem 2rem;
+  background: white;
 }
 
-
-  /* Lade till detta för att öka height-ytan totalt i mobile */
-  /* main {
+/* Lade till detta för att öka height-ytan totalt i mobile */
+/* main {
     height: 200rem;
   } */
-
