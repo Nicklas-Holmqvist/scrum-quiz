@@ -7,15 +7,9 @@
       height: 100%;
     }
 
-    .players-container {
-      flex-direction: column;
-    }
-
     .player-one, .player-two {
-      width: 12rem;
-      border: 1px white solid;
-      padding: 1rem 2rem;
-      background-color: white;
+      width: 8rem;
+
       
     }
 
@@ -25,6 +19,10 @@
 
     .game-btn-container .btn-big {
       margin: 1rem 1rem; 
+    }
+
+    .user-container {
+      flex-direction: column-reverse;
     }
     
   }

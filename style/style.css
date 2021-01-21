@@ -126,9 +126,12 @@ main {
 
 /* the game */
 
-
 .players-container {
-  /* height: 20rem; */
+  padding: 2rem 0;
+}
+
+.versus {
+  padding: 0 2rem;
 }
 
 .answer {
@@ -144,11 +147,13 @@ main {
 }
 
 .player-one, .player-two {
-  width: 12rem;
+  width: 12rem;  
+}
+
+.players-container .fas {
   border: 1px white solid;
   padding: 1rem 2rem;
   background-color: white;
-  
 }
 
 .game-btn-container .confirm {
