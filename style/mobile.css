@@ -8,10 +8,19 @@
     width: 100%;
     position: relative;
   }
-
   .bots {
-    flex-direction: column;
+    /* flex-direction: column; */
+    width: 100%;
+    padding: 1rem;
   }
+  
+  .figure-1 {
+    font-size: 4rem;
+    border: 1px white solid;
+    padding: 1rem 2rem;
+    background: white;
+  }
+
 
   /* Lade till detta för att öka height-ytan totalt i mobile */
   /* main {
