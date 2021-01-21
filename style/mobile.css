@@ -1,8 +1,3 @@
-@media (max-width: 39.99em) {
-  main {
-    height: xxx;
-  }
-}
 .media-column {
   flex-direction: column;
   justify-content: center;
@@ -17,3 +12,39 @@
 #inputfield {
   padding: 0.5rem;
 }
+
+
+/* statistics page */
+
+.bot-statistics {
+  flex-direction: column;
+}
+
+/* @media (max-width: 39.99em) {
+    main {
+      height: xxx;
+    }
+  } */
+
+  .playerbox {
+    width: 100%;
+    position: relative;
+  }
+  .bots {
+    /* flex-direction: column; */
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .figure-1 {
+    font-size: 4rem;
+    border: 1px white solid;
+    padding: 1rem 2rem;
+    background: white;
+  }
+
+
+  /* Lade till detta för att öka height-ytan totalt i mobile */
+  /* main {
+    height: 200rem;
+  } */
