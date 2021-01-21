@@ -1,5 +1,30 @@
 @media (max-width: 39.99em) {
     main {
-      height: xxx;
+      
+      
+      width: 100%;
+      margin: 0 auto;
+      height: 100%;
     }
+
+    .players-container {
+      flex-direction: column;
+    }
+
+    .player-one, .player-two {
+      width: 12rem;
+      border: 1px white solid;
+      padding: 1rem 2rem;
+      background-color: white;
+      
+    }
+
+    .fas {
+      font-size: 2rem;
+    }
+
+    .game-btn-container .btn-big {
+      margin: 1rem 1rem; 
+    }
+    
   }
