@@ -147,8 +147,11 @@ main {
 }
 
 .playerbox {
-  transition: background .3s;
+  transition: background .3s ease-in-out;
   cursor: pointer;
+}
+.playerbox:hover {
+  background-color: white;
 }
 
 /* the game */
