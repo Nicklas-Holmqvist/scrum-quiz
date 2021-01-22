@@ -142,6 +142,15 @@ main {
   background: white;
 }
 
+.green-bot {
+  color: green;
+}
+
+.playerbox {
+  transition: background .3s;
+  cursor: pointer;
+}
+
 /* the game */
 
 .players-container {

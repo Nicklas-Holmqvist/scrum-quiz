@@ -1,6 +1,8 @@
 const setLink = document.querySelectorAll('.setlink');
 const theGameBotColor = document.querySelector('.figure-2');
 
+console.log(theGameBotColor)
+
 /**
  * Function that sets focus on active bot on page Choose difficulty
  */
@@ -27,7 +29,6 @@ setLink.forEach((e) => {
             else if (e.classList.contains('figure-red')) {
                 // Lägg till klassen på spelsidan för att göra så boten får rätt färg
             }
-
         }
     })
 })  
