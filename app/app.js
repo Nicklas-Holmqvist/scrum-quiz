@@ -1,18 +1,37 @@
-// onClick Border-toggle
-function borderClick1() {
-    if ( botcard1.style.background == 'white' ) 
-    botcard1.style.background = 'transparent'; 
-    else botcard1.style.background='white';
-}
+const setLink = document.querySelectorAll('.setlink');
+const theGameBotColor = document.querySelector('.figure-2');
 
-function borderClick2() {
-    if ( botcard2.style.background == 'white' ) 
-    botcard2.style.background = 'transparent'; 
-    else botcard2.style.background='white';
-}
+/**
+ * Function that sets focus on active bot on page Choose difficulty
+ */
+setLink.forEach((e) => {
 
-function borderClick3() {
-    if ( botcard3.style.background == 'white' ) 
-    botcard3.style.background = 'transparent'; 
-    else botcard3.style.background='white';
-}
+    e.addEventListener('click', () => {        
+        if (e.classList.contains('bot-active')) {
+            e.classList.remove('bot-active')
+        }
+        else if (!e.classList.contains('bot-active')) {   
+            setLink.forEach((i) => {
+                i.classList.remove('bot-active')
+            })
+            e.classList.add('bot-active')
+
+            if (e.classList.contains('figure-green')) {
+                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+            }
+
+            else if (e.classList.contains('figure-blue')) {
+                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+            }
+
+            else if (e.classList.contains('figure-red')) {
+                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+            }
+
+        }
+    })
+})  
+        
+            
+        
+  

@@ -138,6 +138,10 @@ main {
   padding-bottom: 1rem;
 }
 
+.bot-active {
+  background: white;
+}
+
 /* the game */
 
 .players-container {
