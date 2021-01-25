@@ -138,6 +138,22 @@ main {
   padding-bottom: 1rem;
 }
 
+.bot-active {
+  background: white;
+}
+
+.green-bot {
+  color: green;
+}
+
+.playerbox {
+  transition: background .3s ease-in-out;
+  cursor: pointer;
+}
+.playerbox:hover {
+  background-color: white;
+}
+
 /* the game */
 
 .players-container {
