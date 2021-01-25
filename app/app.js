@@ -1,5 +1,18 @@
+
 const setLink = document.querySelectorAll('.setlink');
 const theGameBotColor = document.querySelector('.figure-2');
+
+
+/**
+ * Function that creates an random number between 1-20
+ * use "randomNumber()" where you need an random number
+*/
+randomNumber()
+function randomNumber() {
+    const randomNr = Math.floor(Math.random()*20+1);
+
+    return randomNr
+}
 
 /**
  * Function that sets focus on active bot on page Choose difficulty
