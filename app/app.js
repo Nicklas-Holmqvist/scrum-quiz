@@ -1,5 +1,5 @@
 
-const setLink = document.querySelectorAll('.setlink');
+const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
 
 
@@ -17,14 +17,14 @@ function randomNumber() {
 /**
  * Function that sets focus on active bot on page Choose difficulty
  */
-setLink.forEach((e) => {
+activeBot.forEach((e) => {
 
     e.addEventListener('click', () => {        
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
         }
         else if (!e.classList.contains('bot-active')) {   
-            setLink.forEach((i) => {
+            activeBot.forEach((i) => {
                 i.classList.remove('bot-active')
             })
             e.classList.add('bot-active')
