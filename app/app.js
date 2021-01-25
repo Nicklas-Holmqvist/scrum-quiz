@@ -1,8 +1,6 @@
 const setLink = document.querySelectorAll('.setlink');
 const theGameBotColor = document.querySelector('.figure-2');
 
-console.log(theGameBotColor)
-
 /**
  * Function that sets focus on active bot on page Choose difficulty
  */
