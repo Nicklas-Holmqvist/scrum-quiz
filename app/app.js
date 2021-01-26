@@ -1,7 +1,12 @@
 window.addEventListener('load', main) 
 
 function main() {
+    addEventListeners()
+}
+
+function addEventListeners() {    
     prepareTheGame()
+
 }
 
 const activeBot = document.querySelectorAll('.bot');
