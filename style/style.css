@@ -147,7 +147,7 @@ main {
 }
 
 .playerbox {
-  transition: background .3s ease-in-out;
+  transition: background 0.3s ease-in-out;
   cursor: pointer;
 }
 .playerbox:hover {
@@ -265,4 +265,7 @@ main {
 
 .height100 {
   height: 100%;
+}
+.activeLight {
+  box-shadow: 5px 5px 6px 5px #c609ffe5;
 }
