@@ -88,18 +88,18 @@ function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
     const playerName = document.querySelector('.player-name')
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
-    //let fetchPlayersName = JSON.parse(localStorage.getItem("bot-color"))
+    //let fetchPlayersName = JSON.parse(localStorage.getItem("spelaren index namn från localstorage sätts här"))
     //playerName.innerText = "fetchPlayersName"
     
-    if(fetchLSBotColor == 1){
+    if(fetchLSBotColor === 1){
         theGameBotColor.style.color = "green";
         botName.innerText = "Lätt"
     }    
-    else if(fetchLSBotColor == 2){
+    else if(fetchLSBotColor === 2){
         theGameBotColor.style.color = "blue";
         botName.innerText = "Medium"
     }    
-    else if(fetchLSBotColor == 3){
+    else if(fetchLSBotColor === 3){
         theGameBotColor.style.color = "red";
         botName.innerText = "Svår"
     }
