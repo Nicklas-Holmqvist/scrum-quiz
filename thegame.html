@@ -1,58 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/mobile.css" media="(max-width: 40em)"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="./style/mobile.css"
+      media="(max-width: 40em)"
+    />
 
     <!-- fontawsome -->
-    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e5bc88f7ae.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script defer src="./app/app.js"></script>
     <title>Scrum Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="flex center column width100">
-        <div class="game-status flex center column space-evenly ">
-            <p class="time-left">
-                Tid kvar: 8s
-                <!-- kod från javascript -->
-            </p>
-            <p class="answer">
-                Lägre
-                <!-- kod från javascript -->
-            </p>
-            <p class="show-latest-answer">
-                Senaste siffra: 15
-                <!-- kod från javascript -->
-            </p>            
+      <div class="game-status flex center column space-evenly">
+        <p class="time-left">
+          Tid kvar: 8s
+          <!-- kod från javascript -->
+        </p>
+        <p class="answer">
+          Lägre
+          <!-- kod från javascript -->
+        </p>
+        <p class="show-latest-answer">
+          Senaste siffra: 15
+          <!-- kod från javascript -->
+        </p>
+      </div>
+      <div class="user-container flex column center">
+        <div class="players-container flex center width100 space-between">
+          <div class="player-one flex center column">
+            <i class="fas fa-male figure-1"></i>
+            <p>Karl-Knut</p>
+          </div>
+          <div class="versus">
+            <p>VS</p>
+          </div>
+          <div class="player-two flex center column">
+            <i class="fas fa-male figure-2"></i>
+            <p>Drygo</p>
+          </div>
         </div>
-        <div class="user-container flex column center">
-            <div class="players-container flex center width100 space-between">
-                <div class="player-one flex center column">
-                    <i class="fas fa-male figure-1"></i>
-                    <p>Karl-Knut</p>
-                </div>
-                <div class="versus">
-                    <p>
-                        VS
-                    </p>
-                </div>
-                <div class="player-two flex center column">
-                    <i class="fas fa-male figure-2"></i>
-                    <p>Drygo</p>
-                </div>
-            </div>
-            <div class="user-input flex center column">
-                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in tal">
-                <div class="game-btn-container flex center column width100">
-                    <button class="btn-big confirm">Bekräfta</button>
-                    <button class="btn-big">Visa senaste poäng</button>
-                </div>
-            </div>
+        <div class="user-input flex center column">
+          <input
+            type="number"
+            name="Skriv in siffra"
+            id="number"
+            placeholder="Skriv in tal"
+          />
+          <div class="game-btn-container flex center column width100">
+            <button class="btn-big confirm" id="confirm">Bekräfta</button>
+            <button class="btn-big">Visa senaste poäng</button>
+          </div>
         </div>
+      </div>
     </main>
-    
-</body>
+  </body>
 </html>
