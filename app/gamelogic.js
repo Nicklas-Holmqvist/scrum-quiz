@@ -93,7 +93,8 @@ function countdown() {
         const countDown = count--
         timeLeftP.innerText = timeLeftText + countDown
 
-        if(countDown === 0) {            
+        if(countDown === 0) {   
+            count = 10         
             alert('Du hann inte!')
         }
     }, 1000)
