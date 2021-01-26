@@ -1,10 +1,10 @@
-window.addEventListener('load', main) 
+window.addEventListener('load', main)
 
 function main() {
     addEventListeners()
 }
 
-function addEventListeners() {    
+function addEventListeners() {
     prepareTheGame()
     countdown()
 }
@@ -22,7 +22,7 @@ console.log(count)
 */
 randomNumber()
 function randomNumber() {
-    const randomNr = Math.floor(Math.random()*20+1);
+    const randomNr = Math.floor(Math.random() * 20 + 1);
 
     return randomNr
 }
@@ -32,11 +32,11 @@ function randomNumber() {
  */
 activeBot.forEach((e) => {
 
-    e.addEventListener('click', () => {        
+    e.addEventListener('click', () => {
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
         }
-        else if (!e.classList.contains('bot-active')) {   
+        else if (!e.classList.contains('bot-active')) {
             activeBot.forEach((i) => {
                 i.classList.remove('bot-active')
             })
@@ -58,7 +58,7 @@ activeBot.forEach((e) => {
             }
         }
     })
-})  
+})
 
 /**
  * Function to prepare theGame with information from localstorage
@@ -69,16 +69,16 @@ function prepareTheGame() {
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
     let fetchPlayerName = localStorage.getItem("player-name")
     playerName.innerText = fetchPlayerName
-    
-    if(fetchLSBotColor === 1){
+
+    if (fetchLSBotColor === 1) {
         theGameBotColor.style.color = "green";
         botName.innerText = "Lätt"
-    }    
-    else if(fetchLSBotColor === 2){
+    }
+    else if (fetchLSBotColor === 2) {
         theGameBotColor.style.color = "blue";
         botName.innerText = "Medium"
-    }    
-    else if(fetchLSBotColor === 3){
+    }
+    else if (fetchLSBotColor === 3) {
         theGameBotColor.style.color = "red";
         botName.innerText = "Svår"
     }
@@ -89,14 +89,79 @@ function prepareTheGame() {
  */
 function countdown() {
     const timeLeftText = timeLeftP.innerText = "Tid kvar: "
-    setInterval(()=> {
+    setInterval(() => {
         const countDown = count--
         timeLeftP.innerText = timeLeftText + countDown
 
-        if(countDown === 0) {   
-            count = 10         
+        if (countDown === 0) {
+            count = 10
             alert('Du hann inte!')
         }
     }, 1000)
 }
 
+//////////////////////////////////////////
+////////////// STANDARDBOT LOGIK /////////
+/////////////////////////////////////////
+
+////// Globala variabler //////////////
+const questionNum = Math.trunc(Math.random() * 20) + 1;
+const answer = document.querySelector('.answer').textContent = " "
+let activePlayer = 0;
+document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
+
+///// Jämför input med random tal //
+document.querySelector('#confirm').addEventListener('click', () => {
+    let input = Number(document.querySelector('#number').value);
+    console.log(questionNum)
+    if (!input || input > 20) {
+        document.querySelector('.answer').textContent = "Invalid nummer"
+    } else if (input === questionNum) {
+        document.querySelector('.answer').textContent = "Rätt nummer"
+    } else if (input !== questionNum) {
+        document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
+        switchPlayer()
+    } else document.querySelector('.answer').textContent = "GAME OVER"
+})
+
+
+
+
+
+//////Jämför Bot med randomnummer////
+const BotCompairNum = function () {
+    if (activePlayer === 1) {
+        let botNum = Math.trunc(Math.random() * 20) + 1;
+        if (questionNum === botNum) {
+            document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
+
+        } else if (questionNum !== botNum) {
+            document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
+            document.querySelector('.show-latest-answer').textContent = `Bot guess ${botNum}` //console.log(`bot guess ${botNum}`)
+            switchPlayer()
+        } else console.log("gameOver")
+    }
+}
+
+
+const switchPlayer = function () {
+    document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
+    activePlayer = activePlayer === 0 ? 1 : 0
+    document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
+    setTimeout(() => {
+        BotCompairNum()
+    }, 1000 * (Math.random() * 2 + 4));
+
+}
+const botGuess = function () {
+    return Math.trunc(Math.random() * 20) + 1;
+}
+
+////////////// bot1 vinner aldgig om den får rätt siffra kör en if så att den får fel
+///////////// Bot2 mellan 1-20 standard
+//////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre 
+                       ////////////
+                //////////////////////////
+//////////////// STANDARDBOT LOGIC SLUT ////////////////////
+               //////////////////////////
+                    /////////////
