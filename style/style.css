@@ -282,6 +282,7 @@ main {
   padding: 4rem;
   border: 1px solid #888;
   width: 80%;
+  line-height: 2rem;
 }
 
 .ruleHeader {
@@ -303,4 +304,7 @@ main {
   cursor: pointer;
 }
 
+#orderedListA {
+  margin-left: 1.5rem;
+}
 /* rule box css end */
