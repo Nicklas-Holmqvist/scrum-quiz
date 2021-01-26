@@ -84,6 +84,9 @@ function prepareTheGame() {
     }
 }
 
+/**
+ * Function that counts down to zero then it goes over to the bot or back to the player
+ */
 function countdown() {
     const timeLeftText = timeLeftP.innerText = "Tid kvar: "
     setInterval(()=> {
