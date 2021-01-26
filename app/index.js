@@ -5,6 +5,7 @@ const ruleButton = document.getElementById("rule-btn") //button that opens the r
 
 const span = document.getElementsByClassName("close")[0]; //gets the <span> element (button) which closes the rule box  
      
+const startGameButton = document.getElementById("start-button");
 
 //opens the rule box 
 ruleButton.onclick = function() {
@@ -19,4 +20,14 @@ window.onclick = function(event) {
     if (event.target == ruleBox) {
         ruleBox.style.display = "none";
     }
+}
+
+startGameButton.addEventListener("click", savePlayerName);
+
+//saves player name to local storage
+
+function savePlayerName() {
+    let playerName = document.getElementById("inputfield").value;
+    localStorage.setItem("player-name", playerName);
+    window.location.href="./bots.html";
 }
