@@ -15,12 +15,43 @@
       src="https://kit.fontawesome.com/e5bc88f7ae.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./app/app.js"></script>
+    <script defer src="./app/index.js"></script>
 
     <title>Scrum Quiz</title>
   </head>
   <body>
     <main class="flex column center space-evenly">
+
+      <!-- rule box -->
+      <div class="rule-box" id="ruleContBox">
+        
+        <div class="rule-content">
+          <span class="close">&times;</span>
+         
+          <p> <p class="ruleHeader">Regler</p><br>
+            
+            <ol>
+            <li>En spelledare samlar ihop ett antal deltagare och ställer upp dem på rad.</li>
+            <li>Spelledaren förklarar reglerna för dem samt ställer frågan (som har ett numerärt svar.)</li>
+            <li>En av deltagarna börjar svara.</li>
+            <li>Om svaret är rätt är tävlingen över.</li>
+            <li>Om svaret är fel, görs följande kontroll</li>
+            <ol type="a" id="orderedListA" >
+            <li>Om deltagarens svar är högre än frågans korrekta svar, säger spelledaren
+            “Lägre!”.</li>
+            <li>Om deltagarens svar är lägre än frågans korrekta svar, säger spelledaren
+            “Högre!”.</li>
+            </ol>
+            <li>Näste deltagare får svara och svaret kontrolleras enligt punkterna 4 och 5.</li>
+            <li>Om ingen av deltagarna svarat rätt går frågan tillbaka till den förste deltagaren.</li>
+          </ol> 
+          <br><br>
+            Klicka på x eller utanför regelrutan för att gå ut reglerna
+            </p>
+        </div>
+      </div>
+      <!-- rule box end -->
+
       <div class="flex center">
         <h1>Quizz-App</h1>
       </div>
@@ -28,7 +59,7 @@
         <label for="text"></label>
 
         <div class="btn-login"></div>
-        <input type="text" placeholder="Namn"/ size="26" id="inputfield">
+        <input type="text" placeholder="Namn" size="26" id="inputfield">
         <div class="btn-login media-margin-top">
           <button class="btn-small margin-btn">Logga in</button>
         </div>
@@ -59,15 +90,19 @@
         </div>
       </div>
       <div class="flex row space-evenly width100 media-column">
-        <button class="btn-big">Regler</button>
+        <button class="btn-big" id="rule-btn">Regler</button>
 
+        <button class="btn-big media-margin-top" type="submit" id="start-button">Starta spelet</button>
+<!--
         <form action="bots.html">
           <input
             class="btn-big media-margin-top"
             type="submit"
             value="Starta spelet"
+            onclick="savePlayerName()"
           />
         </form>
+-->
         <form action="statistics.html">
           <input
             class="btn-big media-margin-top"

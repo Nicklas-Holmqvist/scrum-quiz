@@ -70,7 +70,7 @@
   padding: 1rem;
 }
 
-.figure-1 {
+.figure-1, .figure-2 {
   font-size: 4rem;
   padding: 1rem 2rem;
 }
@@ -85,3 +85,14 @@
 /* main {
     height: 200rem;
   } */
+
+
+.rule-content {
+  font-size: 1rem;
+  padding: 2rem;
+  line-height: 1.2rem;
+}
+
+.ruleHeader {
+  font-size: 1.5rem;
+}
