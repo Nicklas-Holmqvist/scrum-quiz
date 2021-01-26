@@ -6,11 +6,15 @@ function main() {
 
 function addEventListeners() {    
     prepareTheGame()
+    countdown()
 }
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
 let botColor;
+const timeLeftP = document.querySelector('.time-left')
+let count = 10;
+console.log(count)
 
 /**
  * Function that creates an random number between 1-20
@@ -79,3 +83,16 @@ function prepareTheGame() {
         botName.innerText = "Svår"
     }
 }
+
+function countdown() {
+    const timeLeftText = timeLeftP.innerText = "Tid kvar: "
+    setInterval(()=> {
+        const countDown = count--
+        timeLeftP.innerText = timeLeftText + countDown
+
+        if(countDown === 0) {            
+            alert('Du hann inte!')
+        }
+    }, 1000)
+}
+
