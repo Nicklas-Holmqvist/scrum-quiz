@@ -84,3 +84,13 @@
 /* main {
     height: 200rem;
   } */
+
+
+.rule-content {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.ruleHeader {
+  font-size: 1.5rem;
+}
