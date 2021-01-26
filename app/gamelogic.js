@@ -67,8 +67,8 @@ function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
     const playerName = document.querySelector('.player-name')
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
-    //let fetchPlayersName = JSON.parse(localStorage.getItem("spelaren index namn från localstorage sätts här"))
-    //playerName.innerText = "fetchPlayersName"
+    let fetchPlayerName = localStorage.getItem("player-name")
+    playerName.innerText = fetchPlayerName
     
     if(fetchLSBotColor === 1){
         theGameBotColor.style.color = "green";
