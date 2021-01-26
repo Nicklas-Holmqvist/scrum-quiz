@@ -1,6 +1,17 @@
+window.addEventListener('load', main) 
+
+function main() {
+    addEventListeners()
+}
+
+function addEventListeners() {    
+    prepareTheGame()
+
+}
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
+let botColor;
 
 
 /**
@@ -30,26 +41,29 @@ activeBot.forEach((e) => {
             e.classList.add('bot-active')
 
             if (e.classList.contains('figure-green')) {
-                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+                botColor = 1;
+                localStorage.setItem("bot-color", botColor)
             }
 
             else if (e.classList.contains('figure-blue')) {
-                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+                botColor = 2;
+                localStorage.setItem("bot-color", botColor)
             }
 
             else if (e.classList.contains('figure-red')) {
-                // Lägg till klassen på spelsidan för att göra så boten får rätt färg
+                botColor = 3;
+                localStorage.setItem("bot-color", botColor)
             }
         }
     })
 })  
 
 //rule box javascript
-let ruleBox = document.getElementById("ruleContBox"); //the whole rule box
+const ruleBox = document.getElementById("ruleContBox"); //the whole rule box
 
-let ruleButton = document.getElementById("rule-btn") //button that opens the rule box
+const ruleButton = document.getElementById("rule-btn") //button that opens the rule box
 
-let span = document.getElementsByClassName("close")[0]; //gets the <span> element (button) which closes the rule box  
+const span = document.getElementsByClassName("close")[0]; //gets the <span> element (button) which closes the rule box  
      
 
 //opens the rule box 
@@ -66,3 +80,31 @@ window.onclick = function(event) {
         ruleBox.style.display = "none";
     }
 }
+
+/**
+ * Function to prepare theGame with information from localstorage
+ */
+function prepareTheGame() {
+    const botName = document.querySelector('.bot-name')
+    const playerName = document.querySelector('.player-name')
+    let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
+    //let fetchPlayersName = JSON.parse(localStorage.getItem("spelaren index namn från localstorage sätts här"))
+    //playerName.innerText = "fetchPlayersName"
+    
+    if(fetchLSBotColor === 1){
+        theGameBotColor.style.color = "green";
+        botName.innerText = "Lätt"
+    }    
+    else if(fetchLSBotColor === 2){
+        theGameBotColor.style.color = "blue";
+        botName.innerText = "Medium"
+    }    
+    else if(fetchLSBotColor === 3){
+        theGameBotColor.style.color = "red";
+        botName.innerText = "Svår"
+    }
+}
+
+
+
+

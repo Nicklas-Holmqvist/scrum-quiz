@@ -147,12 +147,10 @@ main {
 }
 
 .playerbox {
-  transition: background .3s ease-in-out;
+  transition: background .1s ease-in-out;
   cursor: pointer;
 }
-.playerbox:hover {
-  background-color: white;
-}
+
 
 /* the game */
 
@@ -179,12 +177,6 @@ main {
 .player-one,
 .player-two {
   width: 12rem;
-}
-
-.players-container .fas {
-  border: 1px white solid;
-  padding: 1rem 2rem;
-  background-color: white;
 }
 
 .game-btn-container .confirm {
