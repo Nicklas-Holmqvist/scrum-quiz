@@ -8,6 +8,12 @@ function addEventListeners() {
     prepareTheGame()
     countdown()
 }
+// Globala variabler för spelaren
+
+let playerName = localStorage.getItem("player-name")
+let playerWins = parseInt(localStorage.getItem("player-wins"))
+let playerGames = parseInt(localStorage.getItem("player-games"))
+let playerGuesses = 0;
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
@@ -65,10 +71,9 @@ activeBot.forEach((e) => {
  */
 function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
-    const playerName = document.querySelector('.player-name')
+    const playerNameField = document.querySelector('.player-name')
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
-    let fetchPlayerName = localStorage.getItem("player-name")
-    playerName.innerText = fetchPlayerName
+    playerNameField.innerText = playerName
 
     if (fetchLSBotColor === 1) {
         theGameBotColor.style.color = "green";
@@ -121,6 +126,11 @@ document.querySelector('#confirm').addEventListener('click', () => {
         clearInput.value = '';
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
+        playerGuesses ++;
+        playerWins ++;
+        playerGames ++;
+        updatePlayerInfoInLS()
+        console.log("Vunna spel: " + playerWins)
         clearInput.value = '';
 
         setTimeout(()=>{           
@@ -132,6 +142,7 @@ document.querySelector('#confirm').addEventListener('click', () => {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         clearInput.value = '';
         document.querySelector('#player-bubble').textContent = `${input}`
+        playerGuesses ++;
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
 })
@@ -142,6 +153,9 @@ const BotCompairNum = function () {
         let botNum = Math.trunc(Math.random() * 20) + 1;
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
+            playerGames ++;
+            updatePlayerInfoInLS()
+
 
             setTimeout(()=>{           
                 const endingPage = "./endscreen.html"
@@ -176,3 +190,10 @@ const switchPlayer = function () {
 //////////////// STANDARDBOT LOGIC SLUT ////////////////////
                //////////////////////////
                     /////////////
+
+
+function updatePlayerInfoInLS() {
+    localStorage.setItem("player-wins", playerWins)
+    localStorage.setItem("player-games", playerGames)
+    localStorage.setItem("player-guesses", playerGuesses)
+}
