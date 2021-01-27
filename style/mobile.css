@@ -1,3 +1,5 @@
+/* start page */
+
 .media-column {
   flex-direction: column;
   justify-content: center;
@@ -6,11 +8,19 @@
 .media-margin-top {
   margin-top: 0.5rem;
 }
-.media.input {
-  padding: 1rem;
+
+.logo {
+  width: 20rem;
 }
+
 #inputfield {
-  padding: 0.5rem;
+  width: 15rem;
+  font-size: 1rem;
+}
+
+.close {
+  top: 0.5rem;
+  right: 1rem;
 }
 
 /* the game */
@@ -46,9 +56,7 @@
   flex-direction: column;
 }
 
-/* main {
-  height: xxx;
-} */
+/* end screen */
 
 .endscreenBtn {
   flex-direction: column;
@@ -65,27 +73,23 @@
 }
 
 .bots {
-  /* flex-direction: column; */
   width: 100%;
   padding: 1rem;
 }
 
-.figure-1, .figure-2 {
+.figure-1,
+.figure-2 {
   font-size: 4rem;
   padding: 1rem 2rem;
 }
+
 .statisticFix {
   height: 100%;
 }
+
 .bodyFix {
   height: auto;
 }
-
-/* Lade till detta för att öka height-ytan totalt i mobile */
-/* main {
-    height: 200rem;
-  } */
-
 
 .rule-content {
   font-size: 1rem;

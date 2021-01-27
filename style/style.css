@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
 }
 
 html {
@@ -102,12 +104,34 @@ main {
   height: 100%;
 }
 
+.colorText {
+  color: #00abbe;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
 /* Knappsmink */
 #inputfield {
   padding-left: 0.5rem;
   border-style: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgb(221, 221, 221);
   outline: none;
+  background: none;
+  font-size: 1.5rem;
 }
 
 .btn {
@@ -115,22 +139,24 @@ main {
 }
 
 .btn-small {
-  /* width: 10rem; */
   padding: 0.5rem;
   width: 8rem;
   border-style: none;
-  box-shadow: 1px 1px 1px #4e4e4e;
-  background: #ffffff;
+  background: #a0a0a0;
+  color: white;
 }
 
 .btn-big {
-  /* width: 10rem; */
   padding: 0.5rem;
   width: 10rem;
-  /* color: hotpink; */
   border-style: none;
-  box-shadow: 1px 1px 1px #4e4e4e;
-  background: #ffffff;
+  background: #a0a0a0;
+  color: white;
+}
+
+.colorBtn {
+  background-color: #00abbe;
+  color: white;
 }
 
 .fas {
@@ -151,7 +177,16 @@ main {
   cursor: pointer;
 }
 
-/* the game */
+/* Start page */
+.logo {
+  width: 40rem;
+}
+
+.width70 {
+  width: 60%;
+}
+
+/* The game */
 
 .players-container {
   padding: 2rem 0;
@@ -159,6 +194,7 @@ main {
 
 .versus {
   padding: 0 2rem;
+  color: #00abbe;
 }
 
 .answer {
@@ -171,6 +207,7 @@ main {
 
 #number {
   height: 3rem;
+  width: 10rem;
 }
 
 .player-one,
@@ -179,7 +216,7 @@ main {
 }
 
 .game-btn-container .confirm {
-  padding: 2rem;
+  padding: 1.3rem;
 }
 
 .figure-green {
@@ -194,7 +231,7 @@ main {
   color: red;
 }
 
-/* endscreen css */
+/* Endscreen css */
 
 .endBody {
   height: 100%;
@@ -222,7 +259,7 @@ main {
   width: 55vw;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background-color: #f3f3f3;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -261,7 +298,7 @@ main {
   box-shadow: 5px 5px 6px 5px #c609ffe5;
 }
 
-/* rule box css */
+/* Rule box css */
 
 .rule-box {
   display: none;
@@ -277,12 +314,13 @@ main {
 }
 
 .rule-content {
-  background-color: #fefefe;
+  background-color: #f3f3f3;
   font-size: 1.4rem;
   margin: 5% auto;
   padding: 4rem;
   border: 1px solid #888;
   width: 80%;
+  position: relative;
   line-height: 2rem;
 }
 
@@ -296,6 +334,9 @@ main {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
 }
 
 .close:hover,
