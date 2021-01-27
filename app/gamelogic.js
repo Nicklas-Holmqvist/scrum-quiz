@@ -140,6 +140,9 @@ const BotCompairNum = function () {
         let botNum = Math.trunc(Math.random() * 20) + 1;
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
+            playerGames ++;
+            updatePlayerInfoInLS()
+
 
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
