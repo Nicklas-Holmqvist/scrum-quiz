@@ -22,13 +22,13 @@ window.onclick = function(event) {
     }
 }
 
-startGameButton.addEventListener("click", savePlayerName);
+startGameButton.addEventListener("click", savePlayerInLS);
 
 /**
  * Function that saves a new player in local storage and then changes to the bot-page
  */
 
-function savePlayerName() {
+function savePlayerInLS() {
     let playerName = document.getElementById("inputfield").value;
     localStorage.setItem("player-name", playerName);
     localStorage.setItem("player-wins", "0")

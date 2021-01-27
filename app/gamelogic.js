@@ -8,6 +8,11 @@ function addEventListeners() {
     prepareTheGame()
     countdown()
 }
+// Globala variabler för spelaren
+
+let playerName = localStorage.getItem("player-name")
+let playerWins = parseInt(localStorage.getItem("player-wins"))
+let playerGames = parseInt(localStorage.getItem("player-games"))
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
@@ -65,10 +70,9 @@ activeBot.forEach((e) => {
  */
 function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
-    const playerName = document.querySelector('.player-name')
+    const playerNameField = document.querySelector('.player-name')
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
-    let fetchPlayerName = localStorage.getItem("player-name")
-    playerName.innerText = fetchPlayerName
+    playerNameField.innerText = playerName
 
     if (fetchLSBotColor === 1) {
         theGameBotColor.style.color = "green";
@@ -118,6 +122,11 @@ document.querySelector('#confirm').addEventListener('click', () => {
         document.querySelector('.answer').textContent = "Invalid nummer"
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
+        playerWins ++;
+        playerGames ++;
+        updatePlayerInfoInLS()
+        console.log("Vunna spel: " + playerWins)
+
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         document.querySelector('#player-bubble').textContent = `${input}`
@@ -161,4 +170,7 @@ const switchPlayer = function () {
                     /////////////
 
 
-
+function updatePlayerInfoInLS() {
+    localStorage.setItem("player-wins", playerWins)
+    localStorage.setItem("player-games", playerGames)
+}
