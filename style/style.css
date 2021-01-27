@@ -215,8 +215,8 @@ main {
   width: 12rem;
 }
 
-.game-btn-container .confirm {
-  padding: 1.3rem;
+.confirm {
+  padding: 2rem;
 }
 
 .figure-green {
