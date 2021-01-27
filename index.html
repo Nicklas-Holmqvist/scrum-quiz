@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/rrk4aht.css">
     <link
       rel="stylesheet"
       href="./style/mobile.css"
@@ -19,15 +20,20 @@
 
     <title>Scrum Quiz</title>
   </head>
+  <header>
+    <div class="flex center">
+      <img class="logo" src="./assets/logo-quiz.png" alt="quiz logo">
+    </div>
+  </header>
   <body>
     <main class="flex column center space-evenly">
 
       <!-- rule box -->
       <div class="rule-box" id="ruleContBox">
 
-        <div class="rule-content">
+        <div class="rule-content flex center column">
           <span class="close">&times;</span>
-          <p> <p class="ruleHeader">Regler</p><br>
+          <p class="ruleHeader colorText bold">Regler</p><br>
             
             1. En spelledare samlar ihop ett antal deltagare och ställer upp dem på rad. <br><br>
             2. Spelledaren förklarar reglerna för dem samt ställer frågan (som har ett numerärt svar.) <br><br>
@@ -46,53 +52,21 @@
       </div>
       <!-- rule box end -->
 
-      <div class="flex center">
-        <h1>Quizz-App</h1>
-      </div>
-      <div class="flex row media-column">
-        <label for="text"></label>
 
-        <div class="btn-login"></div>
-        <input type="text" placeholder="Namn"/ size="26" id="inputfield">
-        <div class="btn-login media-margin-top">
-          <button class="btn-small margin-btn">Logga in</button>
-        </div>
-        <div class="btn-confirm media-margin-top">
-          <button class="btn-small margin-btn">Registrera</button>
-        </div>
+      <div class="flex column">
+        <input type="text" placeholder="Namn:" size="42" id="inputfield">
       </div>
-      <div class="flex column toplist">
-        <div class="rubrik">
-          <h3>Antal spelade spel:</h3>
-          <p id="ANTALSPEL"></p>
-        </div>
-        <div class="flex space-between">
-          <p>Topplista</p>
-          <p>Poäng</p>
-        </div>
-        <div class="flex space-between">
-          <p>Namn</p>
-          <p>000</p>
-        </div>
-        <div class="flex space-between">
-          <p>Namn</p>
-          <p>000</p>
-        </div>
-        <div class="flex space-between">
-          <p>Namn</p>
-          <p>000</p>
-        </div>
-      </div>
-      <div class="flex row space-evenly width100 media-column">
+
+      <form action="bots.html" class="game-btn-container">
+        <input
+          class="btn-big confirm colorBtn marginBtn"
+          type="submit"
+          value="Starta spelet"
+        />
+      </form>
+      <div class="flex row space-evenly width70 media-column">
         <button class="btn-big" id="rule-btn">Regler</button>
 
-        <form action="bots.html">
-          <input
-            class="btn-big media-margin-top"
-            type="submit"
-            value="Starta spelet"
-          />
-        </form>
         <form action="statistics.html">
           <input
             class="btn-big media-margin-top"
