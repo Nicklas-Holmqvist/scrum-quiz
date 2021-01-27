@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: roboto, sans-serif;
   font-weight: 400;
+  /* color: white; */
 }
 
 html {
@@ -12,7 +13,8 @@ html {
 
 body {
   margin: 0 auto;
-  background: #f3f3f3;
+  /* background: hsl(235, 21%, 21%); */
+  background: linear-gradient(#d2dce9, #9198e5);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -37,6 +39,12 @@ h3 {
 
 p {
   font-size: 1.2rem;
+  /* color: white; */
+}
+
+.time-left {
+  font-size: 1.2rem;
+  /* color: white; */
 }
 
 .bots {
@@ -161,6 +169,7 @@ main {
 
 .fas {
   font-size: 10rem;
+  padding: 1rem;
   padding-bottom: 1rem;
   margin-top: 1.5rem;
 }
@@ -199,7 +208,9 @@ main {
 }
 
 .answer {
-  font-size: 3rem;
+  font-size: 2rem;
+  height: 2rem;
+  margin: 1rem;
 }
 
 .game-btn-container .btn-big {
@@ -209,6 +220,7 @@ main {
 #number {
   height: 3rem;
   width: 10rem;
+  padding-left: 0.5rem;
 }
 
 .player-one,
@@ -221,15 +233,15 @@ main {
 }
 
 .figure-green {
-  color: green;
+  color: #55a630;
 }
 
 .figure-blue {
-  color: blue;
+  color: #0072ce;
 }
 
 .figure-red {
-  color: red;
+  color: #a4161a;
 }
 
 /* Endscreen css */
@@ -296,7 +308,7 @@ main {
   height: 100%;
 }
 .activeLight {
-  box-shadow: 2px 2px 6px 5px #00abbe;
+  box-shadow: 1px 1px 3px 2px #494949;
   /* background: white; */
 }
 
@@ -357,18 +369,20 @@ main {
 /* SPEECH BUBBLES */
 .bubble {
   justify-content: center;
-  /* display: block; */
+  padding-top: 0.4rem;
 }
+
 .speech-bubble {
   position: relative;
   background: #ffffff;
   border-radius: 0.4em;
   width: 3rem;
   height: 2rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: center;
   align-items: center;
 }
+
 .speech-bubble:after {
   content: "";
   position: absolute;
@@ -378,22 +392,21 @@ main {
   height: 0;
   border: 10px solid transparent;
   border-top-color: #ffffff;
-  /* border: 1px solid black; */
-  /* border-left: 1px solid black; */
   border-bottom: 0;
   border-left: 0;
   margin-left: -10px;
   margin-bottom: -10px;
-  /* border-left: 1px solid black;
-  border-bottom: 1px solid black; */
-  border-left: 1px solid;
-  /* border-right: 1px solid; */
+  /* border-left: 1px solid; */
 }
 
-p.bubble {
-  /* height: 2rem; */
-  /* font-size: 1.2rem; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  margin-left: 1rem;
+.p-bubble {
+  /* padding-left: 1rem;   */
+  /* background: red; */
+  justify-content: center;
+  display: flex;
+  padding-top: 0.4rem;
+}
+
+.player-name, .bot-name {
+  padding-top: 0.5rem;
 }

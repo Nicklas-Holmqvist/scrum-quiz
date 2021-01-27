@@ -113,13 +113,18 @@ document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
 ///// Jämför spelarens input med ett random tal mellan 1-20  /////
 document.querySelector('#confirm').addEventListener('click', () => {
     let input = Number(document.querySelector('#number').value);
-    console.log(questionNum)
+    let clearInput = document.querySelector('#number');
+    
+    // console.log(questionNum)
     if (!input || input > 20) {
         document.querySelector('.answer').textContent = "Invalid nummer"
+        clearInput.value = '';
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
+        clearInput.value = '';
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
+        clearInput.value = '';
         document.querySelector('#player-bubble').textContent = `${input}`
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
@@ -159,6 +164,3 @@ const switchPlayer = function () {
 //////////////// STANDARDBOT LOGIC SLUT ////////////////////
                //////////////////////////
                     /////////////
-
-
-
