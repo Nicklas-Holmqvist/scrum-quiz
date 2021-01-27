@@ -15,28 +15,29 @@
 <body class="endBody"> 
 
     <div class="vinnTitelBox">
-        <div class="vinnTitel">
-            <p id="spelarnamn">Grattis ___!</p>
-            <p id="guesses">Du vann på ___ gissningar</p>
-            <p id="games">Antal spelade spel: </p>
-            <p id="wins">Antal vunna spel</p>
-        </div>
-
         <div class="highscoreTable">
-            <ol id="highscore">
-                <li>Spelare 1</li>
-                <li>Spelare 2</li>
-                <li>Spelare 3</li>
-            </ol>
-
+            <div class= "gameSummary margin1">
+                <p id="player">Grattis ___!</p>
+                <p id="guesses">Du vann på ___ gissningar</p>
+                <p id="games">Antal spelade spel: </p>
+                <p id="wins">Antal vunna spel</p>
+            </div>
+            <div class="highscore">
+                <h3>Topplista</h3>
+                <ol>
+                    <li id="top1">Spelare 1</li>
+                    <li id="top2">Spelare 2</li>
+                    <li id="top3">Spelare 3</li>
+                </ol>
+            </div>
         </div>
     </div>
     
     <div class="endscreenBtn">
         <form action="bots.html">
-            <input type="submit" value="Till start" class="btn-big"/>
+            <input type="submit" value="Välj motståndare" class="btn-big"/>
         </form>
-        <form action="index.html">
+        <form action="thegame.html">
             <input type="submit" value="Spela igen" class="btn-big marginBtn colorBtn"/>       
         </form>
     </div>
