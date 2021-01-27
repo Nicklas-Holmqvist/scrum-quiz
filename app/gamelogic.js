@@ -13,6 +13,7 @@ function addEventListeners() {
 let playerName = localStorage.getItem("player-name")
 let playerWins = parseInt(localStorage.getItem("player-wins"))
 let playerGames = parseInt(localStorage.getItem("player-games"))
+let playerGuesses = 0;
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
@@ -122,6 +123,7 @@ document.querySelector('#confirm').addEventListener('click', () => {
         document.querySelector('.answer').textContent = "Invalid nummer"
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
+        playerGuesses ++;
         playerWins ++;
         playerGames ++;
         updatePlayerInfoInLS()
@@ -130,6 +132,7 @@ document.querySelector('#confirm').addEventListener('click', () => {
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         document.querySelector('#player-bubble').textContent = `${input}`
+        playerGuesses ++;
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
 })
@@ -176,4 +179,5 @@ const switchPlayer = function () {
 function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
     localStorage.setItem("player-games", playerGames)
+    localStorage.setItem("player-guesses", playerGuesses)
 }
