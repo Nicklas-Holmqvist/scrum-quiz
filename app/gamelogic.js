@@ -105,7 +105,7 @@ function countdown() {
 
 
 ////// Globala variabler //////////////
-const questionNum = Math.trunc(Math.random() * 20) + 1;
+const questionNum = randomNumber();
 const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
@@ -122,6 +122,12 @@ document.querySelector('#confirm').addEventListener('click', () => {
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
         clearInput.value = '';
+
+        setTimeout(()=>{           
+            const endingPage = "./endscreen.html"
+            window.open(endingPage, "_self")
+        },1000)
+
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         clearInput.value = '';
@@ -137,6 +143,11 @@ const BotCompairNum = function () {
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
 
+            setTimeout(()=>{           
+                const endingPage = "./endscreen.html"
+                window.open(endingPage, "_self")
+            },1000)
+
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
             document.querySelector('#bot-bubble').textContent = ` ${botNum}`
@@ -150,6 +161,7 @@ const switchPlayer = function () {
     document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
     activePlayer = activePlayer === 0 ? 1 : 0
     document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
+    count = 10;
     setTimeout(() => {
         BotCompairNum()
     }, 1000 * (Math.random() * 2 + 4));
