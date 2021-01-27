@@ -95,14 +95,14 @@ function countdown() {
 
         if (countDown === 0) {
             count = 10
-            alert('Du hann inte!')
+            // alert('Du hann inte!') !!!!!!!!!!!!!!!!!!
         }
     }, 1000)
 }
 
-//////////////////////////////////////////
+
 ////////////// STANDARDBOT LOGIK /////////
-/////////////////////////////////////////
+
 
 ////// Globala variabler //////////////
 const questionNum = Math.trunc(Math.random() * 20) + 1;
@@ -110,7 +110,7 @@ const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
 
-///// Jämför input med random tal //
+///// Jämför spelarens input med ett random tal mellan 1-20  /////
 document.querySelector('#confirm').addEventListener('click', () => {
     let input = Number(document.querySelector('#number').value);
     console.log(questionNum)
@@ -120,15 +120,12 @@ document.querySelector('#confirm').addEventListener('click', () => {
         document.querySelector('.answer').textContent = "Rätt nummer"
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
+        document.querySelector('#player-bubble').textContent = `${input}`
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
 })
 
-
-
-
-
-//////Jämför Bot med randomnummer////
+////// Skapar ett random nummer mellan 1-20 och jämför med talet mellan 1-20 //////
 const BotCompairNum = function () {
     if (activePlayer === 1) {
         let botNum = Math.trunc(Math.random() * 20) + 1;
@@ -137,13 +134,13 @@ const BotCompairNum = function () {
 
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
-            document.querySelector('.show-latest-answer').textContent = `Bot guess ${botNum}` //console.log(`bot guess ${botNum}`)
+            document.querySelector('#bot-bubble').textContent = ` ${botNum}`
             switchPlayer()
         } else console.log("gameOver")
     }
 }
 
-
+///// tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen /////
 const switchPlayer = function () {
     document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
     activePlayer = activePlayer === 0 ? 1 : 0
@@ -153,15 +150,15 @@ const switchPlayer = function () {
     }, 1000 * (Math.random() * 2 + 4));
 
 }
-const botGuess = function () {
-    return Math.trunc(Math.random() * 20) + 1;
-}
-
 ////////////// bot1 vinner aldgig om den får rätt siffra kör en if så att den får fel
 ///////////// Bot2 mellan 1-20 standard
-//////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre 
+//////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre  
+
                        ////////////
                 //////////////////////////
 //////////////// STANDARDBOT LOGIC SLUT ////////////////////
                //////////////////////////
                     /////////////
+
+
+
