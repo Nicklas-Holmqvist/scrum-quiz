@@ -19,10 +19,9 @@
 }
 
 .close {
-  top: .5rem;
+  top: 0.5rem;
   right: 1rem;
 }
-
 
 /* the game */
 
@@ -57,7 +56,6 @@
   flex-direction: column;
 }
 
-
 /* end screen */
 
 .endscreenBtn {
@@ -79,7 +77,8 @@
   padding: 1rem;
 }
 
-.figure-1, .figure-2 {
+.figure-1,
+.figure-2 {
   font-size: 4rem;
   padding: 1rem 2rem;
 }

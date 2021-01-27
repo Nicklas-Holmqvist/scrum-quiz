@@ -7,11 +7,11 @@ let botColor;
  */
 activeBot.forEach((e) => {
 
-    e.addEventListener('click', () => {        
+    e.addEventListener('click', () => {
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
         }
-        else if (!e.classList.contains('bot-active')) {   
+        else if (!e.classList.contains('bot-active')) {
             activeBot.forEach((i) => {
                 i.classList.remove('bot-active')
             })

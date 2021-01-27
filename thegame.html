@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/mobile.css" media="(max-width: 40em)"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="./style/mobile.css"
+      media="(max-width: 40em)"
+    />
 
     <!-- fontawsome -->
-    <script src="https://kit.fontawesome.com/e5bc88f7ae.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e5bc88f7ae.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- <script defer src="./app/main.js"></script> -->
     <!-- <script defer src="./app/botspage.js"></script> -->
     <script defer src="./app/gamelogic.js"></script>
     <title>Scrum Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="flex center column width100">
         <div class="game-status flex center column space-evenly ">
             <p class="time-left">
@@ -31,7 +38,13 @@
         </div>
         <div class="user-container flex column center">
             <div class="players-container flex center width100 space-between">
-                <div class="player-one flex center column">
+                <div class="player-one flex center column player--0">
+                    <div class="bubble">
+                        <div class="speech-bubble"><p id="player-bubble"></p></div>
+                        <div class="speech-bubble:after"></div>
+                    </div>
+                   
+                    
                     <i class="fas fa-male figure-1"></i>
                     <p class="player-name">Karl-Knut</p>
                 </div>
@@ -40,20 +53,24 @@
                         VS
                     </p>
                 </div>
-                <div class="player-two flex center column">
+                <div class="player-two flex center column player--1">
+                    <div class="bubble">
+                        <div class="speech-bubble"><p id="bot-bubble"></p></div>
+                        <div class="speech-bubble:after"></div>
+                    </div>
                     <i class="fas fa-male figure-2"></i>
                     <p class="bot-name">Bot 1</p>
                 </div>
             </div>
             <div class="user-input flex center column">
-                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in tal">
+                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in ett tal 1-20">
                 <div class="game-btn-container flex center column width100">
-                    <button class="btn-big confirm colorBtn">Bekräfta</button>
+                    <button class="btn-big confirm colorBtn" id="confirm">Bekräfta</button>
                     <button class="btn-big">Visa senaste poäng</button>
                 </div>
             </div>
         </div>
+      </div>
     </main>
-    
-</body>
+  </body>
 </html>

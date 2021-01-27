@@ -105,7 +105,7 @@ main {
 }
 
 .colorText {
-  color: #00ABBE;
+  color: #00abbe;
 }
 
 .bold {
@@ -142,7 +142,7 @@ main {
   padding: 0.5rem;
   width: 8rem;
   border-style: none;
-  background: #A0A0A0;
+  background: #a0a0a0;
   color: white;
 }
 
@@ -150,12 +150,12 @@ main {
   padding: 0.5rem;
   width: 10rem;
   border-style: none;
-  background: #A0A0A0;
+  background: #a0a0a0;
   color: white;
 }
 
 .colorBtn {
-  background-color: #00ABBE;
+  background-color: #00abbe;
   color: white;
 }
 
@@ -173,10 +173,9 @@ main {
 }
 
 .playerbox {
-  transition: background .1s ease-in-out;
+  transition: background 0.1s ease-in-out;
   cursor: pointer;
 }
-
 
 /* Start page */
 .logo {
@@ -195,7 +194,7 @@ main {
 
 .versus {
   padding: 0 2rem;
-  color: #00ABBE;
+  color: #00abbe;
 }
 
 .answer {
@@ -216,8 +215,8 @@ main {
   width: 12rem;
 }
 
-.game-btn-container .confirm {
-  padding: 1.3rem;
+.confirm {
+  padding: 2rem;
 }
 
 .figure-green {
@@ -295,21 +294,23 @@ main {
 .height100 {
   height: 100%;
 }
-
+.activeLight {
+  box-shadow: 5px 5px 6px 5px #c609ffe5;
+}
 
 /* Rule box css */
 
 .rule-box {
   display: none;
   position: fixed;
-  z-index: 1; 
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .rule-content {
@@ -349,3 +350,26 @@ main {
   margin-left: 1.5rem;
 }
 /* rule box css end */
+.speech-bubble {
+  position: relative;
+  background: #00aabb;
+  border-radius: 0.4em;
+  width: 3rem;
+}
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #00aabb;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+.bubble {
+  display: block;
+}
