@@ -173,12 +173,10 @@ main {
 }
 
 .playerbox {
-  transition: background .3s ease-in-out;
+  transition: background .1s ease-in-out;
   cursor: pointer;
 }
-.playerbox:hover {
-  background-color: white;
-}
+
 
 /* Start page */
 .logo {
@@ -216,12 +214,6 @@ main {
 .player-one,
 .player-two {
   width: 12rem;
-}
-
-.players-container .fas {
-  border: 1px white solid;
-  padding: 1rem 2rem;
-  background-color: white;
 }
 
 .game-btn-container .confirm {
@@ -328,6 +320,7 @@ main {
   border: 1px solid #888;
   width: 80%;
   position: relative;
+  line-height: 2rem;
 }
 
 .ruleHeader {
@@ -352,4 +345,7 @@ main {
   cursor: pointer;
 }
 
+#orderedListA {
+  margin-left: 1.5rem;
+}
 /* rule box css end */
