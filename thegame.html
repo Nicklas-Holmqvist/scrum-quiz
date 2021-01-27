@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
+    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
     <link
@@ -31,41 +32,40 @@
                 Lägre
                 <!-- kod från javascript -->
             </p>
-            <p class="show-latest-answer">
+            <!-- <p class="show-latest-answer">
                 Senaste siffra: 15
-                <!-- kod från javascript -->
-            </p>            
+            </p>             -->
         </div>
         <div class="user-container flex column center">
             <div class="players-container flex center width100 space-between">
-                <div class="player-one flex center column player--0">
+                <div class="player-one flex center column">
                     <div class="bubble">
-                        <div class="speech-bubble"><p id="player-bubble"></p></div>
+                        <div class="speech-bubble"><p class="p-bubble" id="player-bubble"></p></div>
                         <div class="speech-bubble:after"></div>
                     </div>
                    
                     
-                    <i class="fas fa-male figure-1"></i>
+                    <i class="fas fa-male figure-1 player--0"></i>
                     <p class="player-name">Karl-Knut</p>
                 </div>
-                <div class="versus">
+                <!-- <div class="versus">
                     <p>
                         VS
                     </p>
-                </div>
-                <div class="player-two flex center column player--1">
+                </div> -->
+                <div class="player-two flex center column ">
                     <div class="bubble">
-                        <div class="speech-bubble"><p id="bot-bubble"></p></div>
+                        <div class="speech-bubble"><p class="p-bubble" id="bot-bubble"></p></div>
                         <div class="speech-bubble:after"></div>
                     </div>
-                    <i class="fas fa-male figure-2"></i>
+                    <i class="fas fa-male figure-2 player--1"></i>
                     <p class="bot-name">Bot 1</p>
                 </div>
             </div>
             <div class="user-input flex center column">
-                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in ett tal 1-20">
+                <input type="number" name="Skriv in siffra" id="number" placeholder="Skriv in ett tal 1-20" >
                 <div class="game-btn-container flex center column width100">
-                    <button class="btn-big confirm colorBtn" id="confirm">Bekräfta</button>
+                    <button class="btn-big colorBtn" id="confirm">Bekräfta</button>
                     <button class="btn-big">Visa senaste poäng</button>
                 </div>
             </div>
