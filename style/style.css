@@ -14,7 +14,7 @@ html {
 body {
   margin: 0 auto;
   /* background: hsl(235, 21%, 21%); */
-  background: linear-gradient(hsl(196, 97%, 36%), hsl(196, 97%, 26%));
+  background: linear-gradient(hsl(196, 97%, 40%), hsl(196, 97%, 30%));
   height: 100%;
   display: flex;
   justify-content: center;
@@ -142,6 +142,10 @@ main {
   font-size: 1.5rem;
 }
 
+#inputfield::placeholder {
+  color: white;
+}
+
 .btn {
   width: 10rem;
 }
@@ -192,9 +196,10 @@ main {
 }
 
 .playerbox p {
-  font-weight: 600;
+  font-weight: 700;
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
+  text-shadow: 1px 1px black;
 }
 
 /* Start page */
