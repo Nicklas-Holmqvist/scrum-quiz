@@ -22,7 +22,6 @@ window.onclick = function(event) {
     }
 }
 
-
 startGameButton.addEventListener("click", savePlayerInLS);
 
 /**
