@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/e5bc88f7ae.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./app/app.js"></script>
+    <script defer src="./app/stats.js"></script>
     <title>Scrum Quiz</title>
   </head>
   <body class="bodyFix">
@@ -28,20 +28,20 @@
           <div class="flex column center margin1">
             <i class="fas fa-male figure-green"></i>
             <p class="green">Lätt</p>
-            <p>Vunna matcher:</p>
-            <p>Spelade matcher:</p>
+            <p id="easyWins">Vunna matcher:</p>
+            <p id="easyGames">Spelade matcher:</p>
           </div>
           <div class="flex column center margin1">
             <i class="fas fa-male figure-blue"></i>
             <p class="blue">Medium</p>
-            <p>Vunna matcher:</p>
-            <p>Spelade matcher:</p>
+            <p id="mediWins">Vunna matcher:</p>
+            <p id="mediGames">Spelade matcher:</p>
           </div>
           <div class="flex column center margin1">
             <i class="fas fa-male figure-red"></i>
             <p class="red">Svår</p>
-            <p>Vunna matcher:</p>
-            <p>Spelade matcher:</p>
+            <p id="hardWins">Vunna matcher:</p>
+            <p id="hardGames">Spelade matcher:</p>
           </div>
         </div>
 
