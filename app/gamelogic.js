@@ -7,6 +7,7 @@ function main() {
 function addEventListeners() {
     prepareTheGame()
     countdown()
+    // document.getElementById("#number").clearInput.focus();
 }
 // Globala variabler för spelaren
 
@@ -141,6 +142,7 @@ document.querySelector('#confirm').addEventListener('click', () => {
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         clearInput.value = '';
+        clearInput.readOnly = true;
         document.querySelector('#player-bubble').textContent = `${input}`
         playerGuesses ++;
         switchPlayer()
@@ -149,6 +151,8 @@ document.querySelector('#confirm').addEventListener('click', () => {
 
 ////// Skapar ett random nummer mellan 1-20 och jämför med talet mellan 1-20 //////
 const BotCompairNum = function () {
+    let clearInput = document.querySelector('#number');
+
     if (activePlayer === 1) {
         let botNum = Math.trunc(Math.random() * 20) + 1;
         if (questionNum === botNum) {
@@ -165,6 +169,8 @@ const BotCompairNum = function () {
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
             document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+            clearInput.readOnly = false;
+            clearInput.focus();
             switchPlayer()
         } else console.log("gameOver")
     }
