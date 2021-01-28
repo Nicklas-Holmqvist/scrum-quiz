@@ -141,6 +141,7 @@ main {
   outline: none;
   background: none;
   font-size: 1.5rem;
+  outline: none;
 }
 
 #inputfield::placeholder {
@@ -242,6 +243,12 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
+  outline-color: #0387B7;
+  
+}
+
+.number-nofocus {
+  outline: none;
 }
 
 .player-one,

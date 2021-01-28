@@ -22,6 +22,19 @@ window.onclick = function(event) {
     }
 }
 
+window.addEventListener("keydown", checkKeyPress, false);
+
+function checkKeyPress(key) {    
+    let inputControl  = document.querySelector('#inputfield').value;
+
+    if (key.keyCode == "13") {
+        if(inputControl == "") {
+            return
+        }
+        savePlayerInLS()
+    }  
+}
+
 startGameButton.addEventListener("click", savePlayerInLS);
 
 /**
