@@ -113,7 +113,8 @@ main {
 }
 
 .colorText {
-  color: #00abbe;
+  color: hsl(186, 100%, 57%);
+  text-shadow: 1px 1px black;
 }
 
 .bold {
@@ -144,6 +145,7 @@ main {
 
 #inputfield::placeholder {
   color: white;
+  /* text-align: center; */
 }
 
 .btn {
@@ -200,11 +202,13 @@ main {
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
   text-shadow: 1px 1px black;
+  padding-bottom: 1rem;
 }
 
 /* Start page */
 .logo {
   width: 40rem;
+  filter: brightness(1.5);
 }
 
 .width70 {
@@ -226,6 +230,8 @@ main {
   font-size: 2rem;
   height: 2rem;
   margin: 1rem;
+  color: hsl(186, 100%, 57%);
+  text-shadow: 1px 1px black;
 }
 
 .game-btn-container .btn-big {
@@ -320,8 +326,12 @@ main {
   height: 100%;
 }
 .activeLight {
-  box-shadow: 1px 1px 3px 2px #353535;
+  background: rgba(255, 255, 255, 0.8);
   /* background: white; */
+  opacity: 0.9;
+  /* box-shadow: 3px 3px 10px 4px #00abbe; */
+  -webkit-box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%); 
+  box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%);
 }
 
 /* Rule box css */
