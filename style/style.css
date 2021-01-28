@@ -14,7 +14,7 @@ html {
 body {
   margin: 0 auto;
   /* background: hsl(235, 21%, 21%); */
-  background: linear-gradient(#d2dce9, #9198e5);
+  background: linear-gradient(hsl(196, 97%, 36%), hsl(196, 97%, 26%));
   height: 100%;
   display: flex;
   justify-content: center;
@@ -169,13 +169,17 @@ main {
 
 .fas {
   font-size: 10rem;
-  padding: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
+  /* padding-bottom: 1rem; */
   margin-top: 1.5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .bot-active {
-  background: white;
+  background: rgb(230, 230, 230);
+  opacity: 0.9;
+  /* border: 1px solid black; */
 }
 
 .green-bot {
@@ -185,6 +189,12 @@ main {
 .playerbox {
   transition: background 0.1s ease-in-out;
   cursor: pointer;
+}
+
+.playerbox p {
+  font-weight: 600;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
 }
 
 /* Start page */
@@ -305,7 +315,7 @@ main {
   height: 100%;
 }
 .activeLight {
-  box-shadow: 1px 1px 3px 2px #494949;
+  box-shadow: 1px 1px 3px 2px #353535;
   /* background: white; */
 }
 
