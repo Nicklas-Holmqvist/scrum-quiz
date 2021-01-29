@@ -1,3 +1,5 @@
+//localStorage.clear();
+
 // Global variables
 
 let playerName = "";
@@ -48,20 +50,20 @@ startGameButton.addEventListener("click", goToBotPage)
  */
 
 function goToBotPage() {
-    updatePlayerDetails();
+    playerName = document.getElementById("inputfield").value;
+    checkPlayerDetails();
     savePlayerInLS();
     window.location.href="./bots.html";
 } 
 
 /**
- * Updates player details from local storage if player already exists
+ * Checks and updates player details from local storage if player already exists
  */
 
-function updatePlayerDetails() {
-    playerName = document.getElementById("inputfield").value;
+function checkPlayerDetails() {
     let highscore = JSON.parse(localStorage.getItem("highscore"))
     if (highscore !== null || undefined) {
-        for (i=0; 1 < highscore.length; i++) {
+        for (i=0; i < highscore.length; i++) {
             if (highscore[i].name === playerName) {
                 playerWins = highscore[i].wins;
                 playerGames = highscore[i].games;
