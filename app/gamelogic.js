@@ -171,7 +171,7 @@ function BotCompairNum() {
     let clearInput = document.querySelector('#number');
 
     if (activePlayer === 1) {
-        let botNum = Math.trunc(Math.random() * 20) + 1;
+        let botNum = randomNumber()
 
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
