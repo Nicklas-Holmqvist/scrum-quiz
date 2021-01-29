@@ -158,7 +158,7 @@ function checkUserInput() {
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         clearInput.value = '';
-        clearInput.readOnly = true;
+        // clearInput.readOnly = true;
         clearInput.classList.add("number-nofocus");
         document.querySelector('#player-bubble').textContent = `${input}`
         playerGuesses ++;
@@ -167,11 +167,12 @@ function checkUserInput() {
 }
 
 ////// Skapar ett random nummer mellan 1-20 och jämför med talet mellan 1-20 //////
-const BotCompairNum = function () {
+function BotCompairNum() {
     let clearInput = document.querySelector('#number');
 
     if (activePlayer === 1) {
         let botNum = Math.trunc(Math.random() * 20) + 1;
+
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
             playerGames ++;
@@ -186,22 +187,31 @@ const BotCompairNum = function () {
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
             document.querySelector('#bot-bubble').textContent = ` ${botNum}`
-            clearInput.readOnly = false;
+            // clearInput.readOnly = false;
             clearInput.focus();
             clearInput.classList.remove("number-nofocus");
             switchPlayer()
         } else console.log("gameOver")
     }
+    
 }
 
 ///// tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen /////
 // const switchPlayer = function 
 
 function switchPlayer() {
+    let input = document.querySelector('#number');
     document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
     activePlayer = activePlayer === 0 ? 1 : 0
     document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
     count = 10;
+    if(input.readOnly === false) {
+        input.readOnly = true;
+        input.classList.add("number-nofocus");
+    } else if (input.readOnly === true) {
+        input.readOnly = false
+        input.classList.remove("number-nofocus");
+    }
     setTimeout(() => {
         BotCompairNum()
     }, 1000 * (Math.random() * 2 + 4));
