@@ -7,6 +7,7 @@ function main() {
 function addEventListeners() {
     prepareTheGame()
     countdown()
+    
 }
 // Globala variabler för spelaren
 
@@ -31,6 +32,20 @@ function randomNumber() {
     const randomNr = Math.floor(Math.random() * 20 + 1);
 
     return randomNr
+}
+
+window.addEventListener("keydown", checkKeyPress, false);
+
+function checkKeyPress(key) {    
+    let inputControl  = document.querySelector('#number').value;
+    console.log(inputControl)
+
+    if (key.keyCode == "13") {
+        if(inputControl == "") {
+            return
+        }
+        checkUserInput()
+    }    
 }
 
 /**
@@ -104,11 +119,11 @@ function countdown() {
 
         if (countDown === 0) {
             count = 10
-            // alert('Du hann inte!') !!!!!!!!!!!!!!!!!!
+            switchPlayer()
+           
         }
     }, 1000)
 }
-
 
 ////////////// STANDARDBOT LOGIK /////////
 
@@ -119,8 +134,13 @@ const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
 
-///// Jämför spelarens input med ett random tal mellan 1-20  /////
-document.querySelector('#confirm').addEventListener('click', () => {
+
+document.querySelector('#confirm').addEventListener('click', checkUserInput)
+
+/**
+ * Jämför användarens input
+ */
+function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
     
@@ -147,16 +167,25 @@ document.querySelector('#confirm').addEventListener('click', () => {
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
         clearInput.value = '';
+        // clearInput.readOnly = true;
+        clearInput.classList.add("number-nofocus");
         document.querySelector('#player-bubble').textContent = `${input}`
         playerGuesses ++;
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
-})
+}
 
-////// Skapar ett random nummer mellan 1-20 och jämför med talet mellan 1-20 //////
-const BotCompairNum = function () {
+
+/**
+ * Botlogik
+ * Tar fram ett random nummer 1-20 som jämför huvudnumret
+ */
+function BotCompairNum() {
+    let clearInput = document.querySelector('#number');
+
     if (activePlayer === 1) {
-        let botNum = Math.trunc(Math.random() * 20) + 1;
+        let botNum = randomNumber()
+
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
             playerGames ++;
@@ -171,21 +200,34 @@ const BotCompairNum = function () {
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
             document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+            // clearInput.readOnly = false;
+            clearInput.focus();
+            clearInput.classList.remove("number-nofocus");
             switchPlayer()
         } else console.log("gameOver")
     }
+    
 }
 
-///// tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen /////
-const switchPlayer = function () {
+/**
+ * tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen
+ */
+function switchPlayer() {
+    let input = document.querySelector('#number');
     document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
     activePlayer = activePlayer === 0 ? 1 : 0
     document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
     count = 10;
+    if(input.readOnly === false) {
+        input.readOnly = true;
+        input.classList.add("number-nofocus");
+    } else if (input.readOnly === true) {
+        input.readOnly = false
+        input.classList.remove("number-nofocus");
+    }
     setTimeout(() => {
         BotCompairNum()
     }, 1000 * (Math.random() * 2 + 4));
-
 }
 ////////////// bot1 vinner aldgig om den får rätt siffra kör en if så att den får fel
 ///////////// Bot2 mellan 1-20 standard
