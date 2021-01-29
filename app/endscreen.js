@@ -15,13 +15,32 @@ let playerWins = parseInt(localStorage.getItem("player-wins"))
 let playerGames = parseInt(localStorage.getItem("player-games"))
 let playerGuesses = parseInt(localStorage.getItem("player-guesses"))
 let highscore = JSON.parse(localStorage.getItem("highscore"))
+let playerWin = localStorage.getItem("player-win")
 
 /**
  * Function that displays a summary of the game and player statistics
  */
 function showGameSummary() {
-    document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
-    document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissningar."
+    if (playerWin == true) {
+        document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
+        if (playerGuesses == 1) {
+            document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissning."
+        }
+        else {
+        document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissningar."
+        }
+    }
+    else {
+        document.querySelector('#player').innerHTML = "Tyvärr, du förlorade!"   
+        if (playerGuesses == 1) {
+            document.querySelector('#guesses').innerHTML = "Du gissade " + playerGuesses + " gång."
+        }
+        else {
+            document.querySelector('#guesses').innerHTML = "Du gissade " + playerGuesses + " gånger."
+        }
+     
+    }
+
     document.querySelector('#games').innerHTML = "Antal spelade spel: " + playerGames
     document.querySelector('#wins').innerHTML = "Antal vunna spel: " + playerWins    
 }
