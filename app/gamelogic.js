@@ -18,7 +18,7 @@ let playerGuesses = 0;
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
-let botColor;
+//let botColor;
 const timeLeftP = document.querySelector('.time-left')
 let count = 10;
 console.log(count)
@@ -63,20 +63,23 @@ activeBot.forEach((e) => {
             })
             e.classList.add('bot-active')
 
-            if (e.classList.contains('figure-green')) {
-                botColor = 1;
-                localStorage.setItem("bot-color", botColor)
-            }
+            // if (e.classList.contains('figure-green')) {
+            //    // botColor = 1;
+            //     // localStorage.setItem("bot-color", botColor)
+            //     localStorage.setItem("easy-bot", botColor)
+            // }
 
-            else if (e.classList.contains('figure-blue')) {
-                botColor = 2;
-                localStorage.setItem("bot-color", botColor)
-            }
+            // else if (e.classList.contains('figure-blue')) {
+            //     // botColor = 2;
+            //     // localStorage.setItem("bot-color", botColor)
+            //     localStorage.setItem("medium-bot", botColor)
+            // }
 
-            else if (e.classList.contains('figure-red')) {
-                botColor = 3;
-                localStorage.setItem("bot-color", botColor)
-            }
+            // else if (e.classList.contains('figure-red')) {
+            //     // botColor = 3;
+            //     // localStorage.setItem("bot-color", botColor)
+            //     localStorage.setItem("hard-bot", botColor)
+            // }
         }
     })
 })
@@ -87,18 +90,19 @@ activeBot.forEach((e) => {
 function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
     const playerNameField = document.querySelector('.player-name')
-    let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
+    // let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
+    let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     playerNameField.innerText = playerName
-
-    if (fetchLSBotColor === 1) {
+   
+    if (fetchLSBotColor.botColor == 1) {
         theGameBotColor.style.color = "green";
         botName.innerText = "Lätt"
     }
-    else if (fetchLSBotColor === 2) {
+    if (fetchLSBotColor.botColor == 2) {
         theGameBotColor.style.color = "blue";
         botName.innerText = "Medium"
     }
-    else if (fetchLSBotColor === 3) {
+    if (fetchLSBotColor.botColor == 3) {
         theGameBotColor.style.color = "red";
         botName.innerText = "Svår"
     }
@@ -150,6 +154,8 @@ function checkUserInput() {
         playerWins ++;
         playerGames ++;
         updatePlayerInfoInLS()
+        updateBotScore('loss')
+     
         console.log("Vunna spel: " + playerWins)
         clearInput.value = '';
 
@@ -184,8 +190,8 @@ function BotCompairNum() {
             document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
             playerGames ++;
             updatePlayerInfoInLS()
-
-
+            updateBotScore('win')
+            console.log('Comes here 1');
             setTimeout(()=>{           
                 const endingPage = "./endscreen.html"
                 window.open(endingPage, "_self")
@@ -238,4 +244,42 @@ function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
     localStorage.setItem("player-games", playerGames)
     localStorage.setItem("player-guesses", playerGuesses)
+}
+
+function updateBotScore(result) {
+    let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
+    console.log('Comes here 3');
+    if(result == 'win'){
+        if (fetchLSBotColor.botColor == 1) {
+            fetchLSBotColor.easyBot.wins += 1 
+            fetchLSBotColor.easyBot.games += 1
+        }
+        if (fetchLSBotColor.botColor == 2) {
+            fetchLSBotColor.mediBot.wins += 1 
+            fetchLSBotColor.mediBot.games += 1
+        }
+        if (fetchLSBotColor.botColor == 3) {
+            fetchLSBotColor.hardBot.wins += 1 
+            fetchLSBotColor.hardBot.games += 1
+        }
+
+        localStorage.setItem("bot", JSON.stringify(fetchLSBotColor))
+
+    }else{
+        if (fetchLSBotColor.botColor == 1) {
+   
+            fetchLSBotColor.easyBot.games += 1
+        }
+        if (fetchLSBotColor.botColor == 2) {
+           
+            fetchLSBotColor.mediBot.games += 1
+        }
+        if (fetchLSBotColor.botColor == 3) {
+           
+            fetchLSBotColor.hardBot.games += 1
+        }
+        localStorage.setItem("bot", JSON.stringify(fetchLSBotColor))
+    }
+   
+    
 }
