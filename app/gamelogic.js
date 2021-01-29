@@ -130,9 +130,12 @@ const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
 
-///// Jämför spelarens input med ett random tal mellan 1-20  /////
+
 document.querySelector('#confirm').addEventListener('click', checkUserInput)
 
+/**
+ * Jämför användarens input
+ */
 function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
@@ -166,7 +169,11 @@ function checkUserInput() {
     } else document.querySelector('.answer').textContent = "GAME OVER"
 }
 
-////// Skapar ett random nummer mellan 1-20 och jämför med talet mellan 1-20 //////
+
+/**
+ * Botlogik
+ * Tar fram ett random nummer 1-20 som jämför huvudnumret
+ */
 function BotCompairNum() {
     let clearInput = document.querySelector('#number');
 
@@ -196,9 +203,9 @@ function BotCompairNum() {
     
 }
 
-///// tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen /////
-// const switchPlayer = function 
-
+/**
+ * tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen
+ */
 function switchPlayer() {
     let input = document.querySelector('#number');
     document.querySelector(`.player--${activePlayer}`).classList.remove('activeLight')
