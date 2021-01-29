@@ -46,7 +46,10 @@ function comparePlayerWithHighscore() {
         for (let i = 0; i < 3; i++) {
             if (player.wins > highscore[i].wins) {
                 if(player.name !== highscore[i].name) {
-                    highscore.splice(i, 0, player);               
+                    highscore.splice(i, 0, player);
+                    if(player.name === highscore[i+1].name) {
+                        highscore.splice(i+1, 1)
+                    }               
                 }
                 else {
                     highscore[i].wins = player.wins;
@@ -55,8 +58,7 @@ function comparePlayerWithHighscore() {
             break;
             }
         }
-    }
-    
+    }    
 }
 
 /**
