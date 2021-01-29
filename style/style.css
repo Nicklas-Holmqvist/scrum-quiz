@@ -14,7 +14,7 @@ html {
 body {
   margin: 0 auto;
   /* background: hsl(235, 21%, 21%); */
-  background: linear-gradient(#d2dce9, #9198e5);
+  background: linear-gradient(hsl(196, 97%, 40%), hsl(196, 97%, 30%));
   height: 100%;
   display: flex;
   justify-content: center;
@@ -113,7 +113,8 @@ main {
 }
 
 .colorText {
-  color: #00abbe;
+  color: hsl(186, 100%, 57%);
+  text-shadow: 1px 1px black;
 }
 
 .bold {
@@ -140,6 +141,12 @@ main {
   outline: none;
   background: none;
   font-size: 1.5rem;
+  outline: none;
+}
+
+#inputfield::placeholder {
+  color: white;
+  /* text-align: center; */
 }
 
 .btn {
@@ -169,13 +176,17 @@ main {
 
 .fas {
   font-size: 10rem;
-  padding: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
+  /* padding-bottom: 1rem; */
   margin-top: 1.5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .bot-active {
-  background: white;
+  background: rgb(230, 230, 230);
+  opacity: 0.9;
+  /* border: 1px solid black; */
 }
 
 .green-bot {
@@ -187,9 +198,18 @@ main {
   cursor: pointer;
 }
 
+.playerbox p {
+  font-weight: 700;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
+  text-shadow: 1px 1px black;
+  padding-bottom: 1rem;
+}
+
 /* Start page */
 .logo {
   width: 40rem;
+  filter: brightness(1.5);
 }
 
 .width70 {
@@ -211,6 +231,8 @@ main {
   font-size: 2rem;
   height: 2rem;
   margin: 1rem;
+  color: hsl(186, 100%, 57%);
+  text-shadow: 1px 1px black;
 }
 
 .game-btn-container .btn-big {
@@ -221,6 +243,12 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
+  outline-color: #0387B7;
+  
+}
+
+.number-nofocus {
+  outline: none;
 }
 
 .player-one,
@@ -305,8 +333,12 @@ main {
   height: 100%;
 }
 .activeLight {
-  box-shadow: 1px 1px 3px 2px #494949;
+  background: rgba(255, 255, 255, 0.8);
   /* background: white; */
+  opacity: 0.9;
+  /* box-shadow: 3px 3px 10px 4px #00abbe; */
+  -webkit-box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%); 
+  box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%);
 }
 
 /* Rule box css */
