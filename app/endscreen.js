@@ -15,13 +15,13 @@ let playerWins = parseInt(localStorage.getItem("player-wins"))
 let playerGames = parseInt(localStorage.getItem("player-games"))
 let playerGuesses = parseInt(localStorage.getItem("player-guesses"))
 let highscore = JSON.parse(localStorage.getItem("highscore"))
-let playerWin = localStorage.getItem("player-win")
+let playerWin = JSON.parse(localStorage.getItem("player-win"))
 
 /**
  * Function that displays a summary of the game and player statistics
  */
 function showGameSummary() {
-    if (playerWin == true) {
+    if (playerWin === true) {
         document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
         if (playerGuesses == 1) {
             document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissning."

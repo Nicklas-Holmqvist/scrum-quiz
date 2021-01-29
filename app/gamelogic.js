@@ -189,7 +189,7 @@ function BotCompairNum() {
         let botNum = randomNumber()
 
         if (questionNum === botNum) {
-            document.querySelector('.answer').textContent = "Bot gissa rätt nummer"
+            document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
             playerGames ++;
             updatePlayerInfoInLS()
             updateBotScore('win')
@@ -246,7 +246,7 @@ function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
     localStorage.setItem("player-games", playerGames)
     localStorage.setItem("player-guesses", playerGuesses)
-    localStorage.setItem("player-win", playerWin)
+    localStorage.setItem("player-win",JSON.stringify(playerWin))
 }
 
 function updateBotScore(result) {
