@@ -239,6 +239,18 @@ function switchPlayer() {
                //////////////////////////
                     /////////////
 
+// Toggle speech-bubbles button
+function toggleBubbles() {
+    let bubbles = document.getElementById("bubble")
+
+    if (bubbles.style.display === "none") {
+        bubbles.style.display = "inline-block";
+    }
+    else {
+        bubbles.style.display = "none";
+    }
+}
+
 
 function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)

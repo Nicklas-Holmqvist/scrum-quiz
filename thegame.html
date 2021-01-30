@@ -37,38 +37,33 @@
             </p>             -->
         </div>
         <div class="user-container flex column center">
-            <div class="players-container flex center width100 space-between">
-                <div class="player-one flex center column">
-                    <div class="bubble">
-                        <div class="speech-bubble"><p class="p-bubble" id="player-bubble"></p></div>
-                        <div class="speech-bubble:after"></div>
-                    </div>
-                   
-                    
-                    <i class="fas fa-male figure-1 player--0"></i>
-                    <p class="player-name">Karl-Knut</p>
+            <div class="bubblebox">
+                <div class="bubble" id="bubble">
+                    <div class="speech-bubble"><p class="p-bubble" id="player-bubble"></p></div>
+                    <div class="speech-bubble:after"></div>
                 </div>
-                <!-- <div class="versus">
-                    <p>
-                        VS
-                    </p>
-                </div> -->
+                <div class="bubble" id="bubble2">
+                    <div class="speech-bubble"><p class="p-bubble" id="bot-bubble"></p></div>
+                    <div class="speech-bubble:after"></div>
+                </div>
+            </div>
+            <div class="players-container flex center width100 space-between">
+                <div class="player-one flex center column">                                       
+                    <i class="fas fa-male figure-1 player--0"></i>
+                    <p class="player-name">Player<!-- code injected from javascript--></p>
+                </div>
                 <div class="player-two flex center column ">
-                    <div class="bubble">
-                        <div class="speech-bubble"><p class="p-bubble" id="bot-bubble"></p></div>
-                        <div class="speech-bubble:after"></div>
-                    </div>
                     <i class="fas fa-male figure-2 player--1"></i>
-                    <p class="bot-name">Bot 1</p>
+                    <p class="bot-name">Bot<!-- code injected from javascript--></p>
                 </div>
             </div>
             <div class="user-input flex center column">
                 <label for="Skriv in siffra"></label>
-                <input type="number" name="Skriv in siffra" id="number" min="1" max="20" placeholder="Skriv in ett tal 1-20" onkeydown="javascript: return event.keyCode === 8 ||
+                <input type="number" name="Skriv in siffra" id="number" min="1" max="20" pattern="[0-9]" placeholder="Skriv in ett tal 1-20" onkeydown="javascript: return event.keyCode === 8 ||
                 event.keyCode === 46 ? true : !isNaN(Number(event.key))" autofocus required="">
                 <div class="game-btn-container flex center column width100">
                     <button class="btn-big colorBtn" id="confirm">Bekräfta</button>
-                    <button class="btn-big">Visa senaste poäng</button>
+                    <button class="btn-big" onclick="toggleBubbles()">Visa senaste gissning</button>
                 </div>
             </div>
         </div>
