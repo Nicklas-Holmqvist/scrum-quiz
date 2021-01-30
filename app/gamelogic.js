@@ -95,15 +95,15 @@ function prepareTheGame() {
     playerNameField.innerText = playerName
    
     if (fetchLSBotColor.botColor == 1) {
-        theGameBotColor.style.color = "green";
+        theGameBotColor.style.color = "#55a630";
         botName.innerText = "Lätt"
     }
     if (fetchLSBotColor.botColor == 2) {
-        theGameBotColor.style.color = "blue";
+        theGameBotColor.style.color = "#0072ce";
         botName.innerText = "Medium"
     }
     if (fetchLSBotColor.botColor == 3) {
-        theGameBotColor.style.color = "red";
+        theGameBotColor.style.color = "#a4161a";
         botName.innerText = "Svår"
     }
 }

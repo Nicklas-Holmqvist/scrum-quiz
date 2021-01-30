@@ -122,15 +122,15 @@ main {
 }
 
 .green {
-  color: green;
+  color: 55a630;
 }
 
 .blue {
-  color: blue;
+  color: 0072ce;
 }
 
 .red {
-  color: red;
+  color: a4161a;
 }
 
 /* Knappsmink */
@@ -243,7 +243,7 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
-  outline-color: #0387B7;
+  outline-color: #03b74e;
   
 }
 
