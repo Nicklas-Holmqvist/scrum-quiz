@@ -401,7 +401,11 @@ main {
   width: 16rem;
   display: flex;
   justify-content: center;
-  background: red;
+  /* background: red; */
+}
+
+.bubble-placeholder {
+  /* background: green; */
 }
 
 .bubble {
