@@ -240,15 +240,15 @@ function switchPlayer() {
                     /////////////
 
                     
-// Toggle speech-bubbles button
-function toggleBubbles() {
+// Toggle player speech-bubble
+function toggleBubble() {
     let bubbles = document.getElementById("bubble")
 
-    if (bubbles.style.display === "none") {
-        bubbles.style.display = "inline-block";
+    if (bubbles.style.visibility === "hidden") {
+        bubbles.style.visibility = "visible";
     }
     else {
-        bubbles.style.display = "none";
+        bubbles.style.visibility = "hidden";
     }
 }
 
