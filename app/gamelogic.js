@@ -239,6 +239,7 @@ function switchPlayer() {
                //////////////////////////
                     /////////////
 
+                    
 // Toggle speech-bubbles button
 function toggleBubbles() {
     let bubbles = document.getElementById("bubble")
