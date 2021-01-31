@@ -205,11 +205,12 @@ main {
 }
 
 .playerbox p {
-  font-weight: 700;
+  /* font-weight: 700; */
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
-  text-shadow: 1px 1px black;
+  /* text-shadow: 1px 1px black; */
   padding-bottom: 1rem;
+  color: black;
 }
 
 /* Start page */
