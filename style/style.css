@@ -173,8 +173,9 @@ main {
   background-color: #00abbe;
   /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
+  /* font-size: 1rem; */
   border-radius: 0.25rem;
-  text-shadow: 1px 1px solid;
+  /* text-shadow: 1px 1px solid; */
   /* border: 1px solid rgb(156, 156, 156); */
   filter: drop-shadow(2px 2px 3px #264144);
 }
@@ -263,7 +264,7 @@ main {
 }
 
 .confirm {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .figure-green {
