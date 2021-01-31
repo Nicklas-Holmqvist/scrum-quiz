@@ -43,7 +43,7 @@ p {
 }
 
 .time-left {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   /* color: white; */
 }
 
@@ -171,7 +171,12 @@ main {
 
 .colorBtn {
   background-color: #00abbe;
+  /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
+  border-radius: 0.25rem;
+  text-shadow: 1px 1px solid;
+  /* border: 1px solid rgb(156, 156, 156); */
+  filter: drop-shadow(2px 2px 3px #264144);
 }
 
 .fas {
@@ -209,7 +214,8 @@ main {
 /* Start page */
 .logo {
   width: 40rem;
-  filter: brightness(1.5);
+  filter: brightness(1.35) hue-rotate(0deg);
+  padding: 1rem 0 0 0;
 }
 
 .width70 {
@@ -219,7 +225,7 @@ main {
 /* The game */
 
 .players-container {
-  padding: 1rem 0 2rem 0;
+  padding: 0 0 2.3rem 0;
 }
 
 .versus {
@@ -402,6 +408,7 @@ main {
   display: flex;
   justify-content: center;
   /* background: red; */
+  padding: 0 0 0 0;
 }
 
 /* .bubble-placeholder { */
