@@ -15,12 +15,19 @@ let playerWins = parseInt(localStorage.getItem("player-wins"))
 let playerGames = parseInt(localStorage.getItem("player-games"))
 let playerGuesses = parseInt(localStorage.getItem("player-guesses"))
 let highscore = JSON.parse(localStorage.getItem("highscore"))
+let playerWin = JSON.parse(localStorage.getItem("player-win"))
 
 /**
  * Function that displays a summary of the game and player statistics
  */
 function showGameSummary() {
-    document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
+    if (playerWin === true) {
+        document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
+    }
+    else {
+        document.querySelector('#player').innerHTML = "Tyvärr, du förlorade!"        
+    }
+
     document.querySelector('#guesses').innerHTML = playerGuesses
     document.querySelector('#games').innerHTML = playerGames
     document.querySelector('#wins').innerHTML = playerWins      
@@ -46,7 +53,10 @@ function comparePlayerWithHighscore() {
         for (let i = 0; i < 3; i++) {
             if (player.wins > highscore[i].wins) {
                 if(player.name !== highscore[i].name) {
-                    highscore.splice(i, 0, player);               
+                    highscore.splice(i, 0, player);
+                    if(player.name === highscore[i+2].name) {
+                        highscore.splice(i+2, 1)
+                    }               
                 }
                 else {
                     highscore[i].wins = player.wins;
@@ -55,8 +65,7 @@ function comparePlayerWithHighscore() {
             break;
             }
         }
-    }
-    
+    }    
 }
 
 /**

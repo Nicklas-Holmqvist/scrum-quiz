@@ -1,3 +1,11 @@
+//localStorage.clear();
+
+// Global variables
+
+let playerName = "";
+let playerWins = 0;
+let playerGames = 0;
+
 //rule box javascript
 const ruleBox = document.getElementById("ruleContBox"); //the whole rule box
 
@@ -31,20 +39,46 @@ function checkKeyPress(key) {
         if(inputControl == "") {
             return
         }
-        savePlayerInLS()
+        goToBotPage()
     }  
 }
 
-startGameButton.addEventListener("click", savePlayerInLS);
+startGameButton.addEventListener("click", goToBotPage)
 
 /**
- * Function that saves a new player in local storage and then changes to the bot-page
+ * Moves to the bots page
+ */
+
+function goToBotPage() {
+    playerName = document.getElementById("inputfield").value;
+    checkPlayerDetails();
+    savePlayerInLS();
+    window.location.href="./bots.html";
+} 
+
+/**
+ * Checks and updates player details from local storage if player already exists
+ */
+
+function checkPlayerDetails() {
+    let highscore = JSON.parse(localStorage.getItem("highscore"))
+    if (highscore !== null || undefined) {
+        for (i=0; i < highscore.length; i++) {
+            if (highscore[i].name === playerName) {
+                playerWins = highscore[i].wins;
+                playerGames = highscore[i].games;
+                break;
+            }
+        }
+    }
+} 
+
+/**
+ * Saves player data in local storage
  */
 
 function savePlayerInLS() {
-    let playerName = document.getElementById("inputfield").value;
     localStorage.setItem("player-name", playerName);
-    localStorage.setItem("player-wins", "0")
-    localStorage.setItem("player-games", "0")
-    window.location.href="./bots.html";
+    localStorage.setItem("player-wins", playerWins);
+    localStorage.setItem("player-games", playerGames);
 }
