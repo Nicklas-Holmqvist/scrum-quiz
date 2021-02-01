@@ -17,6 +17,7 @@
       src="https://kit.fontawesome.com/e5bc88f7ae.js"
       crossorigin="anonymous"
     ></script>
+    <script defer src="./app/stats.js"></script>
     <script defer src="./app/index.js"></script>
 
     <title>Scrum Quiz</title>
@@ -60,9 +61,9 @@
 
 
       <div class="flex column">
-        <input type="text" placeholder="Namn" size="42" id="inputfield">
+        <input type="text" placeholder="Namn" size="42" id="inputfield" autofocus>
       </div>
-      <button class="btn-big confirm colorBtn marginBtn " type="submit" id="start-button">Starta spelet</button>
+      <button class=" btn-big confirm colorBtn" type="submit" id="start-button">Starta spelet</button>
 
       <!-- <form action="bots.html" class="game-btn-container">
         <input
@@ -71,17 +72,13 @@
           value="Starta spelet"
         /> -->
       <!-- </form> -->
-      <div class="flex row space-evenly width70 media-column marginBtn">
-        <button class="btn-big margin-mobile" id="rule-btn">Regler</button>
+      <div class="flex row space-evenly width70 media-column">
+        <button class="btn-big" id="rule-btn">Regler</button>
+        <button onclick="window.location='/statistics.html'" class="btn-big" id="statButton">Statistik</button>
 
+
+        <!-- <div class="flex row space-evenly width70 media-column"> -->
       
-        <form action="statistics.html">
-          <input
-            class="btn-big media-margin-top"
-            type="submit"
-            value="Statistik"
-          />
-        </form>
       </div>
     </main>
   </body>

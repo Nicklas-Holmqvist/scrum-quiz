@@ -44,7 +44,7 @@ p {
 }
 
 .time-left {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   /* color: white; */
 }
 
@@ -129,6 +129,7 @@ main {
   outline: none;
   background: none;
   font-size: 1.5rem;
+  outline: none;
 }
 
 #inputfield::placeholder {
@@ -151,7 +152,13 @@ main {
 
 .colorBtn {
   background-color: #00abbe;
+  /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
+  /* font-size: 1rem; */
+  border-radius: 0.25rem;
+  /* text-shadow: 1px 1px solid; */
+  /* border: 1px solid rgb(156, 156, 156); */
+  filter: drop-shadow(2px 2px 3px #264144);
 }
 
 .fas {
@@ -177,16 +184,19 @@ main {
 }
 
 .playerbox p {
-  font-weight: 700;
+  /* font-weight: 700; */
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
+  /* text-shadow: 1px 1px black; */
   padding-bottom: 1rem;
+  color: black;
 }
 
 /* Start page */
 .logo {
   width: 40rem;
-  filter: brightness(1.2);
+  filter: brightness(1.35) hue-rotate(0deg);
+  padding: 1rem 0 0 0;
 }
 
 .width70 {
@@ -196,7 +206,7 @@ main {
 /* The game */
 
 .players-container {
-  padding: 2rem 0;
+  padding: 0 0 2.3rem 0;
 }
 
 .versus {
@@ -219,7 +229,12 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
-  color: #00abbe;
+  outline-color: #03b74e;
+  
+}
+
+.number-nofocus {
+  outline: none;
 }
 
 .player-one,
@@ -397,9 +412,24 @@ main {
 
 
 /* SPEECH BUBBLES */
+.bubblebox {
+  height: 3rem;
+  width: 16rem;
+  display: flex;
+  justify-content: center;
+  /* background: red; */
+  padding: 0 0 0 0;
+}
+
+/* .bubble-placeholder { */
+  /* background: green; */
+/* } */
+
 .bubble {
   justify-content: center;
-  padding-top: 0.4rem;
+  padding-top: 1rem;
+  display: inline-block;
+  margin: 0rem 4.5rem;
 }
 
 .speech-bubble {
