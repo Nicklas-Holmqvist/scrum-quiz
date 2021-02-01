@@ -93,17 +93,17 @@ function prepareTheGame() {
     // let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     playerNameField.innerText = playerName
-
-    if (fetchLSBotColor === 1) {
+   
+    if (fetchLSBotColor.botColor == 1) {
         theGameBotColor.style.color = "#55a630";
         botName.innerText = "Lätt"
     }
-    else if (fetchLSBotColor === 2) {
+    if (fetchLSBotColor.botColor == 2) {
         theGameBotColor.style.color = "#0072ce";
         botName.innerText = "Medium"
     }
-    else if (fetchLSBotColor === 3) {
-        theGameBotColor.style.color = "#B22222";
+    if (fetchLSBotColor.botColor == 3) {
+        theGameBotColor.style.color = "#a4161a";
         botName.innerText = "Svår"
     }
 }
