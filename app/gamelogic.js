@@ -7,7 +7,7 @@ function main() {
 function addEventListeners() {
     prepareTheGame()
     countdown()
-    
+
 }
 // Globala variabler för spelaren
 
@@ -37,16 +37,16 @@ function randomNumber() {
 
 window.addEventListener("keydown", checkKeyPress, false);
 
-function checkKeyPress(key) {    
-    let inputControl  = document.querySelector('#number').value;
+function checkKeyPress(key) {
+    let inputControl = document.querySelector('#number').value;
     console.log(inputControl)
 
     if (key.keyCode == "13") {
-        if(inputControl == "") {
+        if (inputControl == "") {
             return
         }
         checkUserInput()
-    }    
+    }
 }
 
 /**
@@ -94,7 +94,7 @@ function prepareTheGame() {
     // let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     playerNameField.innerText = playerName
-   
+
     if (fetchLSBotColor.botColor == 1) {
         theGameBotColor.style.color = "#55a630";
         botName.innerText = "Lätt"
@@ -121,7 +121,7 @@ function countdown() {
         if (countDown === 0) {
             count = 10
             switchPlayer()
-           
+
         }
     }, 1000)
 }
@@ -144,27 +144,27 @@ document.querySelector('#confirm').addEventListener('click', checkUserInput)
 function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
-    
+
     // console.log(questionNum)
     if (!input || input > 20) {
         document.querySelector('.answer').textContent = "Invalid nummer"
         clearInput.value = '';
     } else if (input === questionNum) {
         document.querySelector('.answer').textContent = "Rätt nummer"
-        playerGuesses ++;
-        playerWins ++;
-        playerGames ++;
+        playerGuesses++;
+        playerWins++;
+        playerGames++;
         playerWin = true;
         updatePlayerInfoInLS()
         updateBotScore('loss')
-     
+
         console.log("Vunna spel: " + playerWins)
         clearInput.value = '';
 
-        setTimeout(()=>{           
+        setTimeout(() => {
             const endingPage = "./endscreen.html"
             window.open(endingPage, "_self")
-        },1000)
+        }, 1000)
 
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
@@ -172,11 +172,15 @@ function checkUserInput() {
         // clearInput.readOnly = true;
         clearInput.classList.add("number-nofocus");
         document.querySelector('#player-bubble').textContent = `${input}`
-        playerGuesses ++;
+        playerGuesses++;
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
 }
-
+const botIntel = [botNum, botNum2, botNum3]
+activeBot = 0;
+const botNum2 = function () {
+    Math.trunc(Math.random() * questionNum)
+}
 
 /**
  * Botlogik
@@ -187,17 +191,17 @@ function BotCompairNum() {
 
     if (activePlayer === 1) {
         let botNum = randomNumber()
-
+        ///let botNumber = botIntel[botChoice]/////
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
-            playerGames ++;
+            playerGames++;
             updatePlayerInfoInLS()
             updateBotScore('win')
             console.log('Comes here 1');
-            setTimeout(()=>{           
+            setTimeout(() => {
                 const endingPage = "./endscreen.html"
                 window.open(endingPage, "_self")
-            },1000)
+            }, 1000)
 
         } else if (questionNum !== botNum) {
             document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
@@ -208,7 +212,7 @@ function BotCompairNum() {
             switchPlayer()
         } else console.log("gameOver")
     }
-    
+
 }
 
 /**
@@ -220,7 +224,7 @@ function switchPlayer() {
     activePlayer = activePlayer === 0 ? 1 : 0
     document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
     count = 10;
-    if(input.readOnly === false) {
+    if (input.readOnly === false) {
         input.readOnly = true;
         input.classList.add("number-nofocus");
     } else if (input.readOnly === true) {
@@ -235,13 +239,13 @@ function switchPlayer() {
 ///////////// Bot2 mellan 1-20 standard
 //////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre  
 
-                       ////////////
-                //////////////////////////
+////////////
+//////////////////////////
 //////////////// STANDARDBOT LOGIC SLUT ////////////////////
-               //////////////////////////
-                    /////////////
+//////////////////////////
+/////////////
 
-                    
+
 // Toggle player speech-bubble
 function toggleBubble() {
     let bubbles = document.getElementById("bubble")
@@ -259,43 +263,43 @@ function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
     localStorage.setItem("player-games", playerGames)
     localStorage.setItem("player-guesses", playerGuesses)
-    localStorage.setItem("player-win",JSON.stringify(playerWin))
+    localStorage.setItem("player-win", JSON.stringify(playerWin))
 }
 
 function updateBotScore(result) {
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     console.log('Comes here 3');
-    if(result == 'win'){
+    if (result == 'win') {
         if (fetchLSBotColor.botColor == 1) {
-            fetchLSBotColor.easyBot.wins += 1 
+            fetchLSBotColor.easyBot.wins += 1
             fetchLSBotColor.easyBot.games += 1
         }
         if (fetchLSBotColor.botColor == 2) {
-            fetchLSBotColor.mediBot.wins += 1 
+            fetchLSBotColor.mediBot.wins += 1
             fetchLSBotColor.mediBot.games += 1
         }
         if (fetchLSBotColor.botColor == 3) {
-            fetchLSBotColor.hardBot.wins += 1 
+            fetchLSBotColor.hardBot.wins += 1
             fetchLSBotColor.hardBot.games += 1
         }
 
         localStorage.setItem("bot", JSON.stringify(fetchLSBotColor))
 
-    }else{
+    } else {
         if (fetchLSBotColor.botColor == 1) {
-   
+
             fetchLSBotColor.easyBot.games += 1
         }
         if (fetchLSBotColor.botColor == 2) {
-           
+
             fetchLSBotColor.mediBot.games += 1
         }
         if (fetchLSBotColor.botColor == 3) {
-           
+
             fetchLSBotColor.hardBot.games += 1
         }
         localStorage.setItem("bot", JSON.stringify(fetchLSBotColor))
     }
-   
-    
+
+
 }
