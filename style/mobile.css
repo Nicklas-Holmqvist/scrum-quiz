@@ -25,9 +25,9 @@
 
 /* the game */
 
-.players-container {
+/* .players-container {
   padding: 1rem 0;
-}
+} */
 
 .player-one,
 .player-two {
@@ -36,6 +36,10 @@
 
 .versus {
   padding: 1rem 0;
+}
+
+.bubble {
+  margin: 0rem 2.5rem;
 }
 
 .fas {
