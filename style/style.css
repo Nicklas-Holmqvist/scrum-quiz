@@ -14,7 +14,7 @@ html {
 body {
   margin: 0 auto;
   /* background: hsl(235, 21%, 21%); */
-  background: linear-gradient(hsl(196, 97%, 40%), hsl(196, 97%, 30%));
+  background: linear-gradient(#064258, #026082);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -35,15 +35,21 @@ h2 {
 h3 {
   text-align: center;
   font-size: 1.5rem;
+  color: #24e9ff
 }
 
 p {
   font-size: 1.2rem;
   /* color: white; */
+  color: white;
+}
+
+li {
+  color: white;
 }
 
 .time-left {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   /* color: white; */
 }
 
@@ -74,8 +80,7 @@ p {
 }
 
 .marginBtn {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  margin: 0 1rem 0 0;
 }
 
 main {
@@ -122,15 +127,15 @@ main {
 }
 
 .green {
-  color: green;
+  color: 55a630;
 }
 
 .blue {
-  color: blue;
+  color: 0072ce;
 }
 
 .red {
-  color: red;
+  color: a4161a;
 }
 
 /* Knappsmink */
@@ -142,6 +147,7 @@ main {
   background: none;
   font-size: 1.5rem;
   outline: none;
+  color: white;
 }
 
 #inputfield::placeholder {
@@ -162,16 +168,23 @@ main {
 }
 
 .btn-big {
-  padding: 0.5rem;
+  padding: .8rem;
   width: 10rem;
   border-style: none;
   background: #a0a0a0;
   color: white;
+  font-size: 1rem;
 }
 
 .colorBtn {
   background-color: #00abbe;
+  /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
+  /* font-size: 1rem; */
+  border-radius: 0.25rem;
+  /* text-shadow: 1px 1px solid; */
+  /* border: 1px solid rgb(156, 156, 156); */
+  filter: drop-shadow(2px 2px 3px #264144);
 }
 
 .fas {
@@ -199,17 +212,23 @@ main {
 }
 
 .playerbox p {
-  font-weight: 700;
+  /* font-weight: 700; */
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
-  text-shadow: 1px 1px black;
+  /* text-shadow: 1px 1px black; */
   padding-bottom: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.small-text {
+  font-size: .9rem;
 }
 
 /* Start page */
 .logo {
   width: 40rem;
-  filter: brightness(1.5);
+  filter: brightness(1.35) hue-rotate(0deg);
+  padding: 1rem 0 0 0;
 }
 
 .width70 {
@@ -219,7 +238,7 @@ main {
 /* The game */
 
 .players-container {
-  padding: 2rem 0;
+  padding: 0 0 2.3rem 0;
 }
 
 .versus {
@@ -243,7 +262,7 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
-  outline-color: #0387B7;
+  outline-color: #03b74e;
   
 }
 
@@ -257,7 +276,7 @@ main {
 }
 
 .confirm {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .figure-green {
@@ -274,49 +293,79 @@ main {
 
 /* Endscreen css */
 
+
 .endBody {
   height: 100%;
 }
 
 .vinnTitelBox {
-  height: 60vh;
-  width: 60vw;
-  background-color: gray;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
   flex-direction: column;
 }
 
-.vinnTitel {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
+.highscore {
+  margin: 1rem 0 1rem 0;  
 }
+
 .highscoreTable {
-  height: 48vh;
-  width: 55vw;
+  /* height: 50vh; */
+  /* width: 55vw; */
   margin-left: auto;
   margin-right: auto;
-  background-color: #f3f3f3;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2rem;
+}
+
+.gameSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  width: 20rem;
+  color: white;
+}
+
+#player {
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem; 
+}
+
+#scoreText {
+  width: 100%;
+  float: left;
+  font-size: 1.4rem;
+}
+
+#wins {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
+#games {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
+#guesses {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
 }
 
 .endscreenBtn {
-  display: flex;
   justify-content: space-around;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 50%;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  flex-direction: row-reverse;
+  margin: 2rem 0 0 0;
 }
-
 
 .margin-btn {
   margin-left: 1rem;
@@ -357,11 +406,10 @@ main {
 }
 
 .rule-content {
-  background-color: #f3f3f3;
+  background-color: #a0a0a0;
   font-size: 1.4rem;
   margin: 5% auto;
   padding: 4rem;
-  border: 1px solid #888;
   width: 80%;
   position: relative;
   line-height: 2rem;
@@ -396,9 +444,24 @@ main {
 
 
 /* SPEECH BUBBLES */
+.bubblebox {
+  height: 3rem;
+  width: 16rem;
+  display: flex;
+  justify-content: center;
+  /* background: red; */
+  padding: 0 0 0 0;
+}
+
+/* .bubble-placeholder { */
+  /* background: green; */
+/* } */
+
 .bubble {
   justify-content: center;
-  padding-top: 0.4rem;
+  padding-top: 1rem;
+  display: inline-block;
+  margin: 0rem 4.5rem;
 }
 
 .speech-bubble {
@@ -434,6 +497,7 @@ main {
   justify-content: center;
   display: flex;
   padding-top: 0.4rem;
+  color: #00565f;
 }
 
 .player-name, .bot-name {

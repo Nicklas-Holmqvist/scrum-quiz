@@ -23,26 +23,14 @@ let playerWin = JSON.parse(localStorage.getItem("player-win"))
 function showGameSummary() {
     if (playerWin === true) {
         document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
-        if (playerGuesses == 1) {
-            document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissning."
-        }
-        else {
-        document.querySelector('#guesses').innerHTML = "Du vann på " + playerGuesses + " gissningar."
-        }
     }
     else {
-        document.querySelector('#player').innerHTML = "Tyvärr, du förlorade!"   
-        if (playerGuesses == 1) {
-            document.querySelector('#guesses').innerHTML = "Du gissade " + playerGuesses + " gång."
-        }
-        else {
-            document.querySelector('#guesses').innerHTML = "Du gissade " + playerGuesses + " gånger."
-        }
-     
+        document.querySelector('#player').innerHTML = "Tyvärr, du förlorade!"        
     }
 
-    document.querySelector('#games').innerHTML = "Antal spelade spel: " + playerGames
-    document.querySelector('#wins').innerHTML = "Antal vunna spel: " + playerWins    
+    document.querySelector('#guesses').innerHTML = playerGuesses
+    document.querySelector('#games').innerHTML = playerGames
+    document.querySelector('#wins').innerHTML = playerWins      
 }
 
 /**
