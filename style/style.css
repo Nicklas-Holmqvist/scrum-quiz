@@ -4,7 +4,8 @@
   box-sizing: border-box;
   font-family: roboto, sans-serif;
   font-weight: 400;
-  /* color: white; */
+  color: white;
+  font-size: 1rem;
 }
 
 html {
@@ -14,7 +15,7 @@ html {
 body {
   margin: 0 auto;
   /* background: hsl(235, 21%, 21%); */
-  background: linear-gradient(hsl(196, 97%, 40%), hsl(196, 97%, 30%));
+  background: linear-gradient(#064258, #026082);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -114,23 +115,10 @@ main {
 
 .colorText {
   color: hsl(186, 100%, 57%);
-  text-shadow: 1px 1px black;
 }
 
 .bold {
   font-weight: 600;
-}
-
-.green {
-  color: green;
-}
-
-.blue {
-  color: blue;
-}
-
-.red {
-  color: red;
 }
 
 /* Knappsmink */
@@ -152,20 +140,13 @@ main {
   width: 10rem;
 }
 
-.btn-small {
-  padding: 0.5rem;
-  width: 8rem;
-  border-style: none;
-  background: #a0a0a0;
-  color: white;
-}
-
 .btn-big {
-  padding: 0.5rem;
+  padding: .8rem;
   width: 10rem;
   border-style: none;
   background: #a0a0a0;
   color: white;
+  font-size: 1rem;
 }
 
 .colorBtn {
@@ -178,8 +159,6 @@ main {
   padding: 1rem 2rem;
   /* padding-bottom: 1rem; */
   margin-top: 1.5rem;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
 }
 
 .bot-active {
@@ -201,14 +180,13 @@ main {
   font-weight: 700;
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black; */
-  text-shadow: 1px 1px black;
   padding-bottom: 1rem;
 }
 
 /* Start page */
 .logo {
   width: 40rem;
-  filter: brightness(1.5);
+  filter: brightness(1.2);
 }
 
 .width70 {
@@ -231,7 +209,6 @@ main {
   height: 2rem;
   margin: 1rem;
   color: hsl(186, 100%, 57%);
-  text-shadow: 1px 1px black;
 }
 
 .game-btn-container .btn-big {
@@ -242,6 +219,7 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
+  color: #00abbe;
 }
 
 .player-one,
@@ -250,7 +228,11 @@ main {
 }
 
 .confirm {
-  padding: 2rem;
+  padding: 1.5rem;
+}
+
+.small-text {
+  font-size: .9rem;
 }
 
 .figure-green {
@@ -262,7 +244,7 @@ main {
 }
 
 .figure-red {
-  color: #a4161a;
+  color: #B22222;
 }
 
 /* Endscreen css */
@@ -272,51 +254,78 @@ main {
 }
 
 .vinnTitelBox {
-  height: 60vh;
-  width: 60vw;
-  background-color: gray;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
   flex-direction: column;
 }
 
-.vinnTitel {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-}
 .highscoreTable {
-  height: 48vh;
+  height: 50vh;
   width: 55vw;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f3f3f3;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 2rem;
 }
 
-.endscreenBtn {
+.gameSummary {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  width: 20rem;
+  color: white;
+}
+
+#player {
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem; 
+}
+
+#scoreText {
+  width: 100%;
+  float: left;
+  font-size: 1.4rem;
+}
+
+#wins {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
+#games {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
+#guesses {
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
+.endscreenBtn {
   justify-content: space-around;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 50%;
-  margin-left: 5rem;
-  margin-right: 5rem;
 }
 
 
 .margin-btn {
   margin-left: 1rem;
 }
+
 .space-around {
   justify-content: space-around;
 }
+
 /*olofs klasser*/
 .rubrik {
   margin-bottom: 1rem;
@@ -325,6 +334,7 @@ main {
 .height100 {
   height: 100%;
 }
+
 .activeLight {
   background: rgba(255, 255, 255, 0.8);
   /* background: white; */
@@ -350,11 +360,10 @@ main {
 }
 
 .rule-content {
-  background-color: #f3f3f3;
+  background-color: #a0a0a0;
   font-size: 1.4rem;
   margin: 5% auto;
   padding: 4rem;
-  border: 1px solid #888;
   width: 80%;
   position: relative;
   line-height: 2rem;
@@ -385,7 +394,6 @@ main {
 #orderedListA {
   margin-left: 1.5rem;
 }
-/* rule box css end */
 
 
 /* SPEECH BUBBLES */
@@ -426,7 +434,8 @@ main {
   /* background: red; */
   justify-content: center;
   display: flex;
-  padding-top: 0.4rem;
+  padding-top: 0.2rem;
+  color: #00abbe;
 }
 
 .player-name, .bot-name {
