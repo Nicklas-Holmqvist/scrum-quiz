@@ -1,3 +1,16 @@
+* {
+  font-size: .8rem;
+}
+
+.btn-big {
+  padding: .7rem;
+}
+
+.confirm {
+  padding: 1.3rem;
+}
+
+
 /* start page */
 
 .media-column {
@@ -10,17 +23,25 @@
 }
 
 .logo {
-  width: 20rem;
+  width: 24rem;
 }
 
 #inputfield {
   width: 15rem;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .close {
   top: 0.5rem;
   right: 1rem;
+}
+
+.highscoreTable {
+  height: 100%;
+}
+
+.margin-mobile {
+  margin-bottom: .5rem;
 }
 
 /* the game */
@@ -46,9 +67,7 @@
   font-size: 4rem;
 }
 
-.game-btn-container .btn-big {
-  margin: 1rem 1rem;
-}
+
 
 /* .user-container {
   flex-direction: column-reverse;
@@ -103,4 +122,12 @@
 
 .ruleHeader {
   font-size: 1.5rem;
+}
+
+.gameSummary {
+  width: 15rem;
+}
+
+#player {
+  font-size: 2rem;
 }

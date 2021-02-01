@@ -64,8 +64,8 @@
                 <input type="number" name="Skriv in siffra" id="number" min="1" max="20" pattern="[0-9]" placeholder="Skriv in ett tal 1-20" onkeydown="return event.keyCode === 8 ||
                 event.keyCode === 46 ? true : !isNaN(Number(event.key))" autofocus required="">
                 <div class="game-btn-container flex center column width100">
-                    <button class="btn-big colorBtn" id="confirm">Bekräfta</button>
-                    <button class="btn-big" onclick="toggleBubble()">Visa/dölj ditt svar</button>
+                    <button class="btn-big confirm colorBtn" id="confirm">Bekräfta</button>
+                    <button class="btn-big small-text" onclick="toggleBubble()">Visa/dölj ditt svar</button>
                 </div>
             </div>
         </div>
