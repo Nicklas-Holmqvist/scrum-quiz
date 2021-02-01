@@ -91,7 +91,6 @@ activeBot.forEach((e) => {
 function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
     const playerNameField = document.querySelector('.player-name')
-    // let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     playerNameField.innerText = playerName
    
@@ -180,13 +179,33 @@ function checkUserInput() {
 
 /**
  * Botlogik
- * Tar fram ett random nummer 1-20 som jämför huvudnumret
+ * 
  */
 function BotCompairNum() {
-    let clearInput = document.querySelector('#number');
+    const clearInput = document.querySelector('#number');
+    const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
 
     if (activePlayer === 1) {
-        let botNum = randomNumber()
+
+        if(botDifficulty.botColor === 1) {
+            botEasy(clearInput)
+            console.log('lätt')
+        }
+
+        else if(botDifficulty.botColor === 2) {
+            botNormal(clearInput)
+            console.log('normal')
+        }
+
+        else if(botDifficulty.botColor === 3) {
+            botHard(clearInput)
+            console.log('svår')
+        }        
+    }    
+}
+
+function botEasy(clearInput) {
+    let botNum = randomNumber()
 
         if (questionNum === botNum) {
             document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
@@ -206,9 +225,55 @@ function BotCompairNum() {
             clearInput.focus();
             clearInput.classList.remove("number-nofocus");
             switchPlayer()
-        } else console.log("gameOver")
-    }
-    
+        } else console.log("gameOver")    
+}
+
+function botNormal(clearInput) {
+    let botNum = randomNumber()
+
+        if (questionNum === botNum) {
+            document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
+            playerGames ++;
+            updatePlayerInfoInLS()
+            updateBotScore('win')
+            console.log('Comes here 1');
+            setTimeout(()=>{           
+                const endingPage = "./endscreen.html"
+                window.open(endingPage, "_self")
+            },1000)
+
+        } else if (questionNum !== botNum) {
+            document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
+            document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+            // clearInput.readOnly = false;
+            clearInput.focus();
+            clearInput.classList.remove("number-nofocus");
+            switchPlayer()
+        } else console.log("gameOver")    
+}
+
+function botHard(clearInput) {
+    let botNum = randomNumber()
+
+        if (questionNum === botNum) {
+            document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
+            playerGames ++;
+            updatePlayerInfoInLS()
+            updateBotScore('win')
+            console.log('Comes here 1');
+            setTimeout(()=>{           
+                const endingPage = "./endscreen.html"
+                window.open(endingPage, "_self")
+            },1000)
+
+        } else if (questionNum !== botNum) {
+            document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
+            document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+            // clearInput.readOnly = false;
+            clearInput.focus();
+            clearInput.classList.remove("number-nofocus");
+            switchPlayer()
+        } else console.log("gameOver")     
 }
 
 /**
