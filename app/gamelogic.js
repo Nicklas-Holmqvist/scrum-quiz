@@ -18,6 +18,7 @@ let playerGuesses = 0;
 let playerWin = false;
 
 const activeBot = document.querySelectorAll('.bot');
+
 const theGameBotColor = document.querySelector('.figure-2');
 //let botColor;
 const timeLeftP = document.querySelector('.time-left')
@@ -33,6 +34,14 @@ function randomNumber() {
     const randomNr = Math.floor(Math.random() * 20 + 1);
 
     return randomNr
+}
+function mediumBot() {
+    return Math.trunc(Math.random() * 20 + 2)
+
+}
+function hardBot() {
+    return Math.trunc(Math.random() * 15 + 1)
+
 }
 
 window.addEventListener("keydown", checkKeyPress, false);
@@ -131,6 +140,7 @@ function countdown() {
 
 ////// Globala variabler //////////////
 const questionNum = randomNumber();
+
 const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
@@ -176,23 +186,27 @@ function checkUserInput() {
         switchPlayer()
     } else document.querySelector('.answer').textContent = "GAME OVER"
 }
-const botIntel = [botNum, botNum2, botNum3]
-activeBot = 0;
-const botNum2 = function () {
-    Math.trunc(Math.random() * questionNum)
-}
+
 
 /**
  * Botlogik
  * Tar fram ett random nummer 1-20 som jämför huvudnumret
  */
+/////// hämta botnummer från LS ////////
+botChoice = JSON.parse(localStorage.getItem("bot"))
+botChoice = botChoice.botColor
+
 function BotCompairNum() {
+    let botNum = randomNumber()
+    let botNum2 = mediumBot()
+    let botNum3 = hardBot()
+    let botIntel = [botNum, botNum2, botNum3]
     let clearInput = document.querySelector('#number');
+    let activeBotNum = botIntel[botChoice - 1]
 
     if (activePlayer === 1) {
-        let botNum = randomNumber()
-        ///let botNumber = botIntel[botChoice]/////
-        if (questionNum === botNum) {
+
+        if (questionNum === activeBotNum) {
             document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
             playerGames++;
             updatePlayerInfoInLS()
@@ -203,17 +217,19 @@ function BotCompairNum() {
                 window.open(endingPage, "_self")
             }, 1000)
 
-        } else if (questionNum !== botNum) {
-            document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
-            document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+        } else if (questionNum !== activeBotNum) {
+            document.querySelector('.answer').textContent = activeBotNum > questionNum ? "För högt nummer" : "För lågt nummer"
+            document.querySelector('#bot-bubble').textContent = ` ${activeBotNum}`
             // clearInput.readOnly = false;
             clearInput.focus();
             clearInput.classList.remove("number-nofocus");
             switchPlayer()
         } else console.log("gameOver")
     }
-
 }
+
+
+
 
 /**
  * tar bort och lägger till activeLight klassen samt kör BotcompairNum funktionen
