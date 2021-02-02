@@ -38,38 +38,40 @@ function showGameSummary() {
 /**
  * Function that compares the player's score to the highscore
  */
-function comparePlayerWithHighscore() {    
-    if (highscore === null || undefined) {
-        highscore = [];
-        highscore.push(player);
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-    }
-    else {
-        for (let i = 0; i < 3; i++) {
-            if (player.wins > highscore[i].wins) {
-                if(player.name === highscore[i].name) {
-                    highscore[i].wins = player.wins;
-                    highscore[i].games = player.games; 
-                    break;           
-                }
-                else {
-                    if(playerName === highscore[i+1].name) {
-                        highscore.splice(i+1, 1)
-                    }   
-                    if(playerName === highscore[i+2].name) {
-                        highscore.splice(i+2, 1)
+function comparePlayerWithHighscore() {
+    if (playerWin === true) {
+        if (highscore === null || undefined) {
+            highscore = [];
+            highscore.push(player);
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+        }
+        else {
+            for (let i = 0; i < 3; i++) {
+                if (playerWins > highscore[i].wins) {
+                    if(playerName === highscore[i].name) {
+                        highscore[i].wins = playerWins;
+                        highscore[i].games = playerGames; 
+                        break;           
                     }
-                    highscore.splice(i, 0, player);
-                    break;
+                    else {
+                        if(playerName === highscore[i+1].name) {
+                            highscore.splice(i+1, 1)
+                        }   
+                        if(playerName === highscore[i+2].name) {
+                            highscore.splice(i+2, 1)
+                        }
+                        highscore.splice(i, 0, player);
+                        break;
+                    }
                 }
             }
-        }
-        if(highscore.length > 5) {
-            highscore.pop;
-        }
+            if (highscore.length > 5) {
+                highscore.pop;
+            }
+        } 
     }    
 }
 
