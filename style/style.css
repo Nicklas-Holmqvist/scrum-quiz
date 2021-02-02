@@ -140,7 +140,7 @@ main {
 
 /* Knappsmink */
 #inputfield {
-  padding-left: 0.4rem;
+  padding-left: 0.2rem;
   border-style: none;
   border-bottom: 1px solid rgb(221, 221, 221);
   outline: none;
@@ -176,6 +176,7 @@ main {
   font-size: 1rem;
   border-radius: 0.25rem;
   filter: drop-shadow(2px 2px 3px #264144);
+  outline: none;
 }
 
 .colorBtn {
@@ -264,13 +265,35 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
-  outline-color: #03b74e;
-  
+  /* outline-color: #00bb38; */
+  /* outline: 3px solid #03b74e;   */
+  /* outline-style: dashed;
+  outline-width: 1rem; */
+  outline: none;
+}
+
+.number {
+  /* height: 3rem;
+  width: 10rem;
+  padding-left: 0.5rem; */
+  /* outline: 3px solid #03b74e;   */
+  /* outline-style: dashed;
+  outline-width: 1rem; */
+  /* outline-color: rgba(0, 255, 34, 0.75);
+  outline-width: 0.2rem;
+  outline-style: solid; */
+
+  box-shadow: 0px 0px 20px 10px rgb(0, 225, 255);
 }
 
 .number-nofocus {
   outline: none;
+  outline-width: 0rem;
+  outline-style: none;
+
+  box-shadow: none;
 }
+
 
 .player-one,
 .player-two {
@@ -466,6 +489,8 @@ main {
   padding-top: 1rem;
   display: inline-block;
   margin: 0rem 4.5rem;
+  animation: fade 1s;
+  transition: all 1s;
 }
 
 .speech-bubble {
@@ -506,4 +531,12 @@ main {
 
 .player-name, .bot-name {
   padding-top: 0.5rem;
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  25%   { opacity: 0.25; }
+  50%   { opacity: 0.5; }
+  75%   { opacity: 0.75; }
+  100% { opacity: 1; }
 }

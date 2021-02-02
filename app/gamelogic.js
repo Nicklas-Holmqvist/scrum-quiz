@@ -244,16 +244,32 @@ function switchPlayer() {
                     
 // Toggle player speech-bubble
 function toggleBubble() {
-    let bubbles = document.getElementById("bubble")
+    let bubbles = document.getElementById("bubble");
 
-    if (bubbles.style.visibility === "hidden") {
-        bubbles.style.visibility = "visible";
+    if (bubbles.style.opacity === "0") {
+        bubbles.style.opacity = "1";
+        // fadeAnimation();
     }
     else {
-        bubbles.style.visibility = "hidden";
+        bubbles.style.opacity = "0";
     }
 }
 
+// function fadeAnimation() {
+//     let op = 1;
+//     let timer = setInterval(function () {
+//         if (op <= 0.1){
+//             clearInterval(timer);
+//             bubble.style.display = 'none';
+//         }
+//         bubble.style.opacity = op;
+//         bubble.style.filter = 'alpha(opacity=' + op * 100 + ")";
+//         op -= op * 0.1;
+//     }, 1000);
+
+//  CLASS ADD
+//  clearInput.classList.add("number-nofocus");
+// }
 
 function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
