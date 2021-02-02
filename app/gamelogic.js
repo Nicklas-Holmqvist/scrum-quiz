@@ -19,7 +19,6 @@ let playerWin = false;
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
-//let botColor;
 const timeLeftP = document.querySelector('.time-left')
 let count = 10;
 console.log(count)
@@ -48,42 +47,6 @@ function checkKeyPress(key) {
         checkUserInput()
     }    
 }
-
-/**
- * Function that sets focus on active bot on page Choose difficulty
- */
-activeBot.forEach((e) => {
-
-    e.addEventListener('click', () => {
-        if (e.classList.contains('bot-active')) {
-            e.classList.remove('bot-active')
-        }
-        else if (!e.classList.contains('bot-active')) {
-            activeBot.forEach((i) => {
-                i.classList.remove('bot-active')
-            })
-            e.classList.add('bot-active')
-
-            // if (e.classList.contains('figure-green')) {
-            //    // botColor = 1;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("easy-bot", botColor)
-            // }
-
-            // else if (e.classList.contains('figure-blue')) {
-            //     // botColor = 2;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("medium-bot", botColor)
-            // }
-
-            // else if (e.classList.contains('figure-red')) {
-            //     // botColor = 3;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("hard-bot", botColor)
-            // }
-        }
-    })
-})
 
 /**
  * Function to prepare theGame with information from localstorage
@@ -134,7 +97,6 @@ const answer = document.querySelector('.answer').textContent = " "
 let activePlayer = 0;
 document.querySelector(`.player--${activePlayer}`).classList.add('activeLight')
 
-
 document.querySelector('#confirm').addEventListener('click', checkUserInput)
 
 /**
@@ -177,10 +139,9 @@ function checkUserInput() {
     } else document.querySelector('.answer').textContent = "GAME OVER"
 }
 
-
 /**
- * Botlogik
- * 
+ * Botlogic
+ * Choose the right bot answer
  */
 function BotCompairNum() {
     const clearInput = document.querySelector('#number');
@@ -202,6 +163,10 @@ function BotCompairNum() {
     }    
 }
 
+/**
+ * Function that gives right answer
+ * @param {Number} botNum 
+ */
 function botRightAnswer(botNum) {
     document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
     playerGames ++;
@@ -214,6 +179,11 @@ function botRightAnswer(botNum) {
     },1000)
 }
 
+/**
+ * Function that gives wrong answer
+ * @param {Number} botNum 
+ * @param {Input} clearInput 
+ */
 function botWrongAnswer(botNum, clearInput) {
     document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
     document.querySelector('#bot-bubble').textContent = ` ${botNum}`
@@ -222,8 +192,12 @@ function botWrongAnswer(botNum, clearInput) {
     switchPlayer()
 }
 
+/**
+ * Function for the easy player
+ * @param {Input} clearInput 
+ */
 function botEasy(clearInput) {
-    let botNum = randomNumber()
+    
         if (questionNum === botNum) {
             botWrongAnswer(botNum, clearInput)
         } else if (questionNum !== botNum) {
@@ -231,6 +205,10 @@ function botEasy(clearInput) {
         } else console.log("gameOver")    
 }
 
+/**
+ * Function for the normal bot
+ * @param {Input} clearInput 
+ */
 function botNormal(clearInput) {
     let botNum = randomNumber()
 
@@ -241,12 +219,15 @@ function botNormal(clearInput) {
     } else console.log("gameOver")    
 }
 
+/**
+ * Function for the hard bot
+ * @param {Input} clearInput 
+ */
 function botHard(clearInput) {
-    let botNum = randomNumber()
     let textHighLow = document.querySelector('.answer').innerText;
     let playerInput = parseInt(localStorage.getItem("player-answer"))
-    let botLower = Math.floor(Math.random()*playerInput)+1
     let topNumber = 20;
+    let botLower = Math.floor(Math.random()*playerInput)+1
     let botHigher = Math.floor(Math.random()*topNumber)+playerInput
     
 
@@ -303,9 +284,6 @@ function switchPlayer() {
         BotCompairNum()
     }, 1000 * (Math.random() * 2 + 4));
 }
-////////////// bot1 vinner aldgig om den får rätt siffra kör en if så att den får fel
-///////////// Bot2 mellan 1-20 standard
-//////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre  
 
                        ////////////
                 //////////////////////////
@@ -325,7 +303,6 @@ function toggleBubble() {
         bubbles.style.visibility = "hidden";
     }
 }
-
 
 function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
