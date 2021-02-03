@@ -22,6 +22,7 @@ body {
   flex-direction: column;
 }
 
+
 h1 {
   text-align: center;
   font-size: 3rem;
@@ -35,7 +36,7 @@ h2 {
 h3 {
   text-align: center;
   font-size: 1.5rem;
-  color: #24e9ff
+  color: hsl(186, 100%, 55%);
 }
 
 p {
@@ -118,7 +119,7 @@ main {
 }
 
 .colorText {
-  color: hsl(186, 100%, 57%);
+  color: hsl(186, 100%, 55%);
   text-shadow: 1px 1px black;
 }
 
@@ -174,10 +175,11 @@ main {
   background: #a0a0a0;
   color: white;
   font-size: 1rem;
+  border-radius: 0.25rem;
 }
 
 .colorBtn {
-  background-color: #00abbe;
+  background-color: #40C7DA;
   /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
   /* font-size: 1rem; */
@@ -224,10 +226,15 @@ main {
   font-size: .9rem;
 }
 
+.logo-small {
+  width: 15rem;
+  filter: brightness(1.15) hue-rotate(0deg);
+}
+
 /* Start page */
 .logo {
   width: 40rem;
-  filter: brightness(1.35) hue-rotate(0deg);
+  filter: brightness(1.15) hue-rotate(0deg);
   padding: 1rem 0 0 0;
 }
 
@@ -236,6 +243,14 @@ main {
 }
 
 /* The game */
+
+.background {
+  background-image:url("/assets/logo-opacity1.png");
+  background-size:cover;
+  background-position: top center;
+  background-size: 48rem;
+  background-repeat: no-repeat, no-repeat;
+}
 
 .players-container {
   padding: 0 0 2.3rem 0;
@@ -403,10 +418,11 @@ main {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  color: white;
 }
 
 .rule-content {
-  background-color: #a0a0a0;
+  background: linear-gradient(#064258, #026082);
   font-size: 1.4rem;
   margin: 5% auto;
   padding: 4rem;
@@ -421,7 +437,7 @@ main {
 }
 
 .close {
-  color: black;
+  color: rgb(255, 255, 255);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -432,7 +448,7 @@ main {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #00abbe;
   text-decoration: none;
   cursor: pointer;
 }
