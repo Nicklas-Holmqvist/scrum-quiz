@@ -27,7 +27,7 @@ function showGameSummary() {
         document.querySelector('#player').innerHTML = "Grattis " + playerName + "!"
     }
     else {
-        document.querySelector('#player').innerHTML = "Tyvärr, du förlorade!"        
+        document.querySelector('#player').innerHTML = "Du förlorade!"        
     }
 
     document.querySelector('#guesses').innerHTML = playerGuesses
