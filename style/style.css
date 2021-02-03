@@ -51,6 +51,8 @@ li {
 .time-left {
   font-size: 1.3rem;
   /* color: white; */
+  animation: flip 1s;
+  /* transition: all 1s; */
 }
 
 .bots {
@@ -149,8 +151,8 @@ main {
   outline: none;
   color: white;
 
-  /* animation: scale 1s; */
-  /* transition: all 1s; */
+  animation: scale 1s;
+  transition: all 1s;
 }
 
 #inputfield::placeholder {
@@ -182,6 +184,7 @@ main {
   filter: drop-shadow(2px 2px 3px #264144);
   outline: none;
   animation: scale 1s forwards;
+  transition: all 1s;
 }
 
 
@@ -316,7 +319,8 @@ main {
   outline-style: none;
 
   /* box-shadow: none; */
-  box-shadow: 0px 0px 5px 3px rgb(255, 0, 0);
+  /* box-shadow: 0px 0px 5px 3px rgb(255, 0, 0); */
+  box-shadow: 0px 0px 5px 2px rgb(255, 0, 0);
 }
 
 
@@ -343,6 +347,7 @@ main {
 
 .figure-1, .figure-2 {
   animation: scale 1s;
+  transition: all 0.5s;
 }
 
 /* Endscreen css */
@@ -440,8 +445,8 @@ main {
   /* background: white; */
   opacity: 0.9;
   /* box-shadow: 3px 3px 10px 4px #00abbe; */
-  -webkit-box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%); 
-  box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%);
+  -webkit-box-shadow: 0px 0px 15px 2px hsl(186, 100%, 57%); 
+  box-shadow: 0px 0px 15px 2px hsl(186, 100%, 57%);
 }
 
 /* Rule box css */
