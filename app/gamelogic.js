@@ -6,8 +6,7 @@ function main() {
 
 function addEventListeners() {
     prepareTheGame()
-    countdown()
-    
+    countdown()    
 }
 // Globala variabler för spelaren
 
@@ -45,6 +44,41 @@ function checkKeyPress(key) {
         checkUserInput()
     }    
 }
+
+// Hover function for buttons
+const hover = document.querySelectorAll('.btn-big');
+
+hover.forEach((e) => {
+    
+    e.addEventListener("mouseover", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        else if (!e.classList.contains('hoverbutton')) {
+            hover.forEach((i) => {
+                i.classList.remove('hoverbutton')
+            })
+            e.classList.add('hoverbutton')  
+        } 
+    }
+    )
+
+    e.addEventListener("mouseout", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        // else if (!e.classList.contains('hoverbutton')) {
+        //     hover.forEach((i) => {
+        //         i.classList.remove('hoverbutton')
+        //     })
+        //     e.classList.add('hoverbutton')  
+        // } 
+    }
+    )
+}
+)
 
 /**
  * Function to prepare theGame with information from localstorage
@@ -102,6 +136,7 @@ function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
     
+    
     if (!input || input > 20) {
         document.querySelector('.answer').textContent = "Invalid nummer"
         clearInput.value = '';
@@ -114,6 +149,7 @@ function checkUserInput() {
         updatePlayerInfoInLS()
         updateBotScore('loss')
      
+       
         clearInput.value = '';
 
         setTimeout(()=>{           
@@ -138,13 +174,13 @@ function checkUserInput() {
  */
 function BotCompairNum() {
     const clearInput = document.querySelector('#number');
-    const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
+    const botDifficulty = JSON.parse(localStorage.getItem("bot"))   
+    
 
     if (activePlayer === 1) {
 
         if(botDifficulty.botColor === 1) {
-            botEasy(clearInput)
-            
+            botEasy(clearInput)          
         }
 
         else if(botDifficulty.botColor === 2) {
@@ -152,7 +188,29 @@ function BotCompairNum() {
         }
 
         else if(botDifficulty.botColor === 3) {
-            botHard(clearInput)
+            botHard(clearInput)        }        
+    }    
+}
+
+function timerBot() {
+    const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
+    const timerEasy =  1000* (Math.round(Math.random()*6)+4)
+    const timerNormal =  1000* (Math.round(Math.random()*3))
+    console.log(timerNormal)
+    const timerHard =  1000* (Math.round(Math.random()*1)+1)
+
+    if (activePlayer === 1) {
+
+        if(botDifficulty.botColor === 1) {
+            setTimeout(BotCompairNum, timerEasy)            
+        }
+
+        else if(botDifficulty.botColor === 2) {
+            setTimeout(BotCompairNum, timerNormal)
+        }
+
+        else if(botDifficulty.botColor === 3) {
+            setTimeout(BotCompairNum, timerHard)
         }        
     }    
 }
@@ -233,8 +291,6 @@ function botHard(clearInput) {
             else if (questionNum !== botHigher) {
                 document.querySelector('.answer').textContent = botHigher > questionNum ? "För högt nummer" : "För lågt nummer"
                 document.querySelector('#bot-bubble').textContent = ` ${botHigher}`
-                clearInput.focus();
-                clearInput.classList.remove("number-nofocus");
                 switchPlayer()
             }     
         }   
@@ -257,23 +313,43 @@ function switchPlayer() {
         input.readOnly = false
         input.classList.remove("number-nofocus");
     }
-    setTimeout(() => {
-        BotCompairNum()
-    }, 1000 * (Math.random() * 2 + 4));
+    timerBot()
+    //BotCompairNum()
+    // setTimeout(() => {
+    //     BotCompairNum()
+    // }, (Math.random()*1));
+
+    
 }
 
 // Toggle player speech-bubble
 function toggleBubble() {
-    let bubbles = document.getElementById("bubble")
+    let bubbles = document.getElementById("bubble");
 
-    if (bubbles.style.visibility === "hidden") {
-        bubbles.style.visibility = "visible";
+    if (bubbles.style.opacity === "0") {
+        bubbles.style.opacity = "1";
+        // fadeAnimation();
     }
     else {
-        bubbles.style.visibility = "hidden";
+        bubbles.style.opacity = "0";
     }
 }
 
+// function fadeAnimation() {
+//     let op = 1;
+//     let timer = setInterval(function () {
+//         if (op <= 0.1){
+//             clearInterval(timer);
+//             bubble.style.display = 'none';
+//         }
+//         bubble.style.opacity = op;
+//         bubble.style.filter = 'alpha(opacity=' + op * 100 + ")";
+//         op -= op * 0.1;
+//     }, 1000);
+
+//  CLASS ADD
+//  clearInput.classList.add("number-nofocus");
+// }
 
 function updatePlayerInfoInLS() {
     localStorage.setItem("player-wins", playerWins)
