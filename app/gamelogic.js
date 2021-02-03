@@ -88,7 +88,6 @@ function countdown() {
     }, 1000)
 }
 
-////////////// STANDARDBOT LOGIK /////////
 
 
 ////// Globala variabler //////////////
