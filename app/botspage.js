@@ -29,6 +29,8 @@ let bot = {
  */
 activeBot.forEach((e) => {
 
+    let history = JSON.parse(localStorage.getItem("bot"))
+
     e.addEventListener('click', () => {
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
@@ -44,18 +46,41 @@ activeBot.forEach((e) => {
 
             if (e.classList.contains('figure-green')) {                
                 bot.botColor = 1
-                localStorage.setItem("bot", JSON.stringify(bot))
+               
+                if (history) {
+                    history.botColor = 1
+                    localStorage.setItem("bot", JSON.stringify(history))
+                }
+                else {
+                    localStorage.setItem("bot", JSON.stringify(bot))
+                }
+                
             }
-
+ 
             else if (e.classList.contains('figure-blue')) {
                 bot.botColor = 2
-                localStorage.setItem("bot",  JSON.stringify(bot))
+                
+                if (history) {
+                   
+                   console.log('helu', history.botColor = 2);
+                    localStorage.setItem("bot", JSON.stringify(history))
+                }
+                else {
+                    localStorage.setItem("bot", JSON.stringify(bot))
+                }
+ 
             }
-
+ 
             else if (e.classList.contains('figure-red')) {
                 bot.botColor = 3
-                localStorage.setItem("bot",  JSON.stringify(bot))
+                if (history) {
+                    history.botColor =3
+                    localStorage.setItem("bot", JSON.stringify(history))
+                }
+                else {
+                    localStorage.setItem("bot", JSON.stringify(bot))
+                }
             }
         }
     })
-})  
+}) 
