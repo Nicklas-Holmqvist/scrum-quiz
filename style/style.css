@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: roboto, sans-serif;
   font-weight: 400;
-  /* color: white; */
 }
 
 html {
@@ -13,7 +12,6 @@ html {
 
 body {
   margin: 0 auto;
-  /* background: hsl(235, 21%, 21%); */
   background: linear-gradient(#064258, #026082);
   height: 100%;
   display: flex;
@@ -45,7 +43,6 @@ h3 {
 
 p {
   font-size: 1.2rem;
-  /* color: white; */
   color: white;
 }
 
@@ -55,9 +52,7 @@ li {
 
 .time-left {
   font-size: 1.3rem;
-  /* color: white; */
   animation: flip 1s;
-  /* transition: all 1s; */
 }
 
 .bots {
@@ -68,6 +63,14 @@ li {
 
 .bot-img {
   width: 12rem;
+}
+
+.margin-top {
+  margin-top: 3rem;
+}
+
+.margin-bottom {
+  margin-bottom: 3rem;
 }
 
 .margin05 {
@@ -91,7 +94,6 @@ li {
 }
 
 main {
-  /* background: rgb(161, 214, 228); */
   max-width: 60rem;
   width: 100%;
   margin: 0 auto;
@@ -155,14 +157,12 @@ main {
   font-size: 1.5rem;
   outline: none;
   color: white;
-
-  animation: scale 1s;
-  transition: all 1s;
+  animation: flip 1s ease;
+  transition: all 1s ease;
 }
 
 #inputfield::placeholder {
   color: white;
-  /* text-align: center; */
 }
 
 .btn {
@@ -188,41 +188,27 @@ main {
   border-radius: 0.25rem;
   filter: drop-shadow(2px 2px 3px #264144);
   outline: none;
-  animation: scale 1s forwards;
-  /* transition: all 1s; */
+  animation: scale 1s ease;
 }
 
 .hoverbutton {
-  /* animation: scalegrow 1s forwards; */
   background: linear-gradient(#37aad4, #51a4c2);
-  /* background: rgb(9, 123, 189); */
 }
 
 .colorBtn {
   background-color: #40C7DA;
-  /* background: linear-gradient(#37aad4, #51a4c2); */
-  /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
-  /* font-size: 1rem; */
-  /* text-shadow: 1px 1px solid; */
-  /* border: 1px solid rgb(156, 156, 156); */
   border-radius: 0.25rem;
   filter: drop-shadow(2px 2px 3px #264144);
 }
 
 .colorBtn:hover {
-  /* background: rgb(9, 123, 189); */
   background: linear-gradient(#37aad4, #51a4c2);
-  /* background: #afbec0; */
-  /* filter: brightness(0.8); */
-  /* background: #3292af; */
-  /* animation: flip 1s; */
 }
 
 .fas {
   font-size: 10rem;
   padding: 1rem 2rem;
-  /* padding-bottom: 1rem; */
   margin-top: 1.5rem;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
@@ -231,7 +217,6 @@ main {
 .bot-active {
   background: rgb(230, 230, 230);
   opacity: 0.9;
-  /* border: 1px solid black; */
 }
 
 .confirm-bot {
@@ -255,10 +240,6 @@ main {
 }
 
 .playerbox p {
-  /* font-weight: 700; */
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black; */
-  /* text-shadow: 1px 1px black; */
   padding-bottom: 1rem;
   color: rgb(255, 255, 255);
 }
@@ -269,7 +250,8 @@ main {
 
 .logo-small {
   width: 15rem;
-  filter: brightness(1.15) hue-rotate(0deg);
+  filter: brightness(1.15);
+  animation: scale 1.5s ease;
 }
 
 /* Start page */
@@ -277,7 +259,7 @@ main {
   width: 40rem;
   filter: brightness(1.15) hue-rotate(0deg);
   padding: 1rem 0 0 0;
-  animation: scale 1.5s;
+  animation: scale 1.5s ease;
 }
 
 .width70 {
@@ -285,7 +267,6 @@ main {
 }
 
 /* The game */
-
 .background {
   background-image:url("/assets/logo-opacity1.png");
   background-size:cover;
@@ -298,17 +279,16 @@ main {
   padding: 0 0 2.3rem 0;
 }
 
-.versus {
-  padding: 0 2rem;
-  color: #00abbe;
-}
-
 .answer {
   font-size: 2rem;
   height: 2rem;
   margin: 1rem;
   color: hsl(186, 100%, 57%);
   text-shadow: 1px 1px black;
+}
+
+.game-status {
+  margin-bottom: 1rem;
 }
 
 .game-btn-container .btn-big {
@@ -319,36 +299,19 @@ main {
   height: 3rem;
   width: 10rem;
   padding-left: 0.5rem;
-  /* outline-color: #00bb38; */
-  /* outline: 3px solid #03b74e;   */
-  /* outline-style: dashed;
-  outline-width: 1rem; */
   outline: none;
-  /* backdrop-filter: opacity(0.2); */
 }
 
 .number {
-  /* height: 3rem;
-  width: 10rem;
-  padding-left: 0.5rem; */
-  /* outline: 3px solid #03b74e;   */
-  /* outline-style: dashed;
-  outline-width: 1rem; */
-  /* outline-color: rgba(0, 255, 34, 0.75);
-  outline-width: 0.2rem;
-  outline-style: solid; */
-
-  box-shadow: 0px 0px 5px 2px rgb(0, 255, 85);
+  box-shadow: 0px 0px 10px 2px rgb(0, 255, 85);
+  transition: all 1s;
 }
 
 .number-nofocus {
   outline: none;
   outline-width: 0rem;
   outline-style: none;
-
-  /* box-shadow: none; */
-  /* box-shadow: 0px 0px 5px 3px rgb(255, 0, 0); */
-  box-shadow: 0px 0px 5px 2px rgb(255, 0, 0);
+  box-shadow: 0px 0px 5px 1px #ffffff;
 }
 
 .player-one,
@@ -397,8 +360,6 @@ main {
 }
 
 .highscoreTable {
-  /* height: 50vh; */
-  /* width: 55vw; */
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -461,6 +422,7 @@ main {
 .space-around {
   justify-content: space-around;
 }
+
 /*olofs klasser*/
 .rubrik {
   margin-bottom: 1rem;
@@ -471,15 +433,12 @@ main {
 }
 .activeLight {
   background: rgba(255, 255, 255, 0.8);
-  /* background: white; */
   opacity: 0.9;
-  /* box-shadow: 3px 3px 10px 4px #00abbe; */
   -webkit-box-shadow: 0px 0px 15px 2px hsl(186, 100%, 57%);
   box-shadow: 0px 0px 15px 2px hsl(186, 100%, 57%);
 }
 
 /* Rule box css */
-
 .rule-box {
   display: none;
   position: fixed;
@@ -495,7 +454,6 @@ main {
 }
 
 .rule-content {
-  /* background-color: #a0a0a0; */
   background: linear-gradient(#064258, #026082);
   border: 1px solid white;
   font-size: 1.4rem;
@@ -539,13 +497,9 @@ main {
   width: 16rem;
   display: flex;
   justify-content: center;
-  /* background: red; */
   padding: 0 0 0 0;
+  margin-bottom: 0.5rem;
 }
-
-/* .bubble-placeholder { */
-/* background: green; */
-/* } */
 
 .bubble {
   justify-content: center;
@@ -562,7 +516,6 @@ main {
   border-radius: 0.4em;
   width: 3rem;
   height: 2rem;
-  /* border: 1px solid black; */
   justify-content: center;
   align-items: center;
 }
@@ -580,12 +533,9 @@ main {
   border-left: 0;
   margin-left: -10px;
   margin-bottom: -10px;
-  /* border-left: 1px solid; */
 }
 
 .p-bubble {
-  /* padding-left: 1rem;   */
-  /* background: red; */
   justify-content: center;
   display: flex;
   padding-top: 0.4rem;
@@ -637,7 +587,6 @@ main {
 }
 
 @keyframes flip {
-  /* 0% { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); } */
   0% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
