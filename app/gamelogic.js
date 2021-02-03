@@ -18,14 +18,8 @@ let playerWin = false;
 
 const activeBot = document.querySelectorAll('.bot');
 const theGameBotColor = document.querySelector('.figure-2');
-//let botColor;
 const timeLeftP = document.querySelector('.time-left')
 let count = 10;
-
-
-
-  
-
 
 /**
  * Function that creates an random number between 1-20
@@ -42,7 +36,6 @@ window.addEventListener("keydown", checkKeyPress, false);
 
 function checkKeyPress(key) {    
     let inputControl  = document.querySelector('#number').value;
-    console.log(inputControl)
 
     if (key.keyCode == "13") {
         if(inputControl == "") {
@@ -88,48 +81,11 @@ hover.forEach((e) => {
 )
 
 /**
- * Function that sets focus on active bot on page Choose difficulty
- */
-activeBot.forEach((e) => {
-
-    e.addEventListener('click', () => {
-        if (e.classList.contains('bot-active')) {
-            e.classList.remove('bot-active')
-        }
-        else if (!e.classList.contains('bot-active')) {
-            activeBot.forEach((i) => {
-                i.classList.remove('bot-active')
-            })
-            e.classList.add('bot-active')
-
-            // if (e.classList.contains('figure-green')) {
-            //    // botColor = 1;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("easy-bot", botColor)
-            // }
-
-            // else if (e.classList.contains('figure-blue')) {
-            //     // botColor = 2;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("medium-bot", botColor)
-            // }
-
-            // else if (e.classList.contains('figure-red')) {
-            //     // botColor = 3;
-            //     // localStorage.setItem("bot-color", botColor)
-            //     localStorage.setItem("hard-bot", botColor)
-            // }
-        }
-    })
-})
-
-/**
  * Function to prepare theGame with information from localstorage
  */
 function prepareTheGame() {
     const botName = document.querySelector('.bot-name')
     const playerNameField = document.querySelector('.player-name')
-    // let fetchLSBotColor = JSON.parse(localStorage.getItem("bot-color"))
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
     playerNameField.innerText = playerName
    
@@ -164,9 +120,6 @@ function countdown() {
     }, 1000)
 }
 
-////////////// STANDARDBOT LOGIK /////////
-
-
 ////// Globala variabler //////////////
 const questionNum = randomNumber();
 const answer = document.querySelector('.answer').textContent = " "
@@ -183,7 +136,7 @@ function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
     
-    // console.log(questionNum)
+    
     if (!input || input > 20) {
         document.querySelector('.answer').textContent = "Invalid nummer"
         clearInput.value = '';
@@ -196,7 +149,7 @@ function checkUserInput() {
         updatePlayerInfoInLS()
         updateBotScore('loss')
      
-        console.log("Vunna spel: " + playerWins)
+       
         clearInput.value = '';
 
         setTimeout(()=>{           
@@ -205,7 +158,7 @@ function checkUserInput() {
         },1000)
 
     } else if (input !== questionNum) {
-        document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt "
+        document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt"
         clearInput.value = '';
         // clearInput.readOnly = true;
         clearInput.classList.add("number-nofocus");
@@ -215,38 +168,133 @@ function checkUserInput() {
     } else document.querySelector('.answer').textContent = "GAME OVER"
 }
 
-
 /**
  * Botlogik
- * Tar fram ett random nummer 1-20 som jämför huvudnumret
+ * 
  */
 function BotCompairNum() {
-    let clearInput = document.querySelector('#number');
+    const clearInput = document.querySelector('#number');
+    const botDifficulty = JSON.parse(localStorage.getItem("bot"))   
+    
 
     if (activePlayer === 1) {
-        let botNum = randomNumber()
 
+        if(botDifficulty.botColor === 1) {
+            botEasy(clearInput)          
+        }
+
+        else if(botDifficulty.botColor === 2) {
+            botNormal(clearInput)
+        }
+
+        else if(botDifficulty.botColor === 3) {
+            botHard(clearInput)        }        
+    }    
+}
+
+function timerBot() {
+    const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
+    const timerEasy =  1000* (Math.round(Math.random()*6)+4)
+    const timerNormal =  1000* (Math.round(Math.random()*3))
+    console.log(timerNormal)
+    const timerHard =  1000* (Math.round(Math.random()*1)+1)
+
+    if (activePlayer === 1) {
+
+        if(botDifficulty.botColor === 1) {
+            setTimeout(BotCompairNum, timerEasy)            
+        }
+
+        else if(botDifficulty.botColor === 2) {
+            setTimeout(BotCompairNum, timerNormal)
+        }
+
+        else if(botDifficulty.botColor === 3) {
+            setTimeout(BotCompairNum, timerHard)
+        }        
+    }    
+}
+
+function botRightAnswer(botNum) {
+    document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
+    playerGames ++;
+    updatePlayerInfoInLS()
+    updateBotScore('win')
+    
+    setTimeout(()=>{           
+        const endingPage = "./endscreen.html"
+        window.open(endingPage, "_self")
+    },1000)
+}
+
+function botWrongAnswer(botNum, clearInput) {
+    document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
+    document.querySelector('#bot-bubble').textContent = ` ${botNum}`
+    clearInput.focus();
+    clearInput.classList.remove("number-nofocus");
+    switchPlayer()
+}
+
+function botEasy(clearInput) {
+    let botNum = randomNumber()
         if (questionNum === botNum) {
-            document.querySelector('.answer').textContent = "Boten gissade rätt nummer"
-            playerGames ++;
-            updatePlayerInfoInLS()
-            updateBotScore('win')
-            console.log('Comes here 1');
-            setTimeout(()=>{           
-                const endingPage = "./endscreen.html"
-                window.open(endingPage, "_self")
-            },1000)
-
+            botWrongAnswer(botNum, clearInput)
         } else if (questionNum !== botNum) {
-            document.querySelector('.answer').textContent = botNum > questionNum ? "För högt nummer" : "För lågt nummer"
-            document.querySelector('#bot-bubble').textContent = ` ${botNum}`
-            // clearInput.readOnly = false;
+            botWrongAnswer(botNum, clearInput)
+        }     
+}
+
+function botNormal(clearInput) {
+    let botNum = randomNumber()
+
+    if (questionNum === botNum) {
+        botRightAnswer(botNum)
+    } else if (questionNum !== botNum) {
+        botWrongAnswer(botNum, clearInput)
+    }     
+}
+
+/**
+ * Function for the hard bot
+ * @param {Input} clearInput 
+ */
+function botHard(clearInput) {
+    let textHighLow = document.querySelector('.answer').innerText;
+    let playerInput = parseInt(localStorage.getItem("player-answer"))
+    let topNumber = 20;
+    let botLower = Math.floor(Math.random()*playerInput)+1
+    let botHigher = Math.floor(Math.random()*topNumber)+playerInput
+    
+
+    if(textHighLow === "För högt") {
+        
+        if (questionNum === botLower) {
+            botRightAnswer()
+         }
+        else if (questionNum !== botLower) {
+            document.querySelector('.answer').textContent = botLower > questionNum ? "För högt nummer" : "För lågt nummer"
+            document.querySelector('#bot-bubble').textContent = ` ${botLower}`
             clearInput.focus();
             clearInput.classList.remove("number-nofocus");
             switchPlayer()
-        } else console.log("gameOver")
-    }
-    
+        }     
+    } 
+
+    if(textHighLow === "För lågt nummer") {      
+        if(botHigher>20) {
+            botHard()
+        }
+        else if(botHigher <=20) {
+            if (questionNum === botHigher) {
+                botRightAnswer()
+             }
+            else if (questionNum !== botHigher) {
+                document.querySelector('.answer').textContent = botHigher > questionNum ? "För högt nummer" : "För lågt nummer"
+                document.querySelector('#bot-bubble').textContent = ` ${botHigher}`
+                switchPlayer()
+            }     
+        }   
+    }    
 }
 
 /**
@@ -265,21 +313,15 @@ function switchPlayer() {
         input.readOnly = false
         input.classList.remove("number-nofocus");
     }
-    setTimeout(() => {
-        BotCompairNum()
-    }, 1000 * (Math.random() * 2 + 4));
+    timerBot()
+    //BotCompairNum()
+    // setTimeout(() => {
+    //     BotCompairNum()
+    // }, (Math.random()*1));
+
+    
 }
-////////////// bot1 vinner aldgig om den får rätt siffra kör en if så att den får fel
-///////////// Bot2 mellan 1-20 standard
-//////////// Bot3 beräknar span mellan senaste svaret och högre eller lägre  
 
-                       ////////////
-                //////////////////////////
-//////////////// STANDARDBOT LOGIC SLUT ////////////////////
-               //////////////////////////
-                    /////////////
-
-                    
 // Toggle player speech-bubble
 function toggleBubble() {
     let bubbles = document.getElementById("bubble");
@@ -318,7 +360,6 @@ function updatePlayerInfoInLS() {
 
 function updateBotScore(result) {
     let fetchLSBotColor = JSON.parse(localStorage.getItem("bot"))
-    console.log('Comes here 3');
     if(result == 'win'){
         if (fetchLSBotColor.botColor == 1) {
             fetchLSBotColor.easyBot.wins += 1 

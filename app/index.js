@@ -3,8 +3,34 @@
 // Global variables
 
 let playerName = "";
+let playerList = JSON.parse(localStorage.getItem("player-list"))
 let playerWins = 0;
 let playerGames = 0;
+
+function checkPlayerLogin() {
+    
+    if (playerList === null || undefined) {
+        playerList = [];
+        player = {name: playerName, wins: playerWins, games: playerGames}
+        playerList.push(player);
+    }
+    else {
+        for (let i = 0; i < playerList.length; i++) {
+            if (playerList[i].name === playerName) {
+                playerWins = playerList[i].wins;
+                playerGames = playerList[i].games;
+            }
+        }
+        if (playerGames === 0) {
+            player = {name: playerName, wins: playerWins, games: playerGames}
+            playerList.push(player);
+        }
+
+    }
+}
+ 
+
+
 
 //rule box javascript
 const ruleBox = document.getElementById("ruleContBox"); //the whole rule box
@@ -75,39 +101,28 @@ function checkKeyPress(key) {
         if(inputControl == "") {
             return
         }
-        goToBotPage()
+        loginAndGoToBotPage()
     }  
 }
 
-startGameButton.addEventListener("click", goToBotPage)
+startGameButton.addEventListener("click", loginAndGoToBotPage)
 
 /**
  * Moves to the bots page
  */
 
-function goToBotPage() {
+function loginAndGoToBotPage() {
     playerName = document.getElementById("inputfield").value;
-    checkPlayerDetails();
-    savePlayerInLS();
-    window.location.href="./bots.html";
-} 
-
-/**
- * Checks and updates player details from local storage if player already exists
- */
-
-function checkPlayerDetails() {
-    let highscore = JSON.parse(localStorage.getItem("highscore"))
-    if (highscore !== null || undefined) {
-        for (i=0; i < highscore.length; i++) {
-            if (highscore[i].name === playerName) {
-                playerWins = highscore[i].wins;
-                playerGames = highscore[i].games;
-                break;
-            }
-        }
+    if (playerName === "") {
+        alert("Skriv in ditt namn för att börja spela")
+    }
+    else {
+        checkPlayerLogin();
+        savePlayerInLS();
+        window.location.href="./bots.html";
     }
 } 
+
 
 /**
  * Saves player data in local storage
@@ -117,4 +132,5 @@ function savePlayerInLS() {
     localStorage.setItem("player-name", playerName);
     localStorage.setItem("player-wins", playerWins);
     localStorage.setItem("player-games", playerGames);
+    localStorage.setItem('player-list',JSON.stringify(playerList));
 }

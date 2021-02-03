@@ -230,6 +230,17 @@ main {
   /* border: 1px solid black; */
 }
 
+.confirm-bot {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.confirm-bot-active {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+}
+
 .green-bot {
   color: green;
 }

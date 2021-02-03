@@ -1,23 +1,7 @@
-window.addEventListener('load', main)
-
-function main() {
-    addEventListeners()
-}
-
-function addEventListeners() {
-    // animateBot();    
-}
 
 
 const activeBot = document.querySelectorAll('.bot');
-
-
-// ANIMATION EFFECTS
-function animateBot() {
-    document.querySelector
-    gsap.from("#bot-active", {duration: 3, x: 300, opacity: 0, scale: 0.5});
-}
-
+const cofirmBtn = document.querySelector(".confirm-bot")
 //let botColor;
 
 let bot = {
@@ -48,36 +32,27 @@ activeBot.forEach((e) => {
     e.addEventListener('click', () => {
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
+            cofirmBtn.classList.remove('confirm-bot-active')
         }
         else if (!e.classList.contains('bot-active')) {
             activeBot.forEach((i) => {
                 i.classList.remove('bot-active')
+                cofirmBtn.classList.remove('confirm-bot-active')
             })
             e.classList.add('bot-active')
+            cofirmBtn.classList.add('confirm-bot-active')
 
-            if (e.classList.contains('figure-green')) {
-                // botColor = 1;
-                // easyBot.botColor = 1
-                // easyBot.wins = 0
-                // easyBot.games = 0 
+            if (e.classList.contains('figure-green')) {                
                 bot.botColor = 1
                 localStorage.setItem("bot", JSON.stringify(bot))
             }
 
             else if (e.classList.contains('figure-blue')) {
-                // botColor = 2;
-                // mediBot.botColor = 2
-                // mediBot.wins = 0
-                // mediBot.games = 0 
                 bot.botColor = 2
                 localStorage.setItem("bot",  JSON.stringify(bot))
             }
 
             else if (e.classList.contains('figure-red')) {
-                // botColor = 3;
-                // hardBot.botColor = 3
-                // hardBot.wins = 0
-                // hardBot.games = 0 
                 bot.botColor = 3
                 localStorage.setItem("bot",  JSON.stringify(bot))
             }

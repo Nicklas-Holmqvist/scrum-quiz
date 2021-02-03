@@ -10,7 +10,7 @@ function getBotStats() {
     document.querySelector("#mediGames").innerHTML = `Spelade matcher: ${fetchLSBotColor.mediBot.games}`
     
     document.querySelector("#hardWins").innerHTML = `Vunna matcher: ${fetchLSBotColor.hardBot.wins}`
-    document.querySelector("#hardGames").innerHTML = "something matcher:" + fetchLSBotColor.hardBot.games
+    document.querySelector("#hardGames").innerHTML = `Spelade matcher: ${fetchLSBotColor.hardBot.games}`
     
 }
 document.addEventListener('readystatechange', event => { 
