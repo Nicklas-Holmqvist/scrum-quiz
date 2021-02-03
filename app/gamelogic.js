@@ -101,7 +101,7 @@ document.querySelector('#confirm').addEventListener('click', checkUserInput)
 function checkUserInput() {
     let input = Number(document.querySelector('#number').value);
     let clearInput = document.querySelector('#number');
-    
+    localStorage.setItem("player-answer", JSON.stringify(input))
     
     if (!input || input > 20) {
         document.querySelector('.answer').textContent = "Invalid nummer"
@@ -126,7 +126,6 @@ function checkUserInput() {
     } else if (input !== questionNum) {
         document.querySelector('.answer').textContent = input < questionNum ? "För lågt nummer" : "För högt"
         clearInput.value = '';
-        // clearInput.readOnly = true;
         clearInput.classList.add("number-nofocus");
         document.querySelector('#player-bubble').textContent = `${input}`
         playerGuesses ++;
