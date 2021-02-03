@@ -184,7 +184,7 @@ main {
   filter: drop-shadow(2px 2px 3px #264144);
   outline: none;
   animation: scale 1s forwards;
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 
@@ -196,7 +196,7 @@ main {
 
 .colorBtn {
   background-color: #00abbe;
-  background: linear-gradient(#37aad4, #51a4c2);
+  /* background: linear-gradient(#37aad4, #51a4c2); */
   /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
   /* font-size: 1rem; */

@@ -15,9 +15,10 @@ const span = document.getElementsByClassName("close")[0]; //gets the <span> elem
      
 const startGameButton = document.getElementById("start-button");
 
-const hover = document.querySelectorAll('.btn-big');
 
 // Hover function for buttons
+const hover = document.querySelectorAll('.btn-big');
+
 hover.forEach((e) => {
     
     e.addEventListener("mouseover", () => {
