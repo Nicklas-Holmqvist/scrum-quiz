@@ -38,6 +38,10 @@ h3 {
   color: #24e9ff
 }
 
+.highscore h3 {
+  padding-bottom: 0.5rem;
+}
+
 p {
   font-size: 1.2rem;
   /* color: white; */
