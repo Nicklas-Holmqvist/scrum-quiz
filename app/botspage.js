@@ -1,4 +1,4 @@
-
+window.addEventListener("load", showWelcomeMessage);
 
 const activeBot = document.querySelectorAll('.bot');
 const cofirmBtn = document.querySelector(".confirm-bot")
@@ -84,3 +84,13 @@ activeBot.forEach((e) => {
         }
     })
 }) 
+
+/**
+ * Function that displays a welcome message
+ */
+
+function showWelcomeMessage() {
+    const playerName = localStorage.getItem("player-name")
+    const welcomeText = document.querySelector(".welcome")
+    welcomeText.innerHTML = "Välkommen " + playerName + "!"
+}
