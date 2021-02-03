@@ -65,6 +65,7 @@
 
 .fas {
   font-size: 4rem;
+  margin-top: 0rem;
 }
 
 /* .user-container {
@@ -132,7 +133,7 @@
 }
 .botStatRow {
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
 }
 .botPadding {
   padding-right: 1rem;
