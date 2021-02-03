@@ -52,7 +52,7 @@ li {
 
 .time-left {
   font-size: 1.3rem;
-  animation: flip 1s;
+  animation: fade 1s ease;
 }
 
 .bots {
@@ -157,7 +157,7 @@ main {
   font-size: 1.5rem;
   outline: none;
   color: white;
-  animation: flip 1s ease;
+  animation: flip 1.4s ease-out;
   transition: all 1s ease;
 }
 
@@ -251,7 +251,7 @@ main {
 .logo-small {
   width: 15rem;
   filter: brightness(1.15);
-  animation: scale 1.5s ease;
+  animation: scale 1s ease-out;
 }
 
 /* Start page */
@@ -269,10 +269,11 @@ main {
 /* The game */
 .background {
   background-image:url("/assets/logo-opacity1.png");
-  background-size:cover;
-  background-position: top center;
+  background-size: cover;
+  background-position: center 0%;
   background-size: 48rem;
   background-repeat: no-repeat, no-repeat;
+  animation: fade 1s ease;
 }
 
 .players-container {
@@ -325,20 +326,26 @@ main {
 
 .figure-green {
   color: #55a630;
+  animation: fade 1.3s linear;
+  transition: all 0.5s linear;
 }
 
 .figure-blue {
   color: #0072ce;
+  animation: fade 1.3s linear;
+  transition: all 0.5s linear;
 }
 
 .figure-red {
   color: #a4161a;
+  animation: fade 1.3s linear;
+  transition: all 0.5s linear;
 }
 
 .figure-1,
 .figure-2 {
-  animation: scale 1s;
-  transition: all 0.5s;
+  animation: flip 1.3s linear;
+  transition: all 0.5s linear;
 }
 
 /* Endscreen css */
@@ -380,7 +387,7 @@ main {
 #player {
   padding-bottom: 3rem;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 #scoreText {
@@ -422,6 +429,10 @@ main {
 .space-around {
   justify-content: space-around;
 }
+
+/* .bot-statistics {
+  padding-bottom: 1rem;
+} */
 
 /*olofs klasser*/
 .rubrik {
