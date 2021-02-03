@@ -4,8 +4,8 @@ function main() {
     showGameSummary();   
     comparePlayerWithHighscore();
     showHighscore();
-    addHighscoreToLS();
-
+    updatePlayerList();
+    updateLS();
 }
 
 // Global variables
@@ -16,6 +16,8 @@ let playerGames = parseInt(localStorage.getItem("player-games"))
 let playerGuesses = parseInt(localStorage.getItem("player-guesses"))
 let highscore = JSON.parse(localStorage.getItem("highscore"))
 let playerWin = JSON.parse(localStorage.getItem("player-win"))
+let player = {name: playerName, wins: playerWins, games: playerGames}
+let playerList = JSON.parse(localStorage.getItem("player-list"))
 
 /**
  * Function that displays a summary of the game and player statistics
@@ -37,36 +39,55 @@ function showGameSummary() {
  * Function that compares the player's score to the highscore
  */
 function comparePlayerWithHighscore() {
-    let player = {
-        name: playerName,
-        wins: playerWins,
-        games: playerGames,
-    }
-    
-    if (highscore === null || undefined) {
-        highscore = [];
-        highscore.push(player);
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-        highscore.push({name: "ingenspelare", wins: 0, games: 0});
-    }
-    else {
-        for (let i = 0; i < 3; i++) {
-            if (player.wins > highscore[i].wins) {
-                if(player.name !== highscore[i].name) {
-                    highscore.splice(i, 0, player);
-                    if(player.name === highscore[i+2].name) {
-                        highscore.splice(i+2, 1)
-                    }               
-                }
-                else {
-                    highscore[i].wins = player.wins;
-                    highscore[i].games = player.games;
-                }
-            break;
-            }
+    if (playerWin === true) {
+        if (highscore === null || undefined) {
+            highscore = [];
+            highscore.push(player);
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
+            highscore.push({name: "ingenspelare", wins: 0, games: 0});
         }
+        else {
+            for (let i = 0; i < 3; i++) {
+                if (playerWins > highscore[i].wins) {
+                    if(playerName === highscore[i].name) {
+                        highscore[i].wins = playerWins;
+                        highscore[i].games = playerGames; 
+                        break;           
+                    }
+                    else {
+                        if(playerName === highscore[i+1].name) {
+                            highscore.splice(i+1, 1)
+                        }   
+                        if(playerName === highscore[i+2].name) {
+                            highscore.splice(i+2, 1)
+                        }
+                        highscore.splice(i, 0, player);
+                        break;
+                    }
+                }
+            }
+            if (highscore.length > 5) {
+                highscore.pop;
+            }
+        } 
     }    
 }
+
+/**
+ * Function that updates the player stats in the list of players
+ */
+
+function updatePlayerList() {
+    for(let i = 0; i < playerList.length; i++) {
+        if (playerList[i].name === playerName) {
+            playerList[i].wins = playerWins;
+            playerList[i].games = playerGames;
+            break;
+        }
+    }
+} 
 
 /**
  * Function that displays highscore top 3
@@ -82,8 +103,9 @@ function showHighscore() {
 }
 
 /**
- * Function that adds the new highscore to local storage
+ * Function that updates the highscore and player info in local storage
  */
-function addHighscoreToLS() {
+function updateLS() {
     localStorage.setItem('highscore',JSON.stringify(highscore));
+    localStorage.setItem('player-list',JSON.stringify(playerList));
 }
