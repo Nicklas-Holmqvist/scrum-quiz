@@ -67,7 +67,7 @@ activeBot.forEach((e) => {
                 
                 if (history) {
                    
-                    history.botColor = 2
+                   console.log('helu', history.botColor = 2);
                     localStorage.setItem("bot", JSON.stringify(history))
                 }
                 else {
