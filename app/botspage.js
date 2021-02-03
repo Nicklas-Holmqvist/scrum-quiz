@@ -1,3 +1,5 @@
+
+
 const activeBot = document.querySelectorAll('.bot');
 
 //let botColor;
@@ -21,7 +23,7 @@ let bot = {
     }
 
 }
-let history = localStorage.getItem("bot")
+
 /**
  * Function that sets focus on active bot on page Choose difficulty
  */
@@ -43,14 +45,7 @@ activeBot.forEach((e) => {
                 // easyBot.wins = 0
                 // easyBot.games = 0 
                 bot.botColor = 1
-                
-                if (history) {
-                    localStorage.setItem("bot", history)
-                }
-                else {
-                    localStorage.setItem("bot", JSON.stringify(bot))
-                }
-                
+                localStorage.setItem("bot", JSON.stringify(bot))
             }
 
             else if (e.classList.contains('figure-blue')) {
@@ -59,29 +54,16 @@ activeBot.forEach((e) => {
                 // mediBot.wins = 0
                 // mediBot.games = 0 
                 bot.botColor = 2
-                
-                if (history) {
-                    localStorage.setItem("bot", history)
-                }
-                else {
-                    localStorage.setItem("bot", JSON.stringify(bot))
-                }
-
+                localStorage.setItem("bot",  JSON.stringify(bot))
             }
 
             else if (e.classList.contains('figure-red')) {
                 // botColor = 3;
                 // hardBot.botColor = 3
                 // hardBot.wins = 0
-                // hardBot.games = 0
+                // hardBot.games = 0 
                 bot.botColor = 3
-
-                if (history) {
-                    localStorage.setItem("bot", history)
-                }
-                else {
-                    localStorage.setItem("bot", JSON.stringify(bot))
-                }
+                localStorage.setItem("bot",  JSON.stringify(bot))
             }
         }
     })
