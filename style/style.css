@@ -361,6 +361,8 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  animation: scale 1s;
+  transition: all 1s;
 }
 
 .highscore {
