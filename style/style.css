@@ -148,6 +148,9 @@ main {
   font-size: 1.5rem;
   outline: none;
   color: white;
+
+  animation: scale 1s;
+  /* transition: all 1s; */
 }
 
 #inputfield::placeholder {
@@ -168,6 +171,7 @@ main {
 }
 
 .btn-big {
+  margin-bottom: 2rem;
   padding: .8rem;
   width: 10rem;
   border-style: none;
@@ -177,6 +181,20 @@ main {
   border-radius: 0.25rem;
   filter: drop-shadow(2px 2px 3px #264144);
   outline: none;
+  animation: scale 1s forwards;
+}
+
+.btn-big:hover {
+  /* box-shadow: inset 0 0 0 25px #bdbdbd; */
+  /* background: #afbec0; */
+  /* filter: brightness(0.8); */
+  /* background: #3292af; */
+  
+}
+
+.hoverbutton {  
+  /* animation: scalegrow 1s forwards; */
+  background: red;
 }
 
 .colorBtn {
@@ -232,6 +250,7 @@ main {
   width: 40rem;
   filter: brightness(1.35) hue-rotate(0deg);
   padding: 1rem 0 0 0;
+  animation: scale 1.5s;
 }
 
 .width70 {
@@ -270,6 +289,7 @@ main {
   /* outline-style: dashed;
   outline-width: 1rem; */
   outline: none;
+  /* backdrop-filter: opacity(0.2); */
 }
 
 .number {
@@ -283,7 +303,7 @@ main {
   outline-width: 0.2rem;
   outline-style: solid; */
 
-  box-shadow: 0px 0px 20px 10px rgb(0, 225, 255);
+  box-shadow: 0px 0px 8px 4px rgb(0, 255, 98);
 }
 
 .number-nofocus {
@@ -314,6 +334,10 @@ main {
 
 .figure-red {
   color: #a4161a;
+}
+
+.figure-1, .figure-2 {
+  animation: scale 1s;
 }
 
 /* Endscreen css */
@@ -489,8 +513,8 @@ main {
   padding-top: 1rem;
   display: inline-block;
   margin: 0rem 4.5rem;
-  animation: fade 1s;
-  transition: all 1s;
+  animation: fade 0.75s;
+  transition: all 0.75s;
 }
 
 .speech-bubble {
@@ -539,4 +563,31 @@ main {
   50%   { opacity: 0.5; }
   75%   { opacity: 0.75; }
   100% { opacity: 1; }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scalegrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flip {
+  /* 0% { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); } */
+  0% { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+  100% { -webkit-transform: rotateY(360deg); transform: rotateY(360deg); }
 }

@@ -6,8 +6,7 @@ function main() {
 
 function addEventListeners() {
     prepareTheGame()
-    countdown()
-    
+    countdown()    
 }
 // Globala variabler för spelaren
 
@@ -22,7 +21,11 @@ const theGameBotColor = document.querySelector('.figure-2');
 //let botColor;
 const timeLeftP = document.querySelector('.time-left')
 let count = 10;
-console.log(count)
+
+
+
+  
+
 
 /**
  * Function that creates an random number between 1-20

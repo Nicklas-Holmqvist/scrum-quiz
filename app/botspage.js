@@ -1,4 +1,22 @@
+window.addEventListener('load', main)
+
+function main() {
+    addEventListeners()
+}
+
+function addEventListeners() {
+    // animateBot();    
+}
+
+
 const activeBot = document.querySelectorAll('.bot');
+
+
+// ANIMATION EFFECTS
+function animateBot() {
+    document.querySelector
+    gsap.from("#bot-active", {duration: 3, x: 300, opacity: 0, scale: 0.5});
+}
 
 //let botColor;
 

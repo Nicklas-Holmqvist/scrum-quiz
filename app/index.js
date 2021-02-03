@@ -15,6 +15,41 @@ const span = document.getElementsByClassName("close")[0]; //gets the <span> elem
      
 const startGameButton = document.getElementById("start-button");
 
+const hover = document.querySelectorAll('.btn-big');
+
+// Hover function for buttons
+hover.forEach((e) => {
+    
+    e.addEventListener("mouseover", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        else if (!e.classList.contains('hoverbutton')) {
+            hover.forEach((i) => {
+                i.classList.remove('hoverbutton')
+            })
+            e.classList.add('hoverbutton')  
+        } 
+    }
+    )
+
+    e.addEventListener("mouseout", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        // else if (!e.classList.contains('hoverbutton')) {
+        //     hover.forEach((i) => {
+        //         i.classList.remove('hoverbutton')
+        //     })
+        //     e.classList.add('hoverbutton')  
+        // } 
+    }
+    )
+}
+)
+
 //opens the rule box 
 ruleButton.onclick = function() {
     ruleBox.style.display = "block";
