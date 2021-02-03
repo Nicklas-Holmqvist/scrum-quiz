@@ -1,15 +1,14 @@
 * {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .btn-big {
-  padding: .7rem;
+  padding: 0.7rem;
 }
 
 .confirm {
   padding: 1.3rem;
 }
-
 
 /* start page */
 
@@ -43,7 +42,7 @@
 }
 
 .margin-mobile {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* the game */
@@ -51,6 +50,11 @@
 /* .players-container {
   padding: 1rem 0;
 } */
+
+.background {
+  background-size: 20rem;
+  background-position: 50% 30%;
+}
 
 .player-one,
 .player-two {
@@ -67,9 +71,8 @@
 
 .fas {
   font-size: 4rem;
+  margin-top: 0rem;
 }
-
-
 
 /* .user-container {
   flex-direction: column-reverse;
@@ -110,10 +113,11 @@
 
 .statisticFix {
   height: 100%;
+  background: linear-gradient(#064258, #026082);
 }
 
 .bodyFix {
-  height: auto;
+  /* height: auto; */
 }
 
 .rule-content {
@@ -132,4 +136,14 @@
 
 #player {
   font-size: 2rem;
+}
+.botStatRow {
+  flex-direction: row;
+  align-items: center;
+}
+.botPadding {
+  padding-right: 1rem;
+}
+.button-padding {
+  padding-top: 1rem;
 }
