@@ -1,7 +1,7 @@
 
 
 const activeBot = document.querySelectorAll('.bot');
-
+const cofirmBtn = document.querySelector(".confirm-bot")
 //let botColor;
 
 let bot = {
@@ -34,18 +34,17 @@ activeBot.forEach((e) => {
     e.addEventListener('click', () => {
         if (e.classList.contains('bot-active')) {
             e.classList.remove('bot-active')
+            cofirmBtn.classList.remove('confirm-bot-active')
         }
         else if (!e.classList.contains('bot-active')) {
             activeBot.forEach((i) => {
                 i.classList.remove('bot-active')
+                cofirmBtn.classList.remove('confirm-bot-active')
             })
             e.classList.add('bot-active')
- 
-            if (e.classList.contains('figure-green')) {
-                // botColor = 1;
-                // easyBot.botColor = 1
-                // easyBot.wins = 0
-                // easyBot.games = 0 
+            cofirmBtn.classList.add('confirm-bot-active')
+
+            if (e.classList.contains('figure-green')) {                
                 bot.botColor = 1
                
                 if (history) {
@@ -59,10 +58,6 @@ activeBot.forEach((e) => {
             }
  
             else if (e.classList.contains('figure-blue')) {
-                // botColor = 2;
-                // mediBot.botColor = 2
-                // mediBot.wins = 0
-                // mediBot.games = 0 
                 bot.botColor = 2
                 
                 if (history) {
@@ -77,10 +72,6 @@ activeBot.forEach((e) => {
             }
  
             else if (e.classList.contains('figure-red')) {
-                // botColor = 3;
-                // hardBot.botColor = 3
-                // hardBot.wins = 0
-                // hardBot.games = 0
                 bot.botColor = 3
                 if (history) {
                     history.botColor =3
