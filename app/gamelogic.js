@@ -186,7 +186,7 @@ function BotCompairNum() {
 
 function timerBot() {
     const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
-    const timerEasy =  3000 * (Math.round(Math.random()+5))
+    const timerEasy =  3000 * (Math.round(Math.random()+1))
     const timerNormal =  1000 * (Math.ceil(Math.random()*3))
     console.log(timerNormal)
     const timerHard =  1000* (Math.round(Math.random()*1)+1)
