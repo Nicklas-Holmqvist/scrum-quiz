@@ -35,7 +35,7 @@ h2 {
 h3 {
   text-align: center;
   font-size: 1.5rem;
-  color: #24e9ff
+  color: #24e9ff;
 }
 
 p {
@@ -168,7 +168,7 @@ main {
 }
 
 .btn-big {
-  padding: .8rem;
+  padding: 0.8rem;
   width: 10rem;
   border-style: none;
   background: #a0a0a0;
@@ -221,7 +221,7 @@ main {
 }
 
 .small-text {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /* Start page */
@@ -263,7 +263,6 @@ main {
   width: 10rem;
   padding-left: 0.5rem;
   outline-color: #03b74e;
-  
 }
 
 .number-nofocus {
@@ -293,7 +292,6 @@ main {
 
 /* Endscreen css */
 
-
 .endBody {
   height: 100%;
 }
@@ -305,7 +303,7 @@ main {
 }
 
 .highscore {
-  margin: 1rem 0 1rem 0;  
+  margin: 1rem 0 1rem 0;
 }
 
 .highscoreTable {
@@ -331,7 +329,7 @@ main {
 #player {
   padding-bottom: 3rem;
   text-align: center;
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
 }
 
 #scoreText {
@@ -344,21 +342,21 @@ main {
   float: right;
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
 #games {
   float: right;
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
 #guesses {
   float: right;
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
 .endscreenBtn {
@@ -386,7 +384,7 @@ main {
   /* background: white; */
   opacity: 0.9;
   /* box-shadow: 3px 3px 10px 4px #00abbe; */
-  -webkit-box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%); 
+  -webkit-box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%);
   box-shadow: 5px 2px 18px -4px hsl(186, 100%, 57%);
 }
 
@@ -442,7 +440,6 @@ main {
 }
 /* rule box css end */
 
-
 /* SPEECH BUBBLES */
 .bubblebox {
   height: 3rem;
@@ -454,7 +451,7 @@ main {
 }
 
 /* .bubble-placeholder { */
-  /* background: green; */
+/* background: green; */
 /* } */
 
 .bubble {
@@ -500,6 +497,7 @@ main {
   color: #00565f;
 }
 
-.player-name, .bot-name {
+.player-name,
+.bot-name {
   padding-top: 0.5rem;
 }

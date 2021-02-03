@@ -26,23 +26,35 @@
       </div>
       <div class="flex column">
         <div class="bot-statistics row flex">
-          <div class="flex column center margin1">
-            <i class="fas fa-male figure-green"></i>
-            <p class="green">Lätt</p>
-            <p id="easyWins"></p>
-            <p id="easyGames">Spelade matcher:</p>
+
+          <div class="flex column center margin1 botStatRow  ">
+            <div class="flex column center  botPadding" ><i class="fas fa-male figure-green"></i>
+              <p class="red">Lätt</p>
+            </div>
+            <div class="flex column" >
+              <p id="easyWins"></p>
+            <p class="button-padding" id="easyGames">Spelade matcher:</p>
+            </div>
+            
           </div>
-          <div class="flex column center margin1">
-            <i class="fas fa-male figure-blue"></i>
+            
+            
+          
+          <div class="flex column center margin1 botStatRow">
+            <div class="flex column center botPadding" >
+              <i class="fas fa-male figure-blue"></i>
             <p class="blue">Medium</p>
-            <p id="mediWins">Vunna matcher:</p>
-            <p id="mediGames">Spelade matcher:</p>
+            </div>
+            <div class="flex column">  <p id="mediWins">Vunna matcher:</p>
+              <p class="button-padding" id="mediGames">Spelade matcher:</p></div>
+           
           </div>
-          <div class="flex column center margin1">
-            <i class="fas fa-male figure-red"></i>
-            <p class="red">Svår</p>
-            <p id="hardWins">Vunna matcher:</p>
-            <p id="hardGames">Spelade matcher:</p>
+          <div class="flex column center margin1 botStatRow">
+            <div class="flex column center botPadding" >  <i class="fas fa-male figure-red"></i>
+              <p class="red">Svår</p></div>
+              <div class="flex column">  <p id="hardWins">Vunna matcher:</p>
+                <p class="button-padding" id="hardGames">Spelade matcher:</p></div>
+           
           </div>
         </div>
 
@@ -52,7 +64,7 @@
           <li id="top3"><!-- code injected from javascript--></li>
         </div>
 
-        <div class="btn-container flex center">
+        <div class="btn-container flex center button-padding ">
           <form action="index.html">
             <input
               type="submit"
@@ -61,7 +73,7 @@
             />
           </form>
         </div>
-      </div>
+     <!-- </div> -->
     </main>
   </body>
 </html>
