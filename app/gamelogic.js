@@ -68,13 +68,6 @@ hover.forEach((e) => {
         if (e.classList.contains('hoverbutton')) {
             e.classList.remove('hoverbutton')
         }
-                
-        // else if (!e.classList.contains('hoverbutton')) {
-        //     hover.forEach((i) => {
-        //         i.classList.remove('hoverbutton')
-        //     })
-        //     e.classList.add('hoverbutton')  
-        // } 
     }
     )
 }
@@ -193,8 +186,8 @@ function BotCompairNum() {
 
 function timerBot() {
     const botDifficulty = JSON.parse(localStorage.getItem("bot"))    
-    const timerEasy =  1000* (Math.round(Math.random()*6)+4)
-    const timerNormal =  1000* (Math.round(Math.random()*3))
+    const timerEasy =  3000 * (Math.round(Math.random()+5))
+    const timerNormal =  1000 * (Math.ceil(Math.random()*3))
     console.log(timerNormal)
     const timerHard =  1000* (Math.round(Math.random()*1)+1)
 
@@ -260,10 +253,26 @@ function botNormal(clearInput) {
 function botHard(clearInput) {
     let textHighLow = document.querySelector('.answer').innerText;
     let playerInput = parseInt(localStorage.getItem("player-answer"))
+    console.log(playerInput)
     let topNumber = 20;
     let botLower = Math.floor(Math.random()*playerInput)+1
     let botHigher = Math.floor(Math.random()*topNumber)+playerInput
+    // let botNull = Math.floor(Math.random()*topNumber)
     
+    // if(localStorage["player-answer"] == undefined) {
+
+    //     if (questionNum === botNull) {
+    //         botRightAnswer()
+    //      }
+
+    //     else if(questionNum === botNull) {        
+    //     document.querySelector('.answer').textContent = botNull > questionNum ? "För högt nummer" : "För lågt nummer"
+    //     document.querySelector('#bot-bubble').textContent = ` ${botNull}`
+    //     clearInput.focus();
+    //     clearInput.classList.remove("number-nofocus");
+    //     switchPlayer()
+    //     }
+    // }
 
     if(textHighLow === "För högt") {
         
