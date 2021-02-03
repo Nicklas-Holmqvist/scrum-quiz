@@ -51,6 +51,11 @@
   padding: 1rem 0;
 } */
 
+.background {
+  background-size: 20rem;
+  background-position: 50% 30%;
+}
+
 .player-one,
 .player-two {
   width: 8rem;
