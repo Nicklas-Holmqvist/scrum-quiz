@@ -149,7 +149,7 @@ main {
   outline: none;
   color: white;
 
-  animation: scale 1s;
+  /* animation: scale 1s; */
   /* transition: all 1s; */
 }
 
@@ -187,11 +187,13 @@ main {
 
 .hoverbutton {  
   /* animation: scalegrow 1s forwards; */
-  background: rgb(9, 123, 189);
+  background: linear-gradient(#37aad4, #51a4c2);
+  /* background: rgb(9, 123, 189); */
 }
 
 .colorBtn {
   background-color: #00abbe;
+  background: linear-gradient(#37aad4, #51a4c2);
   /* background: linear-gradient(#00abbe, #00bed3); */
   color: white;
   /* font-size: 1rem; */
@@ -202,7 +204,8 @@ main {
 }
 
 .colorBtn:hover {
-  background: rgb(9, 123, 189);
+  /* background: rgb(9, 123, 189); */
+  background: linear-gradient(#37aad4, #51a4c2);
   /* background: #afbec0; */
   /* filter: brightness(0.8); */
   /* background: #3292af; */  
@@ -304,7 +307,7 @@ main {
   outline-width: 0.2rem;
   outline-style: solid; */
 
-  box-shadow: 0px 0px 8px 4px rgb(0, 255, 98);
+  box-shadow: 0px 0px 5px 2px rgb(0, 255, 85);
 }
 
 .number-nofocus {
@@ -312,7 +315,8 @@ main {
   outline-width: 0rem;
   outline-style: none;
 
-  box-shadow: none;
+  /* box-shadow: none; */
+  box-shadow: 0px 0px 5px 3px rgb(255, 0, 0);
 }
 
 
@@ -514,8 +518,8 @@ main {
   padding-top: 1rem;
   display: inline-block;
   margin: 0rem 4.5rem;
-  animation: fade 0.75s;
-  transition: all 0.75s;
+  animation: fade 0.5s;
+  transition: all 0.5s;
 }
 
 .speech-bubble {

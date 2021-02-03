@@ -52,6 +52,41 @@ function checkKeyPress(key) {
     }    
 }
 
+// Hover function for buttons
+const hover = document.querySelectorAll('.btn-big');
+
+hover.forEach((e) => {
+    
+    e.addEventListener("mouseover", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        else if (!e.classList.contains('hoverbutton')) {
+            hover.forEach((i) => {
+                i.classList.remove('hoverbutton')
+            })
+            e.classList.add('hoverbutton')  
+        } 
+    }
+    )
+
+    e.addEventListener("mouseout", () => {
+        if (e.classList.contains('hoverbutton')) {
+            e.classList.remove('hoverbutton')
+        }
+                
+        // else if (!e.classList.contains('hoverbutton')) {
+        //     hover.forEach((i) => {
+        //         i.classList.remove('hoverbutton')
+        //     })
+        //     e.classList.add('hoverbutton')  
+        // } 
+    }
+    )
+}
+)
+
 /**
  * Function that sets focus on active bot on page Choose difficulty
  */
