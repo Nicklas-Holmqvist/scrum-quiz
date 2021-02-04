@@ -69,7 +69,7 @@ function comparePlayerWithHighscore() {
                 }
             }
             if (highscore.length > 5) {
-                highscore.pop;
+                highscore.pop();
             }
         } 
     }    
