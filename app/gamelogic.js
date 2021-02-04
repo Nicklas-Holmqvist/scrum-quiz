@@ -230,7 +230,7 @@ function botWrongAnswer(botNum, clearInput) {
 function botEasy(clearInput) {
     let botNum = randomNumber()
         if (questionNum === botNum) {
-            botWrongAnswer(botNum, clearInput)
+            botEasy(clearInput)
         } else if (questionNum !== botNum) {
             botWrongAnswer(botNum, clearInput)
         }     
