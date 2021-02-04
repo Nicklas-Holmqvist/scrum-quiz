@@ -277,7 +277,7 @@ main {
 
 /* The game */
 .background {
-  background-image:url("/assets/logo-opacity1.png");
+  background-image:url("../../assets/logo-opacity1.png");
   background-size: cover;
   background-position: center 0%;
   background-size: 48rem;
