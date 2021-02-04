@@ -65,8 +65,17 @@ li {
   width: 12rem;
 }
 
+.botStatRow {
+  animation: fade 1.3s linear;
+  transition: all 0.5s linear;
+}
+
 .margin-top {
   margin-top: 3rem;
+}
+
+.margin-top1 {
+  margin-top: 1rem;
 }
 
 .margin-bottom {
@@ -326,20 +335,20 @@ main {
 
 .figure-green {
   color: #55a630;
-  animation: fade 1.3s linear;
-  transition: all 0.5s linear;
+  /* animation: fade 1.3s linear;
+  transition: all 0.5s linear; */
 }
 
 .figure-blue {
   color: #0072ce;
-  animation: fade 1.3s linear;
-  transition: all 0.5s linear;
+  /* animation: fade 1.3s linear;
+  transition: all 0.5s linear; */
 }
 
 .figure-red {
   color: #a4161a;
-  animation: fade 1.3s linear;
-  transition: all 0.5s linear;
+  /* animation: fade 1.3s linear;
+  transition: all 0.5s linear; */
 }
 
 .figure-1,

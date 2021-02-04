@@ -53,7 +53,7 @@
 
 .background {
   background-size: 20rem;
-  background-position: 50% 27%;
+  background-position: 50% 10%;
 }
 
 .player-one,
@@ -118,10 +118,6 @@ h2 {
   background: linear-gradient(#064258, #026082);
 }
 
-.bodyFix {
-  /* height: auto; */
-}
-
 .rule-content {
   font-size: 1rem;
   padding: 2rem;
@@ -138,13 +134,16 @@ h2 {
 
 #player {
   font-size: 2rem;
+
 }
 .botStatRow {
   flex-direction: row;
   align-items: center;
 }
+
 .botPadding {
   padding-right: 1rem;
+
 }
 .button-padding {
   padding-top: 1rem;
