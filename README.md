@@ -5,8 +5,6 @@
 *Ett spel mot bottar där man ska gissa rätt tal.*  
 *Svarar man rätt så har man vunnit!*
 
-I repot finns aktuella dokument & screens.
-
 [Trello](https://trello.com/b/J0bT5ZYt/quiz)  
 [Figma](https://www.figma.com/file/MnzbqKDGMdVWdtIWcOLtRd/Untitled)
 
