@@ -7,6 +7,9 @@
 
 I repot finns aktuella dokument & screens.
 
+[Trello](https://trello.com/b/J0bT5ZYt/quiz)  
+[Figma](https://www.figma.com/file/MnzbqKDGMdVWdtIWcOLtRd/Untitled)
+
 *Gruppmedlemmar*  
 Jonas Glingert  
 Nicklas Holmqvist  
@@ -15,4 +18,5 @@ Lisa Pääjärvi
 Marie Wagle  
 Yohan Risteski  
 
-[Demo](https://nicklas-holmqvist.github.io/scrum-quiz/)
+[Netlify](https://quiz-gissa-talet.netlify.app/)  
+[GitHub pages](https://nicklas-holmqvist.github.io/scrum-quiz/)
