@@ -18,3 +18,5 @@ Yohan Risteski
 
 [Netlify](https://quiz-gissa-talet.netlify.app/)  
 [GitHub pages](https://nicklas-holmqvist.github.io/scrum-quiz/)
+
+![Skärmklipp](https://user-images.githubusercontent.com/70426543/114870811-e1c27580-9df8-11eb-9e99-fefb1af69687.JPG)
